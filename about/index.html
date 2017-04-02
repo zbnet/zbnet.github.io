@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <script>
+    document.documentElement.classList.remove("no-js");
+    document.documentElement.classList.add("js");
+</script>
+
+<meta charset="utf-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>ZacharyBell.net</title>
+<meta name="description" content="Only the finest in novels, short stories and blog-like materials.">
+
+<link rel="canonical" href="https://www.zacharybell.net//about/">
+<link rel="alternate" type="application/rss+xml" title="ZacharyBell.net" href="https://www.zacharybell.net//feed.xml">
+
+<link href="https://fonts.googleapis.com/css?family=Karla|Lora|Open+Sans:800" rel="stylesheet">
+<link rel="stylesheet" href="https://www.zacharybell.net/css/main.css">
+
+<script>
+
+</script>
+    <!-- loading these here so I can use the markdown variables.-->
+    <style>
+        @media screen and (orientation:portrait) {
+          .cover-page {
+            background-image: url("https://www.zacharybell.net/images/mobile_portrait/");
+          }
+        }
+        @media screen and (orientation:landscape) {
+          .cover-page {
+            background-image: url("https://www.zacharybell.net/images/medium/");
+          }
+        }
+
+        @media (min-width : 768px) {
+            .cover-page {
+                background-image: url("https://www.zacharybell.net/images/large/");
+            }
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="main-container">
+      <div class="navbar sticky nav-hide">
+	<div class="nav-wrapper">
+		<div class="container main-nav">
+			<span>
+				<a href="/" class="site-logo">
+					ZB
+				</a>
+			</span>
+			<span class="nav-button">
+				<a href="https://www.zacharybell.net">
+					stories
+				</a>
+			</span>
+			<span class="nav-button">
+				<a  href="https://www.zacharybell.net/blog">
+					blog
+				</a>
+			</span>
+			<span class="nav-button">
+				<a href="https://www.zacharybell.net/contact">
+					contact
+				</a>
+			</span>
+			<span class="nav-button">
+				<a href="https://www.zacharybell.net/search">
+					search
+				</a>
+			</span>
+		</div>
+	</div>
+</div>
+
+<a href="/" class="full-screen-home nav-hide">
+	<span href="/" class="site-logo">ZB</span>
+	<span>home</span>
+</a>
+<a href="#footer-nav" class="tab-nav">
+	<span>skip to navigation</span>
+</a>
+
+      <div class="blogHeader">
+    <h1 class="banner">The Author</h1>
+    <span class="tagline">Wants You To Love Him</span>
+</div>
+<div class="container blog">
+    <div class="row">
+        <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+            <h2 class="subTitle">
+                about me
+            </h2>
+            <p>
+                I am a person with a web page and a url that is also my name, which is to say
+                that I am basically a product and you are a potential customer. By which I mean I'm
+                giving a bunch of words away for no money in hope of earning the affection of internet
+                strangers.
+            </p>
+            <p>
+                My business model is a work in progress. 
+            </p>
+            <p>
+                If you like what I have written, please let me know. If you hate what I have written,
+                please let me know.
+            </p>
+            <h2 class="subTitle">
+                how to contact me
+            </h2>
+            <p>
+                <a href="https://twitter.com/intent/user?screen_name=Zachary_Bell">Twitter is fun</a> or
+                <a href="https://www.reddit.com/user/zachary_bell">Reddit</a>, if you're into that.
+                Otherwise, <a href="https://www.zacharybell.net/contact">I have a form</a>.
+            </p>    
+            
+            <h2 class="subTitle">
+                About the site itself
+            </h2>
+            <p>
+                Some people want to know and I am here to please the people. So, for you technologically
+                inclined folks, this site was build on <a href="https://jekyllrb.com/">Jekyll</a>, which
+                I tortured half to death and then added some javascript. 
+            </p>    
+        </div>
+    </div>
+</div>
+
+
+      <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+	<footer class="row">
+		<div id="footer-nav" class="footer-nav">
+			<a href="/">home</a>
+			<a href="/">stories</a>
+			<a href="/blog">blog</a>
+			<a href="/contact">contact</a>
+			<a href="/search">search</a>
+		</div>
+		<div class="footer-meta">
+			<h1></h1>
+			<p>
+				Copyright © <span class="copyright-date">2017</span> Zachary Bell - All Rights Reserved. Except where otherwise noted,
+				contents of this site including text and media may not be reproduced without prior
+				written consent.
+			</p>
+			<p>
+				
+			</p>
+			<span class="pw__vs">vs:</span><span class="pw__sm">sm:</span><span class="pw__md">md:</span><span class="pw__lg">lg:</span><span>107</span>
+		</div>
+	</footer>
+</div>
+    </div>
+    
+    <!-- inject:js -->
+<script src="/javascript-combined/znet.js"></script>
+<!-- endinject -->
+
+<script>
+    var currentTime = new Date();
+    $('.copyright-date').html(currentTime.getFullYear());
+</script>
+    <script>
+
+
+
+        // need to know screen size for a variety of things
+        var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        window.SCREEN_MIN  = 300;
+        window.SCREEN_XS   = 480;
+        window.SCREEN_MS   = 530;
+        window.SCREEN_SM   = 768;
+        window.SCREEN_MD   = 992;
+        window.SCREEN_LG   =1200;
+
+        $('.navbar').znetHideNav({minScrollDown: $(window).height(), storyMode: true});
+        $('.tab-nav').znetTabNav({});
+
+        $('.cover-page').znetFullScreenImage({
+            largeImageBreakpoint    : SCREEN_SM
+
+          // can't do the cover image til we know how big the cover
+          // page is
+          }, function(){
+              $(".cover-title").znetTitleFill({
+                paddingX:               10,
+                titleAlignment:         "scramble",
+                yNudgeDown:             100
+              });
+          });
+        
+        window.onload = function(){
+
+            $(".story-title").znetTitleFill({
+                paddingX:               10,
+                titleAlignment:         "scramble",
+                yNudgeDown:             0
+            }, function(){
+                $('body').css('opacity', '1');
+            });
+
+            // have to wait for the whole page to load before we can set up
+            // the footnote positions, as footnote heights are set relative
+            // to the height of the page, which we won't know until we have 
+            // the cover, the toc and te teasers all set.        
+            $(".footnoteCollection").znetFootnotes({nudge : -4});
+
+            $('.teaser').znetFirstPage({extraPadding : 30});
+            $('.toc').znetFirstPage({extraPadding : 30});
+            $('.topLink').click(function(){
+                var screenHeight = $(window).height();
+                var tocHeight = $('.toc').height();
+                var centerTocMargin;
+                var scrollToHeight;
+
+                // block the navbar, so it doesn't pop up
+                $('body').addClass('autoscrolling');
+
+                // height of the upper toc link
+                scrollToHeight = $( $.attr(this, 'href') ).offset().top;
+
+                // if possible, center the TOC in the window...
+                if(tocHeight < screenHeight){
+                    centerTocMargin = (screenHeight - tocHeight)/2;
+                    scrollToHeight = scrollToHeight-centerTocMargin;
+                }
+                
+                $('html, body').animate({
+                    scrollTop: scrollToHeight
+                }, 500);
+                return false;
+            });
+
+            // the reverse of the above.
+            $('.toc a').click(function(){
+                var position = $( $.attr(this, 'href') ).offset().top - $('.navbar').height() - 30;
+                $('html, body').animate({
+                    scrollTop: position
+                }, 500);
+                return false;
+            });
+
+
+            // these images appear at the very bottom of the story, so they
+            // can load last.
+            $('.story-summary').znetLazyLoadImages({'buffer': 1000});
+        }
+    </script>
+  </body>
+</html>

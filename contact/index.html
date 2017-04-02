@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<script>
+    document.documentElement.classList.remove("no-js");
+    document.documentElement.classList.add("js");
+</script>
+
+<meta charset="utf-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>ZacharyBell.net</title>
+<meta name="description" content="Only the finest in novels, short stories and blog-like materials.">
+
+<link rel="canonical" href="https://www.zacharybell.net//contact/">
+<link rel="alternate" type="application/rss+xml" title="ZacharyBell.net" href="https://www.zacharybell.net//feed.xml">
+
+<link href="https://fonts.googleapis.com/css?family=Karla|Lora|Open+Sans:800" rel="stylesheet">
+<link rel="stylesheet" href="https://www.zacharybell.net/css/main.css">
+
+<script>
+
+</script>
+	</head>
+    <body>
+        <div class="main-container">
+            <div class="navbar sticky nav-hide">
+	<div class="nav-wrapper">
+		<div class="container main-nav">
+			<span>
+				<a href="/" class="site-logo">
+					ZB
+				</a>
+			</span>
+			<span class="nav-button">
+				<a href="https://www.zacharybell.net">
+					stories
+				</a>
+			</span>
+			<span class="nav-button">
+				<a  href="https://www.zacharybell.net/blog">
+					blog
+				</a>
+			</span>
+			<span class="nav-button">
+				<a href="https://www.zacharybell.net/contact">
+					contact
+				</a>
+			</span>
+			<span class="nav-button">
+				<a href="https://www.zacharybell.net/search">
+					search
+				</a>
+			</span>
+		</div>
+	</div>
+</div>
+
+<a href="/" class="full-screen-home nav-hide">
+	<span href="/" class="site-logo">ZB</span>
+	<span>home</span>
+</a>
+<a href="#footer-nav" class="tab-nav">
+	<span>skip to navigation</span>
+</a>
+
+            <div class="blog">
+    <div class="blogHeader">
+        <h1 class="banner">Talk To Me</h1>
+        <span class="tagline">Won't You Please?</span>
+    </div>
+    <div class="container blog">
+        <div class="row">
+            <div class="formWrapper col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                <form class="contactForm" id="contactForm">
+                    <label class="standardLabel" for="name">Your name (required)</label><input type="text" name="name" id="name" required>
+                    <label class="standardLabel" for="yourEmail">Your email address (required)</label><input id="yourEmail" type="email" name="_replyto" required>
+                    <label class="standardLabel" for="whatCanIDoForYou">What can I do for you? (required)</label><textarea id="whatCanIDoForYou" name="content" required></textarea>
+                    <input type="hidden" name="_next" value="https://www.zacharybell.net/contact?submitted=true">
+                    <input type="hidden" name="_subject" value="Website contact">
+                    <input type="text" name="_gotcha" style="display:none" />
+                    <button type="submit">
+                        submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+	<footer class="row">
+		<div id="footer-nav" class="footer-nav">
+			<a href="/">home</a>
+			<a href="/">stories</a>
+			<a href="/blog">blog</a>
+			<a href="/contact">contact</a>
+			<a href="/search">search</a>
+		</div>
+		<div class="footer-meta">
+			<h1></h1>
+			<p>
+				Copyright © <span class="copyright-date">2017</span> Zachary Bell - All Rights Reserved. Except where otherwise noted,
+				contents of this site including text and media may not be reproduced without prior
+				written consent.
+			</p>
+			<p>
+				
+			</p>
+			<span class="pw__vs">vs:</span><span class="pw__sm">sm:</span><span class="pw__md">md:</span><span class="pw__lg">lg:</span><span>107</span>
+		</div>
+	</footer>
+</div>
+        <!-- inject:js -->
+<script src="/javascript-combined/znet.js"></script>
+<!-- endinject -->
+
+<script>
+    var currentTime = new Date();
+    $('.copyright-date').html(currentTime.getFullYear());
+</script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+
+        <script>
+            $('.navbar').znetHideNav({minScrollDown: $(window).height(), storyMode: false});
+
+            $(document).ready(function() {
+                var e = 'Ly9mb3Jtc3ByZWUuaW8vY29udGFjdEB6YWNoYXJ5YmVsbC5vcmc=';
+                var a = atob(e);
+                $('.contactForm').attr('action', a);
+                $('.contactForm').attr('method', 'POST');
+                
+                var variablesFromUrl = location.search.replace('?', '').split('&').map(function(val){
+                    return val.split('=');
+                });
+                if(variablesFromUrl[0][0] === 'submitted' && variablesFromUrl[0][1] === 'true'){
+                    $('.formWrapper').prepend('<div class="alert">Form submitted. I will get back to you soon</div>');
+                }
+            });
+
+            $("#contactForm").validate();
+            
+            $('body').css('opacity', '1');
+        </script>
+    </body>
+</html>
