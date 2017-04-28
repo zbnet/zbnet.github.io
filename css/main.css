@@ -1462,6 +1462,9 @@ ul {
       float: left;
       padding-right: 15px; } }
 @media (max-width: 480px) {
+  .story-summary-large .cover-image {
+    height: 375px; }
+
   .story-summary-medium .mobile-story-title {
     padding: 0 10px;
     font-size: 1.5em; }
