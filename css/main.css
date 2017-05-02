@@ -1307,7 +1307,7 @@ ul {
     display: inline; } }
 .home-container {
   max-width: 1000px;
-  margin: 0 auto; }
+  margin: 45px auto 0 auto; }
 
 .hover-box {
   display: none; }
@@ -1423,7 +1423,7 @@ ul {
 
   .story-summary-large {
     padding: 30px 0;
-    margin: 0 15px 15px 15px; }
+    margin: 0 15px; }
     .story-summary-large .story-excerpt {
       display: none; }
     .story-summary-large .cover-image {
@@ -1791,41 +1791,43 @@ html.no-js .cover-page {
 body.js .ss-form-container {
   display: none !important; }
 
-.blog .blogHeader {
-  margin-bottom: 25px; }
-  .blog .blogHeader .banner {
-    text-align: center;
-    font-family: "Open Sans", "Tahoma", "Verdana", sans-serif;
-    text-transform: uppercase;
-    font-size: 20em;
-    line-height: 1em;
-    margin: 0; }
-  .blog .blogHeader .tagline {
-    display: block;
-    text-align: center;
-    font-family: "Lora", "Palatino", "Georgia", serif;
-    font-style: italic;
-    font-size: 4.5em;
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray; }
-.blog .blog-summary {
-  text-align: center; }
-  .blog .blog-summary h2 {
+.blog {
+  margin-top: 45px; }
+  .blog .blogHeader {
+    margin-bottom: 25px; }
+    .blog .blogHeader .banner {
+      text-align: center;
+      font-family: "Open Sans", "Tahoma", "Verdana", sans-serif;
+      text-transform: uppercase;
+      font-size: 20em;
+      line-height: 1em;
+      margin: 0 0 10px 0; }
+    .blog .blogHeader .tagline {
+      display: block;
+      text-align: center;
+      font-family: "Lora", "Palatino", "Georgia", serif;
+      font-style: italic;
+      font-size: 3em;
+      border-top: 1px solid lightgray;
+      border-bottom: 1px solid lightgray; }
+  .blog .blog-summary {
+    text-align: center; }
+    .blog .blog-summary h2 {
+      font-family: "Karla", "Arial", sans-serif;
+      margin: 0 0 5px 0;
+      -moz-transition: color .25s;
+      transition: color .25s;
+      font-size: 40px;
+      text-transform: uppercase; }
+    .blog .blog-summary a {
+      color: #333333; }
+      .blog .blog-summary a:hover h2 {
+        color: #FF2200; }
+  .blog .blog-entry h2 {
+    font-size: 50px;
     font-family: "Karla", "Arial", sans-serif;
-    margin: 0 0 5px 0;
-    -moz-transition: color .25s;
-    transition: color .25s;
-    font-size: 40px;
+    text-align: center;
     text-transform: uppercase; }
-  .blog .blog-summary a {
-    color: #333333; }
-    .blog .blog-summary a:hover h2 {
-      color: #FF2200; }
-.blog .blog-entry h2 {
-  font-size: 50px;
-  font-family: "Karla", "Arial", sans-serif;
-  text-align: center;
-  text-transform: uppercase; }
 
 .contactForm .standardLabel, .contactForm button {
   font-size: 2em;
@@ -1852,9 +1854,8 @@ body.js .ss-form-container {
   .blog h2 {
     font-size: 25px; }
   .blog .blogHeader .banner {
-    font-size: 55px;
-    line-height: 1em;
-    margin: 10px 0; }
+    font-size: 100px;
+    line-height: 1em; }
   .blog .blogHeader .tagline {
     font-size: 2.5em;
     margin-bottom: 0; }
@@ -1997,6 +1998,10 @@ a.gs-title {
     .socialButtons .icon-mail:hover {
       color: black; }
 
+@media (max-width: 768px) {
+  .socialButtons {
+    padding: 2em 0;
+    margin: 5em 0; } }
 footer {
   display: block;
   color: #808080;

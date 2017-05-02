@@ -28,45 +28,38 @@
     </head>
     <body>
         <div class="main-container" id="page">
-            <div class="navbar sticky nav-hide">
-	<div class="nav-wrapper">
-		<div class="container main-nav">
-			<span>
-				<a href="/" class="site-logo">
-					ZB
-				</a>
-			</span>
-			<span class="nav-button">
-				<a href="https://zacharybell.net">
-					stories
-				</a>
-			</span>
-			<span class="nav-button">
-				<a  href="https://zacharybell.net/blog">
-					blog
-				</a>
-			</span>
-			<span class="nav-button">
-				<a href="https://zacharybell.net/contact">
-					contact
-				</a>
-			</span>
-			<span class="nav-button">
-				<a href="https://zacharybell.net/search">
-					search
-				</a>
-			</span>
-		</div>
+            <div class="navbar sticky">
+    <div class="nav-wrapper">
+	<div class="container main-nav">
+		<span>
+			<a href="/" class="site-logo">
+				ZB
+			</a>
+		</span>
+		<span class="nav-button">
+			<a href="https://zacharybell.net">
+				stories
+			</a>
+		</span>
+		<span class="nav-button">
+			<a  href="https://zacharybell.net/blog">
+				blog
+			</a>
+		</span>
+		<span class="nav-button">
+			<a href="https://zacharybell.net/contact">
+				contact
+			</a>
+		</span>
+		<span class="nav-button">
+			<a href="https://zacharybell.net/search">
+				search
+			</a>
+		</span>
 	</div>
 </div>
 
-<a href="/" class="full-screen-home nav-hide">
-	<span href="/" class="site-logo">ZB</span>
-	<span>home</span>
-</a>
-<a href="#footer-nav" class="tab-nav">
-	<span>skip to navigation</span>
-</a>
+</div>
 
             <div class="blog">
     <div class="container blog-entry">
@@ -169,8 +162,6 @@
             window.SCREEN_SM   = 768;
             window.SCREEN_MD   = 992;
             window.SCREEN_LG   =1200;
-
-            $('.navbar').znetHideNav({minScrollDown: $(window).height(), storyMode: false});
 
             window.onload = function () {
                 $(".story-title").znetTitleFill({
