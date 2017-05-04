@@ -72,12 +72,9 @@
 		</form>
 	</div>
 	<div id='log'></div>
-
-	<div class="container">
-		<div class="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8 search-container">
-			<div class="story-results"></div>
-			<div class="blog-results"></div>
-		</div>
+	<div class="search-container">
+		<div class="story-results"></div>
+		<div class="blog-results"></div>
 	</div>
 </div>
 
@@ -132,19 +129,6 @@
       $('#search-input').focus();
 
       $.znetSearch('https://zacharybell.net');
-
-      var dir = '../images/microthumbnail';
-      var fileExtension = ".jpg";
-      $.ajax({
-          url: dir,
-          success: function (data) {
-              //List all .jpg file names in the page
-              $(data).find("a:contains(" + fileExtension + ")").each(function () {
-                  var filename = this.innerText;
-                  $("body").append("<img class='eager-cached-file' src='" + dir + '/' + filename + "'>");
-              });
-          }
-      });
   </script>
 </body>
 </html>

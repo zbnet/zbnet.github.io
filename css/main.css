@@ -1880,42 +1880,9 @@ body.js .ss-form-container {
       right: 6px;
       color: #808080; }
 
-.eager-cached-file {
-  display: none; }
-
-.search-container h3 {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 3em;
-  font-family: "Karla", "Arial", sans-serif;
-  border-bottom: 1px solid #D9D9D9; }
-.search-container .search-result {
-  overflow: hidden;
-  margin-bottom: 3em; }
-  .search-container .search-result a {
-    color: #FF2200 !important; }
-  .search-container .search-result h4 {
-    font-size: 2em;
-    margin: 0; }
-  .search-container .search-result p {
-    width: 100%;
-    margin: 0; }
-  .search-container .search-result .cover-image {
-    width: 150px;
-    height: 100px;
-    float: left;
-    margin-right: 2em; }
-
-#input {
-  height: 20px;
-  margin: 0; }
-
 @media (max-width: 768px) {
   .main-search-form {
     width: 300px; }
-
-  .search-container .story-summary .cover-image {
-    display: none !important; }
 
   .search-box {
     font-size: 15px;
@@ -2151,3 +2118,60 @@ body.locked {
 @media screen and (max-height: 375px) {
   .mobile-footnote {
     max-height: 200px; } }
+.story-search-result-container {
+  max-width: 800px;
+  margin: 45px auto 0 auto; }
+
+.story-search-result {
+  border-bottom: 1px solid #D9D9D9;
+  width: auto;
+  margin: 0 15px;
+  padding: 15px 0;
+  height: auto;
+  text-align: left; }
+  .story-search-result a {
+    display: block;
+    border: none; }
+    .story-search-result a:hover {
+      border: none;
+      text-decoration: none;
+      color: black; }
+  .story-search-result .title {
+    font-size: 2em;
+    line-height: 1.1em;
+    color: #333333;
+    font-family: "Open Sans", "Tahoma", "Verdana", sans-serif;
+    text-transform: uppercase; }
+  .story-search-result .excerpt {
+    font-size: 1.8em;
+    color: #333333;
+    line-height: 1.2em; }
+
+.blog-search-result-container {
+  max-width: 600px;
+  margin: 0 auto; }
+
+.blog-search-result {
+  border-bottom: 1px solid #D9D9D9;
+  width: auto;
+  margin: 0 15px;
+  padding: 15px 0;
+  height: auto;
+  text-align: left; }
+  .blog-search-result a {
+    display: block;
+    border: none; }
+    .blog-search-result a:hover {
+      border: none;
+      text-decoration: none;
+      color: black; }
+  .blog-search-result .title {
+    font-size: 2em;
+    line-height: 1.1em;
+    color: #333333;
+    font-family: "Open Sans", "Tahoma", "Verdana", sans-serif;
+    text-transform: uppercase; }
+  .blog-search-result .excerpt {
+    font-size: 1.8em;
+    color: #333333;
+    line-height: 1.2em; }
