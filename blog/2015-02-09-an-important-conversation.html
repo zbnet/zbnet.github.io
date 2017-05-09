@@ -119,14 +119,10 @@
     	<span class="icon-reddit"> </span>
     </a>
 
-    <a href="https://www.facebook.com/dialog/feed?link=https://zacharybell.net/content/2015/10/10/the-demonist.html&name=demonist" target="_blank">
+    <a  onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https://zacharybell.net//blog/2015-02-09-an-important-conversation.html&title=' + encodeURIComponent('An Important Conversation'), 'windowOpenTab', 'width=1000,height=600,left=100, top=100'); return false;" href="">
         <span class="icon-facebook"> </span>
     </a>
 
-    <a  onclick="window.open('https://www.facebook.com/dialog/feed?app_id=1175371049143599&display=popup&caption=An%20example%20caption&link=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F&redirect_uri=https://developers.facebook.com/tools/explorer'
-, 'windowOpenTab', 'width=600,height=600,left=100, top=100'); return false;" href="">
-		<span class="icon-facebook"> </span>
-	</a>
     
         <a  onclick="window.location.href = 'mailto:?subject=' + encodeURIComponent('An Important Conversation') + '%3A%20A%20short%20story%20by%20Zachary%20Bell&body=' + encodeURIComponent('You need to read this!') + '%0A%0A https://zacharybell.net//blog/2015-02-09-an-important-conversation.html'; return false;" href="">
         	<span class="icon-mail"> </span>
@@ -187,7 +183,7 @@
             window.onload = function () {
                 $(".story-title").znetTitleFill({
                     paddingX:    0,
-                    titleAlignment: "scramble",
+                    titleAlignment: "center",
                     yNudgeDown:  0,   
                 }, function(){
                     $('body').css('opacity', '1');
