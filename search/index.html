@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js">
-<head>
-  <meta name="google-site-verification" content="Nt3xy9OgkrDFmMXfylZo0UxQYjoBNsUhVwekitE_1bw" />
-  <meta name="google-site-verification" content="Nt3xy9OgkrDFmMXfylZo0UxQYjoBNsUhVwekitE_1bw" />
-  <script>
+    <head>
+        <script>
     document.documentElement.classList.remove("no-js");
     document.documentElement.classList.add("js");
 </script>
@@ -25,10 +23,10 @@
 <script>
 
 </script>
-</head>
-<body>
-<div class="main-container" id="page">
-  <div class="navbar sticky">
+    </head>
+    <body>
+    <div class="main-container" id="page">
+        <div class="navbar sticky">
     <div class="nav-wrapper">
 	<div class="container main-nav">
 		<span>
@@ -61,25 +59,27 @@
 
 </div>
 
-  <div class="blog">
+        <div class="blog">
 	<div class="blogHeader">
 	    <h1 class="banner">search</h1>
 	    <span class="tagline">go ahead, do it.</span>
 	</div>
-	<div class="main-search-form">
-		<form onsubmit="return false;">
-			<input id="search-input" type="text" placeholder="Search terms"><span class="icon-search"></span>
-		</form>
-	</div>
-	<div id='log'></div>
-	<div class="search-container">
-		<div class="story-results"></div>
-		<div class="blog-results"></div>
+	<div class="container">
+		<div class="main-search-form">
+			<form onsubmit="return false;">
+				<input id="search-input" type="text" placeholder="Search terms"><span class="icon-search"></span>
+			</form>
+		</div>
+		<div id='log'></div>
+		<div class="search-container">
+			<div class="story-results"></div>
+			<div class="blog-results"></div>
+		</div>
 	</div>
 </div>
 
-</div>
-<div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+    </div>
+    <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
 	<footer class="row">
 		<div id="footer-nav" class="footer-nav">
 			<a href="/">home</a>
@@ -102,7 +102,7 @@
 		</div>
 	</footer>
 </div>
-<!-- inject:js -->
+    <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
 
@@ -111,24 +111,30 @@
     $('.copyright-date').html(currentTime.getFullYear());
 </script>
 
-  <script src="/external_components/elasticlunr.js-master/elasticlunr.js"></script>
-  <script>
-      window.onload = function () {
-          $('body').css('opacity', '1');
-      };
+    <script src="/external_components/elasticlunr.js-master/elasticlunr.js"></script>
+    <script>
 
-      window.SCREEN_MIN  = 300;
-      window.SCREEN_XS   = 480;
-      window.SCREEN_MS   = 530;
-      window.SCREEN_SM   = 768;
-      window.SCREEN_MD   = 992;
-      window.SCREEN_LG   =1200;
+        window.onload = function () {
+            $('body').css('opacity', '1');
+        };
+        window.SCREEN_MIN  = 300;
+        window.SCREEN_XS   = 480;
+        window.SCREEN_MS   = 530;
+        window.SCREEN_SM   = 768;
+        window.SCREEN_MD   = 992;
+        window.SCREEN_LG   =1200;
 
-      $('.navbar').znetHideNav({minScrollDown: $(window).height(), storyMode: false});
+        $('#search-input').focus();
 
-      $('#search-input').focus();
-
-      $.znetSearch('https://zacharybell.net/');
-  </script>
-</body>
+        $.znetSearch('https://zacharybell.net/', {'callback': function(){
+            $(".story-title").znetTitleFill({
+                paddingX:    0,
+                titleAlignment: "center",
+                yNudgeDown:  0
+            }, function(){
+                $('body').css('opacity', '1');
+            });
+        }});
+    </script>
+    </body>
 </html>

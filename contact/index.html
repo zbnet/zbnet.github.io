@@ -64,7 +64,7 @@
         <h1 class="banner">Talk To Me</h1>
         <span class="tagline">Won't You Please?</span>
     </div>
-    <div class="container blog">
+    <div class="container">
         <div class="row">
             <div class="formWrapper col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
                 <form class="contactForm" id="contactForm">
@@ -115,11 +115,9 @@
     var currentTime = new Date();
     $('.copyright-date').html(currentTime.getFullYear());
 </script>
+
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
-
         <script>
-            $('.navbar').znetHideNav({minScrollDown: $(window).height(), storyMode: false});
-
             $(document).ready(function() {
                 var e = 'Ly9mb3Jtc3ByZWUuaW8vY29udGFjdEB6YWNoYXJ5YmVsbC5vcmc=';
                 var a = atob(e);
