@@ -1356,7 +1356,7 @@ ul, ol {
   margin: 45px auto 0 auto; }
 
 .keep-reading-container {
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto; }
 
 .story-summary:hover {
@@ -1961,8 +1961,6 @@ a.gs-title {
   text-align: center;
   color: #808080;
   margin: 45px auto;
-  border-top: 1px solid #D9D9D9;
-  border-bottom: 1px solid #D9D9D9;
   padding: 45px 0;
   max-width: 800px;
   overflow: hidden; }
