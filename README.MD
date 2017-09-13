@@ -18,6 +18,10 @@ The site is actually a github repo that is then actually served out of Cloudflar
 
 2) Push it to production. I used to have this automated as part of the gulp task, but then I started pushing stuff without having a second look and that was bad, so now you have to go over to the folder and manually `git add .` and `git commit -a -m ""` then `git push` the project up to its repo on github (and _not_ bitbucket, which is where the actual repo lives).
 
+## Hosting and CDN
+
+Page served out of zbnet.github.io, but is CDN'd via cloudflare. Both accounts are registered under zbnet.webmaster@gmail.com
+
 ## Other Useful Notes
 
 gulp did not lend itself well to imagemagick because gulp is async and imagemagick is decidedly not. So the image resize/optimization happens in `images.bat`, which is in the folder `misc_scripts`.
