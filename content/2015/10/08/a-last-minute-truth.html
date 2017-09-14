@@ -2,29 +2,22 @@
 <html class="no-js">
 
 <head>
-    <script>
-    document.documentElement.classList.remove("no-js");
-    document.documentElement.classList.add("js");
-</script>
-
-<meta charset="utf-8" />
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>A Last Minute Truth</title>
-<meta name="description" content="Old, embittered and depressed, Eustace decides to kill himself. Then he does something else.">
-
-<link rel="canonical" href="https://zacharybell.net///content/2015/10/08/a-last-minute-truth.html">
-<link rel="alternate" type="application/rss+xml" title="ZacharyBell.net" href="https://zacharybell.net///feed.xml">
-
-<link rel="stylesheet" href="https://zacharybell.net//css/main.css">
-
-<script>
-
-</script>
-    <!-- loading these here so I can use the markdown variables.-->
+    <!-- bare minimum css to render above the fold content.-->
     <style>
+        body {
+            margin: 0;
+            width: 100%;
+        }
+        .cover-page {
+            position: relative;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 0;
+            background-size: cover;
+            -moz-background-size: cover;  /* Firefox 3.6 */
+            background-position: center;  /* Internet Explorer 7/8 */
+        }
         @media screen and (orientation:portrait) {
             .cover-page {
                 background-image: url("https://zacharybell.net//images/mobile_portrait/45bullet-closer.jpg");
@@ -42,8 +35,40 @@
                 background-image: url("https://zacharybell.net//images/large/45bullet-closer.jpg");
             }
         }
-    </style>
+        .cover-page img {
+            position: absolute;
+            z-index: -1;
+        }
 
+        .cover-page h1 {
+            display: none;
+        }
+        .navbar, .full-screen-home, .tab-nav {
+            display:none;
+        }
+        .cover-page {
+            height: 100vh;
+        }
+    
+    </style>
+    <script>
+    document.documentElement.classList.remove("no-js");
+    document.documentElement.classList.add("js");
+</script>
+
+<meta charset="utf-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>A Last Minute Truth</title>
+<meta name="description" content="Old, embittered and depressed, Eustace decides to kill himself. Then he does something else.">
+
+<link rel="canonical" href="https://zacharybell.net///content/2015/10/08/a-last-minute-truth.html">
+<link rel="alternate" type="application/rss+xml" title="ZacharyBell.net" href="https://zacharybell.net///feed.xml">
+<script>
+
+</script>        
     <meta property="og:url" content="https://zacharybell.net///content/2015/10/08/a-last-minute-truth.html" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="A Last Minute Truth" />
@@ -584,7 +609,8 @@
 </div>
     </div>
 
-
+    <link rel="stylesheet" href="https://zacharybell.net//css/main.css">
+    
     <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
@@ -616,12 +642,12 @@
                     titleAlignment: "center",
                     yNudgeDown: 100
                     }, function(){
-                        // page will not appear until the cover page image/title are done.
                         // hide the full navbar until scroll past cover image. 
                         $('.navbar').znetHideNav({ minScrollDown: $(window).height(), storyMode: true }, function(){
                             // tabbing off of the hombe button offers a "skip to nav" button that takes user to menu at bottom of page.
-                            $('.tab-nav').znetTabNav({});
-                            $('body').css('opacity', '1');
+                            //$('.tab-nav').znetTabNav({});
+
+                            // page will not appear until the cover page image/title are done.                            
                         });
                     }
                 );
