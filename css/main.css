@@ -1222,6 +1222,14 @@ html, body {
 html {
   overflow-y: scroll; }
 
+.js body {
+  opacity: 0;
+  -webkit-transition: opacity .15s;
+  transition: opacity .05s; }
+
+.no-js body {
+  opacity: 1; }
+
 body {
   font-size: 10px;
   margin: 0;

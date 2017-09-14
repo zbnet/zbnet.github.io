@@ -1,57 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js">
-
-<head>
-    <!-- bare minimum css to render above the fold content.-->
-    <style>
-        body {
-            margin: 0;
-            width: 100%;
-        }
-        .cover-page {
-            position: relative;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 0;
-            background-size: cover;
-            -moz-background-size: cover;  /* Firefox 3.6 */
-            background-position: center;  /* Internet Explorer 7/8 */
-        }
-        @media screen and (orientation:portrait) {
-            .cover-page {
-                background-image: url("https://zacharybell.net//images/mobile_portrait/whosblowingwhom.jpg");
-            }
-        }
-
-        @media screen and (orientation:landscape) {
-            .cover-page {
-                background-image: url("https://zacharybell.net//images/medium/whosblowingwhom.jpg");
-            }
-        }
-
-        @media (min-width: 768px) {
-            .cover-page {
-                background-image: url("https://zacharybell.net//images/large/whosblowingwhom.jpg");
-            }
-        }
-        .cover-page img {
-            position: absolute;
-            z-index: -1;
-        }
-
-        .cover-page h1 {
-            display: none;
-        }
-        .navbar, .full-screen-home, .tab-nav {
-            display:none;
-        }
-        .cover-page {
-            height: 100vh;
-        }
-    
-    </style>
-    <script>
+    <head>
+        <script>
     document.documentElement.classList.remove("no-js");
     document.documentElement.classList.add("js");
 </script>
@@ -66,20 +16,43 @@
 
 <link rel="canonical" href="https://zacharybell.net///content/2015/10/10/the-demonist.html">
 <link rel="alternate" type="application/rss+xml" title="ZacharyBell.net" href="https://zacharybell.net///feed.xml">
+
+<link rel="stylesheet" href="https://zacharybell.net//css/main.css">
+
 <script>
 
-</script>        
-    <meta property="og:url" content="https://zacharybell.net///content/2015/10/10/the-demonist.html" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="The Demonist" />
-    <meta property="og:description" content="Tim buys a book. Tim accidentally summons a demon. Hilarity, carnage, ensue." />
-    <meta property="og:image" content="https://zacharybell.net//images/medium/whosblowingwhom.jpg" />
-    <meta property="fb:app_id" content="466074093735144" />
-</head>
+</script>
+        <!-- loading these here so I can use the markdown variables.-->
+        <style>
+            @media screen and (orientation:portrait) {
+              .cover-page {
+                background-image: url("https://zacharybell.net//images/mobile_portrait/whosblowingwhom.jpg");
+              }
+            }
+            @media screen and (orientation:landscape) {
+              .cover-page {
+                background-image: url("https://zacharybell.net//images/medium/whosblowingwhom.jpg");
+              }
+            }
 
-<body>
-    <div class="main-container">
-        <div class="navbar sticky nav-hide">
+            @media (min-width : 768px) {
+                .cover-page {
+                    background-image: url("https://zacharybell.net//images/large/whosblowingwhom.jpg");
+                }
+            }
+        </style>
+
+        <meta property="og:url"          content="https://zacharybell.net///content/2015/10/10/the-demonist.html" />
+        <meta property="og:type"         content="article" />
+        <meta property="og:title"        content="The Demonist" />
+        <meta property="og:description"  content="Tim buys a book. Tim accidentally summons a demon. Hilarity, carnage, ensue." />
+        <meta property="og:image"        content="https://zacharybell.net//images/medium/whosblowingwhom.jpg" />
+        <meta property="fb:app_id"       content="466074093735144"/>
+    </head>
+
+    <body>
+        <div class="main-container">
+            <div class="navbar sticky nav-hide">
 	<div class="nav-wrapper">
 		<div class="container main-nav">
 			<span>
@@ -118,7 +91,8 @@
 <a href="#footer-nav" class="tab-nav">
 	<span>skip to navigation</span>
 </a>
- <div class="cover-page">
+
+            <div class="cover-page">
     <h1 class="cover-title">The Demonist</h1>
 </div>
 
@@ -782,7 +756,8 @@
         
     </ol>
 </div>
- <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
 	<footer class="row">
 		<div id="footer-nav" class="footer-nav">
 			<a href="/">home</a>
@@ -807,11 +782,10 @@
 		</div>
 	</footer>
 </div>
-    </div>
+        </div>
 
-    <link rel="stylesheet" href="https://zacharybell.net//css/main.css">
-    
-    <!-- inject:js -->
+
+        <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
 
@@ -819,99 +793,87 @@
     var currentTime = new Date();
     $('.copyright-date').html(currentTime.getFullYear());
 </script>
-    <script>
-        // need to know screen size for a variety of things
-        window.SCREEN_MIN = 300;
-        window.SCREEN_XS = 480;
-        window.SCREEN_MS = 530;
-        window.SCREEN_SM = 768;
-        window.SCREEN_MD = 992;
-        window.SCREEN_LG = 1200;
+        <script>
+            // need to know screen size for a variety of things
+            window.SCREEN_MIN  = 300;
+            window.SCREEN_XS   = 480;
+            window.SCREEN_MS   = 530;
+            window.SCREEN_SM   = 768;
+            window.SCREEN_MD   = 992;
+            window.SCREEN_LG   =1200;
 
+            $('.navbar').znetHideNav({minScrollDown: $(window).height(), storyMode: true});
+            $('.tab-nav').znetTabNav({});
 
+            $('.cover-page').znetFullScreenImage({
+                largeImageBreakpoint    : SCREEN_SM
 
-        // do the math to make the cover image full screen
-        $('.cover-page').znetFullScreenImage({
-            largeImageBreakpoint: SCREEN_SM
+              // can't do the cover image til we know how big the cover
+              // page is
+              }, function(){
+                  $(".cover-title").znetTitleFill({
+                    paddingX:               10,
+                    titleAlignment:         "center",
+                    yNudgeDown:             100
+                  });
+              });
 
-            // can't do the cover image til we know how big the cover page is
-            }, function () {
-                // this is just the cover image. Titles are also computed for the "read more" stories below.
-                $(".cover-title").znetTitleFill({
-                    paddingX: 10,
-                    titleAlignment: "center",
-                    yNudgeDown: 100
-                    }, function(){
-                        // hide the full navbar until scroll past cover image. 
-                        $('.navbar').znetHideNav({ minScrollDown: $(window).height(), storyMode: true }, function(){
-                            // tabbing off of the hombe button offers a "skip to nav" button that takes user to menu at bottom of page.
-                            //$('.tab-nav').znetTabNav({});
+            window.onload = function(){
 
-                            // page will not appear until the cover page image/title are done.                            
-                        });
+                $(".story-title").znetTitleFill({
+                    paddingX:               10,
+                    titleAlignment:         "center",
+                    yNudgeDown:             0
+                }, function(){
+                    $('body').css('opacity', '1');
+                });
+
+                // have to wait for the whole page to load before we can set up
+                // the footnote positions, as footnote heights are set relative
+                // to the height of the page, which we won't know until we have
+                // the cover, the toc and te teasers all set.
+                $(".footnoteCollection").znetFootnotes({nudge : -4});
+
+                $('.teaser').znetFirstPage({extraPadding : 30});
+                $('.toc').znetFirstPage({extraPadding : 30});
+                $('.topLink').click(function(){
+                    var screenHeight = $(window).height();
+                    var tocHeight = $('.toc').height();
+                    var centerTocMargin;
+                    var scrollToHeight;
+
+                    // block the navbar, so it doesn't pop up
+                    $('body').addClass('autoscrolling');
+
+                    // height of the upper toc link
+                    scrollToHeight = $( $.attr(this, 'href') ).offset().top;
+
+                    // if possible, center the TOC in the window...
+                    if(tocHeight < screenHeight){
+                        centerTocMargin = (screenHeight - tocHeight)/2;
+                        scrollToHeight = scrollToHeight-centerTocMargin;
                     }
-                );
+
+                    $('html, body').animate({
+                        scrollTop: scrollToHeight
+                    }, 500);
+                    return false;
+                });
+
+                // the reverse of the above.
+                $('.toc a').click(function(){
+                    var position = $( $.attr(this, 'href') ).offset().top - $('.navbar').height() - 30;
+                    $('html, body').animate({
+                        scrollTop: position
+                    }, 500);
+                    return false;
+                });
+
+
+                // these images appear at the very bottom of the story, so they
+                // can load last.
+                $('.story-summary').znetLazyLoadImages({'buffer': 1000});
             }
-        );
-
-        // things that can wait until the page is at least displaying something.
-        window.onload = function () {
-            
-            // do the titles for the "keep reading" images. 
-            $(".story-title").znetTitleFill({
-                paddingX: 10,
-                titleAlignment: "center",
-                yNudgeDown: 0
-            }, function () {
-            });
-
-            // have to wait for the whole page to load before we can set up
-            // the footnote positions, as footnote heights are set relative
-            // to the height of the page, which we won't know until we have
-            // the cover, the toc and te teasers all set.
-            $(".footnoteCollection").znetFootnotes({ nudge: -4 });
-
-            $('.teaser').znetFirstPage({ extraPadding: 30 });
-            $('.toc').znetFirstPage({ extraPadding: 30 });
-            $('.topLink').click(function () {
-                var screenHeight = $(window).height();
-                var tocHeight = $('.toc').height();
-                var centerTocMargin;
-                var scrollToHeight;
-
-                // block the navbar, so it doesn't pop up
-                $('body').addClass('autoscrolling');
-
-                // height of the upper toc link
-                scrollToHeight = $($.attr(this, 'href')).offset().top;
-
-                // if possible, center the TOC in the window...
-                if (tocHeight < screenHeight) {
-                    centerTocMargin = (screenHeight - tocHeight) / 2;
-                    scrollToHeight = scrollToHeight - centerTocMargin;
-                }
-
-                $('html, body').animate({
-                    scrollTop: scrollToHeight
-                }, 500);
-                return false;
-            });
-
-            // the reverse of the above.
-            $('.toc a').click(function () {
-                var position = $($.attr(this, 'href')).offset().top - $('.navbar').height() - 30;
-                $('html, body').animate({
-                    scrollTop: position
-                }, 500);
-                return false;
-            });
-
-
-            // these images appear at the very bottom of the story, so they
-            // can load last.
-            $('.story-summary').znetLazyLoadImages({ 'buffer': 1000 });
-        }
-    </script>
-</body>
-
+        </script>
+    </body>
 </html>
