@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="no-js">
-    <head>
-        <script>
+
+<head>
+    <script>
     document.documentElement.classList.remove("no-js");
     document.documentElement.classList.add("js");
 </script>
@@ -22,37 +23,38 @@
 <script>
 
 </script>
-        <!-- loading these here so I can use the markdown variables.-->
-        <style>
-            @media screen and (orientation:portrait) {
-              .cover-page {
+    <!-- loading these here so I can use the markdown variables.-->
+    <style>
+        @media screen and (orientation:portrait) {
+            .cover-page {
                 background-image: url("https://zacharybell.net//images/mobile_portrait/manateeswim.jpg");
-              }
             }
-            @media screen and (orientation:landscape) {
-              .cover-page {
+        }
+
+        @media screen and (orientation:landscape) {
+            .cover-page {
                 background-image: url("https://zacharybell.net//images/medium/manateeswim.jpg");
-              }
             }
+        }
 
-            @media (min-width : 768px) {
-                .cover-page {
-                    background-image: url("https://zacharybell.net//images/large/manateeswim.jpg");
-                }
+        @media (min-width: 768px) {
+            .cover-page {
+                background-image: url("https://zacharybell.net//images/large/manateeswim.jpg");
             }
-        </style>
+        }
+    </style>
 
-        <meta property="og:url"          content="https://zacharybell.net///content/2015/01/08/heather-died-a-long-time-ago.html" />
-        <meta property="og:type"         content="article" />
-        <meta property="og:title"        content="Heather Died A Long Time Ago" />
-        <meta property="og:description"  content="No one can tell you how to mourn." />
-        <meta property="og:image"        content="https://zacharybell.net//images/medium/manateeswim.jpg" />
-        <meta property="fb:app_id"       content="466074093735144"/>
-    </head>
+    <meta property="og:url" content="https://zacharybell.net///content/2015/01/08/heather-died-a-long-time-ago.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Heather Died A Long Time Ago" />
+    <meta property="og:description" content="No one can tell you how to mourn." />
+    <meta property="og:image" content="https://zacharybell.net//images/medium/manateeswim.jpg" />
+    <meta property="fb:app_id" content="466074093735144" />
+</head>
 
-    <body>
-        <div class="main-container">
-            <div class="navbar sticky nav-hide">
+<body>
+    <div class="main-container">
+        <div class="navbar sticky nav-hide">
 	<div class="nav-wrapper">
 		<div class="container main-nav">
 			<span>
@@ -91,8 +93,7 @@
 <a href="#footer-nav" class="tab-nav">
 	<span>skip to navigation</span>
 </a>
-
-            <div class="cover-page">
+ <div class="cover-page">
     <h1 class="cover-title">Heather Died A Long Time Ago</h1>
 </div>
 
@@ -367,8 +368,7 @@
         
     </ol>
 </div>
-
-            <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+ <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
 	<footer class="row">
 		<div id="footer-nav" class="footer-nav">
 			<a href="/">home</a>
@@ -393,9 +393,10 @@
 		</div>
 	</footer>
 </div>
-        </div>
-    
-        <!-- inject:js -->
+    </div>
+
+
+    <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
 
@@ -403,87 +404,99 @@
     var currentTime = new Date();
     $('.copyright-date').html(currentTime.getFullYear());
 </script>
-        <script>
-            // need to know screen size for a variety of things
-            window.SCREEN_MIN  = 300;
-            window.SCREEN_XS   = 480;
-            window.SCREEN_MS   = 530;
-            window.SCREEN_SM   = 768;
-            window.SCREEN_MD   = 992;
-            window.SCREEN_LG   =1200;
+    <script>
+        // need to know screen size for a variety of things
+        window.SCREEN_MIN = 300;
+        window.SCREEN_XS = 480;
+        window.SCREEN_MS = 530;
+        window.SCREEN_SM = 768;
+        window.SCREEN_MD = 992;
+        window.SCREEN_LG = 1200;
 
-            $('.navbar').znetHideNav({minScrollDown: $(window).height(), storyMode: true});
-            $('.tab-nav').znetTabNav({});
 
-            $('.cover-page').znetFullScreenImage({
-                largeImageBreakpoint    : SCREEN_SM
 
-              // can't do the cover image til we know how big the cover
-              // page is
-              }, function(){
-                  $(".cover-title").znetTitleFill({
-                    paddingX:               10,
-                    titleAlignment:         "scramble",
-                    yNudgeDown:             100
-                  });
-              });
+        // do the math to make the cover image full screen
+        $('.cover-page').znetFullScreenImage({
+            largeImageBreakpoint: SCREEN_SM
 
-            window.onload = function(){
-
-                $(".story-title").znetTitleFill({
-                    paddingX:               10,
-                    titleAlignment:         "center",
-                    yNudgeDown:             0
-                }, function(){
-                    $('body').css('opacity', '1');
-                });
-
-                // have to wait for the whole page to load before we can set up
-                // the footnote positions, as footnote heights are set relative
-                // to the height of the page, which we won't know until we have
-                // the cover, the toc and te teasers all set.
-                $(".footnoteCollection").znetFootnotes({nudge : -4});
-
-                $('.teaser').znetFirstPage({extraPadding : 30});
-                $('.toc').znetFirstPage({extraPadding : 30});
-                $('.topLink').click(function(){
-                    var screenHeight = $(window).height();
-                    var tocHeight = $('.toc').height();
-                    var centerTocMargin;
-                    var scrollToHeight;
-
-                    // block the navbar, so it doesn't pop up
-                    $('body').addClass('autoscrolling');
-
-                    // height of the upper toc link
-                    scrollToHeight = $( $.attr(this, 'href') ).offset().top;
-
-                    // if possible, center the TOC in the window...
-                    if(tocHeight < screenHeight){
-                        centerTocMargin = (screenHeight - tocHeight)/2;
-                        scrollToHeight = scrollToHeight-centerTocMargin;
+            // can't do the cover image til we know how big the cover page is
+            }, function () {
+                // this is just the cover image. Titles are also computed for the "read more" stories below.
+                $(".cover-title").znetTitleFill({
+                    paddingX: 10,
+                    titleAlignment: "center",
+                    yNudgeDown: 100
+                    }, function(){
+                        // page will not appear until the cover page image/title are done.
+                        // hide the full navbar until scroll past cover image. 
+                        $('.navbar').znetHideNav({ minScrollDown: $(window).height(), storyMode: true }, function(){
+                            // tabbing off of the hombe button offers a "skip to nav" button that takes user to menu at bottom of page.
+                            $('.tab-nav').znetTabNav({});
+                            $('body').css('opacity', '1');
+                        });
                     }
-
-                    $('html, body').animate({
-                        scrollTop: scrollToHeight
-                    }, 500);
-                    return false;
-                });
-
-                // the reverse of the above.
-                $('.toc a').click(function(){
-                    var position = $( $.attr(this, 'href') ).offset().top - $('.navbar').height() - 30;
-                    $('html, body').animate({
-                        scrollTop: position
-                    }, 500);
-                    return false;
-                });
-
-
-                // these images appear at the very bottom of the story, so they
-                // can load last.
-                $('.story-summary').znetLazyLoadImages({'buffer': 1000});
+                );
             }
-        </script>
-    </body>
+        );
+
+        // things that can wait until the page is at least displaying something.
+        window.onload = function () {
+            
+            // do the titles for the "keep reading" images. 
+            $(".story-title").znetTitleFill({
+                paddingX: 10,
+                titleAlignment: "center",
+                yNudgeDown: 0
+            }, function () {
+            });
+
+            // have to wait for the whole page to load before we can set up
+            // the footnote positions, as footnote heights are set relative
+            // to the height of the page, which we won't know until we have
+            // the cover, the toc and te teasers all set.
+            $(".footnoteCollection").znetFootnotes({ nudge: -4 });
+
+            $('.teaser').znetFirstPage({ extraPadding: 30 });
+            $('.toc').znetFirstPage({ extraPadding: 30 });
+            $('.topLink').click(function () {
+                var screenHeight = $(window).height();
+                var tocHeight = $('.toc').height();
+                var centerTocMargin;
+                var scrollToHeight;
+
+                // block the navbar, so it doesn't pop up
+                $('body').addClass('autoscrolling');
+
+                // height of the upper toc link
+                scrollToHeight = $($.attr(this, 'href')).offset().top;
+
+                // if possible, center the TOC in the window...
+                if (tocHeight < screenHeight) {
+                    centerTocMargin = (screenHeight - tocHeight) / 2;
+                    scrollToHeight = scrollToHeight - centerTocMargin;
+                }
+
+                $('html, body').animate({
+                    scrollTop: scrollToHeight
+                }, 500);
+                return false;
+            });
+
+            // the reverse of the above.
+            $('.toc a').click(function () {
+                var position = $($.attr(this, 'href')).offset().top - $('.navbar').height() - 30;
+                $('html, body').animate({
+                    scrollTop: position
+                }, 500);
+                return false;
+            });
+
+
+            // these images appear at the very bottom of the story, so they
+            // can load last.
+            $('.story-summary').znetLazyLoadImages({ 'buffer': 1000 });
+        }
+    </script>
+</body>
+
 </html>
