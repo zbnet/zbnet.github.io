@@ -9,7 +9,7 @@
             width: 100%;
         }
 
-        .cover-page {
+        .cover-image {
             position: relative;
             top: 0;
             left: 0;
@@ -22,31 +22,8 @@
             /* Internet Explorer 7/8 */
             height: 100vh;
         }
-        .cover-page-initial{
-            position: relative;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 0;
-            background-size: cover;
-            -moz-background-size: cover;
-            /* Firefox 3.6 */
-            background-position: center;
-            /* Internet Explorer 7/8 */
-            height: 100vh;
-        }
-        .cover-page-final {
-            position: relative;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 0;
-            background-size: cover;
-            -moz-background-size: cover;
-            /* Firefox 3.6 */
-            background-position: center;
-            /* Internet Explorer 7/8 */
-            height: 100vh;
+        .loading {
+            filter:blur(20px);
         }
 
         @media screen and (orientation:portrait) {
@@ -54,11 +31,8 @@
                 content: 'https://zacharybell.net//images/mobile_portrait/';
                 display: none;
             }
-            .cover-page-initial {
+            .cover-image {
                 background-image: url("data:image/png;base64,");
-            }
-            .cover-page-final {
-                background-image: url("https://zacharybell.net//images/mobile_portrait/");
             }
         }
 
@@ -67,11 +41,8 @@
                 content: 'https://zacharybell.net//images/medium/';
                 display: none;
             }
-            .cover-page-initial {
+            .cover-image {
                 background-image: url("data:image/png;base64,");
-            }
-            .cover-page-final {
-                background-image: url("https://zacharybell.net//images/medium/");
             }
         }
         @media screen and (orientation:landscape) and (min-width: 768px) {
@@ -79,11 +50,8 @@
                 content: 'https://zacharybell.net//images/large/';
                 display: none;
             }
-            .cover-page-initial {
+            .cover-image {
                 background-image: url("data:image/png;base64,");
-            }
-            .cover-page-final {
-                background-image: url("https://zacharybell.net//images/medium/");
             }
         }
 
@@ -132,7 +100,9 @@
             img.src = backgroundImage.replace(/['"]+/g, '');
             // Assign an onLoad handler to the dummy image *before* assigning the src
             img.onload = function () {
-                document.getElementsByClassName('cover-page')[0].style.backgroundImage = 'url(' + img.src + ')';
+                var coverImage = document.getElementsByClassName('cover-image')[0];
+                coverImage.style.backgroundImage = 'url(' + img.src + ')';
+                coverImage.classList.remove("loading");
             };
         }
     </script>

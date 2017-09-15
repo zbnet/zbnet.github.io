@@ -9,7 +9,7 @@
             width: 100%;
         }
 
-        .cover-page {
+        .cover-image {
             position: relative;
             top: 0;
             left: 0;
@@ -22,31 +22,8 @@
             /* Internet Explorer 7/8 */
             height: 100vh;
         }
-        .cover-page-initial{
-            position: relative;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 0;
-            background-size: cover;
-            -moz-background-size: cover;
-            /* Firefox 3.6 */
-            background-position: center;
-            /* Internet Explorer 7/8 */
-            height: 100vh;
-        }
-        .cover-page-final {
-            position: relative;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 0;
-            background-size: cover;
-            -moz-background-size: cover;
-            /* Firefox 3.6 */
-            background-position: center;
-            /* Internet Explorer 7/8 */
-            height: 100vh;
+        .loading {
+            filter:blur(20px);
         }
 
         @media screen and (orientation:portrait) {
@@ -54,11 +31,8 @@
                 content: 'https://zacharybell.net//images/mobile_portrait/double-decker-bus.jpg';
                 display: none;
             }
-            .cover-page-initial {
+            .cover-image {
                 background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoABcDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQFBv/EACcQAAIBBAECBQUAAAAAAAAAAAECAwAEESESMUEFExQisTJRcYKh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQAC/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAERIQL/2gAMAwEAAhEDEQA/AObeWRWyMIeuu1d3DeFbdAGbPEZ3nOq4hbXzJFDXEYJIHXNbfqYYyUa4xx1kqwHxR6stU2NlrlXYCReWtapWbA08wEluvnoMjKENSs6nOQkest16EyDI+26quZMysCPpYgEfmo5LtjJG8XBGG/aM4Oap5oVJcgsQ2+5ONf2tBfEzL4EvlswzdOfaSO1Kgs5ZeBjhdxskBScUonF2sxSdDj3z03V+Y8AiOV/1C/NKU04W3JJeRjZACSATnrSlKDj/2Q==");
-            }
-            .cover-page-final {
-                background-image: url("https://zacharybell.net//images/mobile_portrait/double-decker-bus.jpg");
             }
         }
 
@@ -67,11 +41,8 @@
                 content: 'https://zacharybell.net//images/medium/double-decker-bus.jpg';
                 display: none;
             }
-            .cover-page-initial {
+            .cover-image {
                 background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUBAwQC/8QAKBAAAgICAAQEBwAAAAAAAAAAAQIAAxESBCExQQUTIlEUMkJhobHh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgEA/8QAGREBAQADAQAAAAAAAAAAAAAAAAECERIx/9oADAMBAAIRAxEAPwCfxtrNfaq6BQ2MnrynT4DxBqN2zHnjHOcTqoXcqrM3vnnNvD26cOWVUQ7kfL1wBLnd+jjNLnxO7DOH69Z6FynGQRz79pKouDUWW3KTq6qPLOOo+82BqtdxbdXkfUAYCU1c49Dcokw2MpGvEIT22Uj9RH3R5SU4hXCo6Fj0yDM0PtWa9QFBJ/H8iJKrbXcyLbUoDLtnBHtAv2wSq4PbXtEQpWPNbPoAAJ9hERK0f//Z");
-            }
-            .cover-page-final {
-                background-image: url("https://zacharybell.net//images/medium/double-decker-bus.jpg");
             }
         }
         @media screen and (orientation:landscape) and (min-width: 768px) {
@@ -79,11 +50,8 @@
                 content: 'https://zacharybell.net//images/large/double-decker-bus.jpg';
                 display: none;
             }
-            .cover-page-initial {
+            .cover-image {
                 background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUBAwQC/8QAKBAAAgICAAQEBwAAAAAAAAAAAQIAAxESBCExQQUTIlEUMkJhobHh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgEA/8QAGREBAQADAQAAAAAAAAAAAAAAAAECERIx/9oADAMBAAIRAxEAPwCfxtrNfaq6BQ2MnrynT4DxBqN2zHnjHOcTqoXcqrM3vnnNvD26cOWVUQ7kfL1wBLnd+jjNLnxO7DOH69Z6FynGQRz79pKouDUWW3KTq6qPLOOo+82BqtdxbdXkfUAYCU1c49Dcokw2MpGvEIT22Uj9RH3R5SU4hXCo6Fj0yDM0PtWa9QFBJ/H8iJKrbXcyLbUoDLtnBHtAv2wSq4PbXtEQpWPNbPoAAJ9hERK0f//Z");
-            }
-            .cover-page-final {
-                background-image: url("https://zacharybell.net//images/medium/double-decker-bus.jpg");
             }
         }
 
@@ -132,7 +100,9 @@
             img.src = backgroundImage.replace(/['"]+/g, '');
             // Assign an onLoad handler to the dummy image *before* assigning the src
             img.onload = function () {
-                document.getElementsByClassName('cover-page')[0].style.backgroundImage = 'url(' + img.src + ')';
+                var coverImage = document.getElementsByClassName('cover-image')[0];
+                coverImage.style.backgroundImage = 'url(' + img.src + ')';
+                coverImage.classList.remove("loading");
             };
         }
     </script>
@@ -179,7 +149,10 @@
 <a href="#footer-nav" class="tab-nav">
 	<span>skip to navigation</span>
 </a>
- <div class="cover-page cover-page-initial">
+ <div class="cover-page">
+    <div class="cover-image loading">
+        <div class="loading">loadding...</div>
+    </div>  
     <h1 class="cover-title">Welcome Travelers, To Dublin</h1>
 </div>
 

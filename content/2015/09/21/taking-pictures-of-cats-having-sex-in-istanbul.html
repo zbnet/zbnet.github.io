@@ -9,7 +9,7 @@
             width: 100%;
         }
 
-        .cover-page {
+        .cover-image {
             position: relative;
             top: 0;
             left: 0;
@@ -22,31 +22,8 @@
             /* Internet Explorer 7/8 */
             height: 100vh;
         }
-        .cover-page-initial{
-            position: relative;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 0;
-            background-size: cover;
-            -moz-background-size: cover;
-            /* Firefox 3.6 */
-            background-position: center;
-            /* Internet Explorer 7/8 */
-            height: 100vh;
-        }
-        .cover-page-final {
-            position: relative;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 0;
-            background-size: cover;
-            -moz-background-size: cover;
-            /* Firefox 3.6 */
-            background-position: center;
-            /* Internet Explorer 7/8 */
-            height: 100vh;
+        .loading {
+            filter:blur(20px);
         }
 
         @media screen and (orientation:portrait) {
@@ -54,11 +31,8 @@
                 content: 'https://zacharybell.net//images/mobile_portrait/mosque.jpg';
                 display: none;
             }
-            .cover-page-initial {
+            .cover-image {
                 background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoABcDASIAAhEBAxEB/8QAGgABAAIDAQAAAAAAAAAAAAAAAAQFAQIDBv/EACgQAAEEAQMDAgcAAAAAAAAAAAEAAgMREgQhMRNRYQUUFUFSYnGRwf/EABgBAAMBAQAAAAAAAAAAAAAAAAABAwQC/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAECEVH/2gAMAwEAAhEDEQA/ALYOCjafXwSTSR9VpdmcfI8FU/xCbUwlmVB7iKAo12UZobu4EgA8rLMetd349Jr5THpwW3ZcBt+CiqB6kJmCOc3i6w8DnY8/tETPBb1Wyx+3xdHJmRyt29Z7LwHnYLn1XCUXzyLohSBJZNPJPzCqjHRrLbZsHwOUXDrFzSwkDsK/qINAbKBf1d7W7XYMyDq25tETcxkSMc4uc82ftRESHX//2Q==");
-            }
-            .cover-page-final {
-                background-image: url("https://zacharybell.net//images/mobile_portrait/mosque.jpg");
             }
         }
 
@@ -67,11 +41,8 @@
                 content: 'https://zacharybell.net//images/medium/mosque.jpg';
                 display: none;
             }
-            .cover-page-initial {
+            .cover-image {
                 background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAIDBQQB/8QAIhAAAgIBAwQDAAAAAAAAAAAAAQIAEQMhMVEEEiKBBTKx/8QAFwEBAQEBAAAAAAAAAAAAAAAAAQMAAv/EABgRAQEBAQEAAAAAAAAAAAAAAAASAWET/9oADAMBAAIRAxEAPwDoHVYlNM4FGpVj+RBzsGQjGdm4mRjSwWL9pHAlqh2HkFF7i5GMXvdbuPLak3oWNH3JlxMB1UGr0ENY+zn2d5zBtuHIOYmA7KAAh8iLoxNHT6ccyuoBo7mWjKe3UabCIlUcDkK70eZFsvcup1/IiBeHIpYE7iIiLP/Z");
-            }
-            .cover-page-final {
-                background-image: url("https://zacharybell.net//images/medium/mosque.jpg");
             }
         }
         @media screen and (orientation:landscape) and (min-width: 768px) {
@@ -79,11 +50,8 @@
                 content: 'https://zacharybell.net//images/large/mosque.jpg';
                 display: none;
             }
-            .cover-page-initial {
+            .cover-image {
                 background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAIDBQQB/8QAIhAAAgIBAwQDAAAAAAAAAAAAAQIAEQMhMVEEEiKBBTKx/8QAFwEBAQEBAAAAAAAAAAAAAAAAAQMAAv/EABgRAQEBAQEAAAAAAAAAAAAAAAASAWET/9oADAMBAAIRAxEAPwDoHVYlNM4FGpVj+RBzsGQjGdm4mRjSwWL9pHAlqh2HkFF7i5GMXvdbuPLak3oWNH3JlxMB1UGr0ENY+zn2d5zBtuHIOYmA7KAAh8iLoxNHT6ccyuoBo7mWjKe3UabCIlUcDkK70eZFsvcup1/IiBeHIpYE7iIiLP/Z");
-            }
-            .cover-page-final {
-                background-image: url("https://zacharybell.net//images/medium/mosque.jpg");
             }
         }
 
@@ -132,7 +100,9 @@
             img.src = backgroundImage.replace(/['"]+/g, '');
             // Assign an onLoad handler to the dummy image *before* assigning the src
             img.onload = function () {
-                document.getElementsByClassName('cover-page')[0].style.backgroundImage = 'url(' + img.src + ')';
+                var coverImage = document.getElementsByClassName('cover-image')[0];
+                coverImage.style.backgroundImage = 'url(' + img.src + ')';
+                coverImage.classList.remove("loading");
             };
         }
     </script>
@@ -179,7 +149,10 @@
 <a href="#footer-nav" class="tab-nav">
 	<span>skip to navigation</span>
 </a>
- <div class="cover-page cover-page-initial">
+ <div class="cover-page">
+    <div class="cover-image loading">
+        <div class="loading">loadding...</div>
+    </div>  
     <h1 class="cover-title">Taking Pictures of Cats Having Sex In Istanbul</h1>
 </div>
 
