@@ -1222,6 +1222,14 @@ html, body {
 html {
   overflow-y: scroll; }
 
+.js body {
+  opacity: 0;
+  -webkit-transition: opacity .15s;
+  transition: opacity .05s; }
+
+.no-js body {
+  opacity: 1; }
+
 body {
   font-size: 10px;
   margin: 0;
@@ -1776,15 +1784,30 @@ html.no-js .cover-page {
   text-align: center;
   font-size: 4em; }
 
-.cover-page h1 {
-  z-index: 1;
-  margin: 0;
-  color: white;
-  font-family: "Open Sans", "Tahoma", "Verdana", sans-serif !important;
-  text-transform: uppercase;
-  font-weight: 800;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-  line-height: 1.2em; }
+.cover-page {
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+  background-size: cover;
+  -moz-background-size: cover;
+  /* Firefox 3.6 */
+  background-position: center;
+  /* Internet Explorer 7/8 */ }
+  .cover-page img {
+    position: absolute;
+    z-index: -1; }
+  .cover-page h1 {
+    z-index: 1;
+    margin: 0;
+    display: inline;
+    color: white;
+    font-family: "Open Sans", "Tahoma", "Verdana", sans-serif !important;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    line-height: 1.2em; }
 
 .teaser {
   font-family: "Lora", "Palatino", "Georgia", serif;
