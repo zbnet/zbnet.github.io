@@ -51,7 +51,7 @@
 
         @media screen and (orientation:portrait) {
             body:after{
-                content: '"https://zacharybell.net//images/mobile_portrait/manateeswim.jpg"';
+                content: 'https://zacharybell.net//images/mobile_portrait/manateeswim.jpg';
                 display: none;
             }
             .cover-page-initial {
@@ -118,6 +118,24 @@
     <meta property="og:description" content="No one can tell you how to mourn." />
     <meta property="og:image" content="https://zacharybell.net//images/medium/manateeswim.jpg" />
     <meta property="fb:app_id" content="466074093735144" />
+    <script>
+        var imageSwap = function () {
+            var img;
+            // Quit early if older browser (e.g. IE8).
+            if (!('addEventListener' in window)) {
+                return;
+            }
+
+            img = new Image();
+
+            var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+            img.src = backgroundImage.replace(/['"]+/g, '');
+            // Assign an onLoad handler to the dummy image *before* assigning the src
+            img.onload = function () {
+                document.getElementsByClassName('cover-page')[0].style.backgroundImage = 'url(' + img.src + ')';
+            };
+        }
+    </script>
 </head>
 
 <body>
@@ -550,22 +568,7 @@
         }
 
 
-        var imageSwap = function () {
-            var img;
-            // Quit early if older browser (e.g. IE8).
-            if (!('addEventListener' in window)) {
-                return;
-            }
-
-            img = new Image();
-
-            var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
-            img.src = backgroundImage.replace(/['"]+/g, '');
-            // Assign an onLoad handler to the dummy image *before* assigning the src
-            img.onload = function () {
-                document.getElementsByClassName('cover-page')[0].style.backgroundImage = 'url(' + img.src + ')';
-            };
-        }
+        
     </script>
 </body>
 
