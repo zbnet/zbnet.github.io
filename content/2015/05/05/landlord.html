@@ -9,18 +9,34 @@
             width: 100%;
         }
 
-        .cover-image {
+        .cover-page {
             position: relative;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 0;
+        }
+        .cover-image-initial, .cover-image-final {
+            
             background-size: cover;
             -moz-background-size: cover;
             /* Firefox 3.6 */
             background-position: center;
             /* Internet Explorer 7/8 */
             height: 100vh;
+        }
+        .cover-image-initial {
+            position: relative;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .cover-image-final {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .cover-image-intial{
+            display: none;
         }
         .loading {
             filter:blur(20px);
@@ -31,7 +47,7 @@
                 content: 'https://zacharybell.net//images/mobile_portrait/sooners.jpg';
                 display: none;
             }
-            .cover-image {
+            .cover-image-initial {
                 background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoABcDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAwb/xAAmEAACAQMCBgIDAAAAAAAAAAABAgMABBESIQUTMUFRkXGBIkLw/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AGIeKSSyFJSUTIXLrgk07BewTOwSXZds9j8VBsI4ZipMwiB/UnIPnf1W9zbw2is8UjFmbcKdsE9qCw11E7MBKAFwdRO3uioGsiTTFHIo7lug+KKDCdobW75AcySowbYd+uBS5vZJ7aYEtp1fl06Z7VS41bJGBNBArSHVn73z/eajIzoY4ltiOZghZDkMfNB0EM8KIebA6422Ukn6oqZYtcLcyxyTmJEG4Q+sUUDTyNIpDjIHjqKTn5zFTgaEbIoooMXZgzMM5NFFFB//2Q==");
             }
         }
@@ -41,7 +57,7 @@
                 content: 'https://zacharybell.net//images/medium/sooners.jpg';
                 display: none;
             }
-            .cover-image {
+            .cover-image-initial {
                 background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDBQT/xAAjEAACAgICAQUBAQAAAAAAAAABAgARAxIEITEFEyJBUWEj/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AFLchXGzjXoiqAMriOUM22T5ea/J0MuIIVqxf3IKl5twejV/2vEBFzc3AzhmdlokMe7j4OVyNA5xnIL7b8H8nU+uTHrdGuj+TFfLkwZDiVWVbo7/AJXmoGoOcMhPxqhYo31CZvvKOIdNBkUCzt3CAzeo/wCGzKNjJr6lW1A/EAwhAvi9S9wqFPZH2JHmKOQxc4wXIrzUIQIbahl1AVqJAhCED//Z");
             }
         }
@@ -50,7 +66,7 @@
                 content: 'https://zacharybell.net//images/large/sooners.jpg';
                 display: none;
             }
-            .cover-image {
+            .cover-image-initial {
                 background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDBQT/xAAjEAACAgICAQUBAQAAAAAAAAABAgARAxIEITEFEyJBUWEj/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AFLchXGzjXoiqAMriOUM22T5ea/J0MuIIVqxf3IKl5twejV/2vEBFzc3AzhmdlokMe7j4OVyNA5xnIL7b8H8nU+uTHrdGuj+TFfLkwZDiVWVbo7/AJXmoGoOcMhPxqhYo31CZvvKOIdNBkUCzt3CAzeo/wCGzKNjJr6lW1A/EAwhAvi9S9wqFPZH2JHmKOQxc4wXIrzUIQIbahl1AVqJAhCED//Z");
             }
         }
@@ -131,9 +147,8 @@
 	<span>skip to navigation</span>
 </a>
  <div class="cover-page">
-    <div class="cover-image loading">
-        <div class="loading">loadding...</div>
-    </div>  
+    <div class="cover-image-initial"></div>
+    <div class="cover-image-final"></div>  
     <h1 class="cover-title">Landlord</h1>
 </div>
 
@@ -334,27 +349,6 @@
 	</footer>
 </div>
     </div>
-    <script>
-        var imageSwap = function () {
-            var img;
-            // Quit early if older browser (e.g. IE8).
-            if (!('addEventListener' in window)) {
-                return;
-            }
-
-            img = new Image();
-
-            var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
-            img.src = backgroundImage.replace(/['"]+/g, '');
-            // Assign an onLoad handler to the dummy image *before* assigning the src
-            img.onload = function () {
-                var coverImage = document.getElementsByClassName('cover-image')[0];
-                coverImage.style.backgroundImage = 'url(' + img.src + ')';
-                coverImage.classList.remove("loading");
-            };
-        }
-        imageSwap();
-    </script>
     <link rel="stylesheet" href="https://zacharybell.net//css/main.css"> <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
@@ -372,8 +366,48 @@
         window.SCREEN_MD = 992;
         window.SCREEN_LG = 1200;
 
+        var getCoverImage = function () {
+            var img;
+            var resizeId;
+
+            // Quit early if older browser (e.g. IE8).
+            if (!('addEventListener' in window)) {
+                return;
+            }
+
+            var init = function(){
+                img = new Image();
+
+                var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+                img.src = backgroundImage.replace(/['"]+/g, '');
+                // Assign an onLoad handler to the dummy image *before* assigning the src
+                img.onload = function () {
+                    var $coverImageInitial = document.getElementsByClassName('cover-image-initial')[0];
+                    var $coverImageFinal = document.getElementsByClassName('cover-image-final')[0];
+
+                    $coverImageFinal.style.backgroundImage = 'url(' + img.src + ')';
+                    //$coverImageInitial.style.display = "none";
+                };
+            }
+            
+            init();
+
+            $(window).resize(function() {
+                clearTimeout(resizeId);
+                resizeId = setTimeout(function(){
+                    init();
+                }, 150);
+            });
+        }
+
+        getCoverImage();
+
+
+
         // hide the full navbar until scroll past cover image. 
-        $('.navbar').znetHideNav({ minScrollDown: $(window).height(), storyMode: true });
+        $('.navbar').znetHideNav({ minScrollDown: $(window).height(), storyMode: true }, function(){
+            $('.navbar').show();
+        });
 
         $(".cover-title").znetTitleFill({
             paddingX: 10,

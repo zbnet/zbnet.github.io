@@ -2113,6 +2113,9 @@ footer {
       footer .footer-nav a:after {
         content: "\a";
         white-space: pre; } }
+.disable-touch {
+  touch-action: none; }
+
 body.locked {
   overflow: hidden;
   position: fixed; }

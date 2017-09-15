@@ -9,18 +9,34 @@
             width: 100%;
         }
 
-        .cover-image {
+        .cover-page {
             position: relative;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 0;
+        }
+        .cover-image-initial, .cover-image-final {
+            
             background-size: cover;
             -moz-background-size: cover;
             /* Firefox 3.6 */
             background-position: center;
             /* Internet Explorer 7/8 */
             height: 100vh;
+        }
+        .cover-image-initial {
+            position: relative;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .cover-image-final {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .cover-image-intial{
+            display: none;
         }
         .loading {
             filter:blur(20px);
@@ -31,7 +47,7 @@
                 content: 'https://zacharybell.net//images/mobile_portrait/45bullet-closer.jpg';
                 display: none;
             }
-            .cover-image {
+            .cover-image-initial {
                 background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoABcDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIEAwX/xAAqEAACAQMCBAQHAAAAAAAAAAABAgMAERIEMSFBUWEFEzJxFCIjkbHB4f/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwDmRgh5kRFvhwHqsw696cFRmE3LLdVI3tx3rFlaWMSamYRxE8rAtbcgc/epx8LnYrMF63F/tWI0sWIspeYfMxyJyC2HLfhRSMgijzRxqdO5seRBGwPT8GigyldX8Suq/TV8VUclBsBTz6d31x0wu1uIO/K9TT5LO0lit2v7GrR4uQfMMKedjbPr3oMNJjp9Y0WoXKPirr1t/aKSAPJN5pUuSTwA3NFBosgkTCVSbD1Dgbd+RpF06ZWu57BKKKCxEYgRBTECL9XYfodhRRRUqv/Z");
             }
         }
@@ -41,7 +57,7 @@
                 content: 'https://zacharybell.net//images/medium/45bullet-closer.jpg';
                 display: none;
             }
-            .cover-image {
+            .cover-image-initial {
                 background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAMCBAH/xAAoEAACAgEDAgQHAAAAAAAAAAABAgADERIhQQRRBTJhcRMiMUKBwfD/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8Ah4oF6m6oVDBbYyQsX4IRTipT5f2e8klhbqrjyK2x+cTyoKXJbcKCcd5iNVvWw0gITkYBOBn2lKbbKH1VHQy+fXz6EcyNVJ6mtWyCxYh2J+g7xW2aSxOoodIJ7cSjPVopxfWulHO4HB7RNPYT0Nqsc/OpHvvEI46WIYsSd9jO52BqFhHptz7xEUiBqVjlSQDxLNXpTSowBuQef7MRCue1/s4zkxESsv/Z");
             }
         }
@@ -50,7 +66,7 @@
                 content: 'https://zacharybell.net//images/large/45bullet-closer.jpg';
                 display: none;
             }
-            .cover-image {
+            .cover-image-initial {
                 background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAMCBAH/xAAoEAACAgEDAgQHAAAAAAAAAAABAgADERIhQQRRBTJhcRMiMUKBwfD/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8Ah4oF6m6oVDBbYyQsX4IRTipT5f2e8klhbqrjyK2x+cTyoKXJbcKCcd5iNVvWw0gITkYBOBn2lKbbKH1VHQy+fXz6EcyNVJ6mtWyCxYh2J+g7xW2aSxOoodIJ7cSjPVopxfWulHO4HB7RNPYT0Nqsc/OpHvvEI46WIYsSd9jO52BqFhHptz7xEUiBqVjlSQDxLNXpTSowBuQef7MRCue1/s4zkxESsv/Z");
             }
         }
@@ -131,9 +147,8 @@
 	<span>skip to navigation</span>
 </a>
  <div class="cover-page">
-    <div class="cover-image loading">
-        <div class="loading">loadding...</div>
-    </div>  
+    <div class="cover-image-initial"></div>
+    <div class="cover-image-final"></div>  
     <h1 class="cover-title">A Last Minute Truth</h1>
 </div>
 
@@ -623,27 +638,6 @@
 	</footer>
 </div>
     </div>
-    <script>
-        var imageSwap = function () {
-            var img;
-            // Quit early if older browser (e.g. IE8).
-            if (!('addEventListener' in window)) {
-                return;
-            }
-
-            img = new Image();
-
-            var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
-            img.src = backgroundImage.replace(/['"]+/g, '');
-            // Assign an onLoad handler to the dummy image *before* assigning the src
-            img.onload = function () {
-                var coverImage = document.getElementsByClassName('cover-image')[0];
-                coverImage.style.backgroundImage = 'url(' + img.src + ')';
-                coverImage.classList.remove("loading");
-            };
-        }
-        imageSwap();
-    </script>
     <link rel="stylesheet" href="https://zacharybell.net//css/main.css"> <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
@@ -661,8 +655,48 @@
         window.SCREEN_MD = 992;
         window.SCREEN_LG = 1200;
 
+        var getCoverImage = function () {
+            var img;
+            var resizeId;
+
+            // Quit early if older browser (e.g. IE8).
+            if (!('addEventListener' in window)) {
+                return;
+            }
+
+            var init = function(){
+                img = new Image();
+
+                var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+                img.src = backgroundImage.replace(/['"]+/g, '');
+                // Assign an onLoad handler to the dummy image *before* assigning the src
+                img.onload = function () {
+                    var $coverImageInitial = document.getElementsByClassName('cover-image-initial')[0];
+                    var $coverImageFinal = document.getElementsByClassName('cover-image-final')[0];
+
+                    $coverImageFinal.style.backgroundImage = 'url(' + img.src + ')';
+                    //$coverImageInitial.style.display = "none";
+                };
+            }
+            
+            init();
+
+            $(window).resize(function() {
+                clearTimeout(resizeId);
+                resizeId = setTimeout(function(){
+                    init();
+                }, 150);
+            });
+        }
+
+        getCoverImage();
+
+
+
         // hide the full navbar until scroll past cover image. 
-        $('.navbar').znetHideNav({ minScrollDown: $(window).height(), storyMode: true });
+        $('.navbar').znetHideNav({ minScrollDown: $(window).height(), storyMode: true }, function(){
+            $('.navbar').show();
+        });
 
         $(".cover-title").znetTitleFill({
             paddingX: 10,
