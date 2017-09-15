@@ -86,26 +86,7 @@
     <meta property="og:description" content="Tim buys a book. Tim accidentally summons a demon. Hilarity, carnage, ensue." />
     <meta property="og:image" content="https://zacharybell.net//images/medium/whosblowingwhom.jpg" />
     <meta property="fb:app_id" content="466074093735144" />
-    <script>
-        var imageSwap = function () {
-            var img;
-            // Quit early if older browser (e.g. IE8).
-            if (!('addEventListener' in window)) {
-                return;
-            }
 
-            img = new Image();
-
-            var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
-            img.src = backgroundImage.replace(/['"]+/g, '');
-            // Assign an onLoad handler to the dummy image *before* assigning the src
-            img.onload = function () {
-                var coverImage = document.getElementsByClassName('cover-image')[0];
-                coverImage.style.backgroundImage = 'url(' + img.src + ')';
-                coverImage.classList.remove("loading");
-            };
-        }
-    </script>
 </head>
 
 <body>
@@ -842,7 +823,27 @@
 	</footer>
 </div>
     </div>
+    <script>
+        var imageSwap = function () {
+            var img;
+            // Quit early if older browser (e.g. IE8).
+            if (!('addEventListener' in window)) {
+                return;
+            }
 
+            img = new Image();
+
+            var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+            img.src = backgroundImage.replace(/['"]+/g, '');
+            // Assign an onLoad handler to the dummy image *before* assigning the src
+            img.onload = function () {
+                var coverImage = document.getElementsByClassName('cover-image')[0];
+                coverImage.style.backgroundImage = 'url(' + img.src + ')';
+                coverImage.classList.remove("loading");
+            };
+        }
+        imageSwap();
+    </script>
     <link rel="stylesheet" href="https://zacharybell.net//css/main.css"> <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
@@ -873,7 +874,6 @@
 
         // things that can wait until the page is at least displaying something.
         window.onload = function () {
-            imageSwap();
             // do the titles for the "keep reading" images. 
             $(".story-title").znetTitleFill({
                 paddingX: 10,
