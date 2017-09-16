@@ -707,7 +707,6 @@
         );
 
         // things that can wait until the page is at least displaying something.
-        window.onload = function () {
             // do the titles for the "keep reading" images. 
             $(".story-title").znetTitleFill({
                 paddingX: 10,
@@ -761,9 +760,6 @@
             // these images appear at the very bottom of the story, so they
             // can load last.
             $('.story-summary').znetLazyLoadImages({ 'buffer': 1000 });
-        }
-
-
         
     </script>
 </body>
