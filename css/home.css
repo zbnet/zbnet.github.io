@@ -289,7 +289,8 @@ input:focus, select:focus, textarea:focus {
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.5); }
   .js .full-screen-home .site-logo {
     letter-spacing: -2px;
-    padding: 0 4px 0 3px; }
+    padding: 0 4px 0 3px;
+    margin-left: 20px; }
   .js .full-screen-home:hover, .js .full-screen-home:focus {
     color: white;
     background-color: rgba(0, 0, 0, 0.2);
@@ -336,7 +337,7 @@ input:focus, select:focus, textarea:focus {
     font-size: 20px;
     letter-spacing: -2px;
     padding: 0 4px 0 3px;
-    margin-top: 7px; }
+    margin: 7px 0 0 20px; }
   .navbar span {
     float: left;
     display: block;
@@ -432,7 +433,8 @@ input:focus, select:focus, textarea:focus {
       text-transform: uppercase;
       font-weight: 800;
       text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-      line-height: 1.2em; }
+      line-height: 1.2em;
+      opacity: 0; }
 .story-summary .info-wrapper .title {
   margin: 0 0 10px 0;
   font-family: "Karla", "Arial", sans-serif;
@@ -662,19 +664,6 @@ footer {
   color: #808080;
   margin-top: 33vh;
   margin-bottom: 10vh; }
-  footer .footer-nav {
-    text-align: center;
-    font-family: "Karla", "Arial", sans-serif;
-    text-transform: uppercase;
-    font-size: 16px;
-    margin-bottom: 20px;
-    word-spacing: 2em; }
-    footer .footer-nav a {
-      color: #333333;
-      border-bottom: 2px solid #FF2200; }
-      footer .footer-nav a:hover {
-        border-bottom: #545454 2px solid;
-        color: #333333; }
   footer .footer-meta {
     border-top: 1px solid #D9D9D9;
     padding: 20px; }
@@ -685,14 +674,3 @@ footer {
     font-size: 1.5em;
     text-transform: uppercase;
     font-family: "Karla", "Arial", sans-serif; }
-
-@media (max-width: 768px) {
-  footer .footer-nav {
-    word-spacing: inherit;
-    text-align: center; }
-    footer .footer-nav a {
-      margin-bottom: 1em;
-      line-height: 2em; }
-      footer .footer-nav a:after {
-        content: "\a";
-        white-space: pre; } }

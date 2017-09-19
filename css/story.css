@@ -330,7 +330,8 @@ input:focus, select:focus, textarea:focus {
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.5); }
   .js .full-screen-home .site-logo {
     letter-spacing: -2px;
-    padding: 0 4px 0 3px; }
+    padding: 0 4px 0 3px;
+    margin-left: 20px; }
   .js .full-screen-home:hover, .js .full-screen-home:focus {
     color: white;
     background-color: rgba(0, 0, 0, 0.2);
@@ -377,7 +378,7 @@ input:focus, select:focus, textarea:focus {
     font-size: 20px;
     letter-spacing: -2px;
     padding: 0 4px 0 3px;
-    margin-top: 7px; }
+    margin: 7px 0 0 20px; }
   .navbar span {
     float: left;
     display: block;
@@ -427,7 +428,7 @@ html.no-js .cover-page {
 
 .toc {
   overflow: hidden;
-  margin: 30vh 0;
+  margin: 20vh 0 0 0;
   text-transform: uppercase;
   font-family: "Karla", "Arial", sans-serif;
   text-align: center;
@@ -453,7 +454,7 @@ html.no-js .cover-page {
 
 .story {
   flex: 3 0 calc(70% - 40px);
-  margin: 0 20px; }
+  margin: 20vh 20px 0 20px; }
   .story .topLink {
     padding: 0 0.15em;
     margin: 0 0.1em;
@@ -462,7 +463,8 @@ html.no-js .cover-page {
     text-transform: uppercase;
     text-align: center;
     font-family: "Karla", "Arial", sans-serif;
-    margin: 1.8em 0; }
+    margin: 20px 0;
+    font-size: 3em; }
   .story p {
     font-family: "Lora", "Palatino", "Georgia", serif; }
   .story p:first-child:first-letter {
@@ -722,7 +724,8 @@ body.locked {
       text-transform: uppercase;
       font-weight: 800;
       text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-      line-height: 1.2em; }
+      line-height: 1.2em;
+      opacity: 0; }
 .story-summary .info-wrapper .title {
   margin: 0 0 10px 0;
   font-family: "Karla", "Arial", sans-serif;
@@ -812,24 +815,35 @@ body.locked {
       font-size: 1.8em;
       text-align: left;
       margin: 0; } }
+.footer-nav {
+  text-align: center;
+  font-family: "Karla", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin: 33vh 0 20px 0;
+  word-spacing: 2em; }
+  .footer-nav a {
+    color: #333333;
+    border-bottom: 2px solid #FF2200; }
+    .footer-nav a:hover {
+      border-bottom: #545454 2px solid;
+      color: #333333; }
+
+@media (max-width: 768px) {
+  .footer-nav {
+    word-spacing: inherit;
+    text-align: center; }
+    .footer-nav a {
+      margin-bottom: 1em;
+      line-height: 2em; }
+      .footer-nav a:after {
+        content: "\a";
+        white-space: pre; } }
 footer {
   display: block;
   color: #808080;
   margin-top: 33vh;
   margin-bottom: 10vh; }
-  footer .footer-nav {
-    text-align: center;
-    font-family: "Karla", "Arial", sans-serif;
-    text-transform: uppercase;
-    font-size: 16px;
-    margin-bottom: 20px;
-    word-spacing: 2em; }
-    footer .footer-nav a {
-      color: #333333;
-      border-bottom: 2px solid #FF2200; }
-      footer .footer-nav a:hover {
-        border-bottom: #545454 2px solid;
-        color: #333333; }
   footer .footer-meta {
     border-top: 1px solid #D9D9D9;
     padding: 20px; }
@@ -840,14 +854,3 @@ footer {
     font-size: 1.5em;
     text-transform: uppercase;
     font-family: "Karla", "Arial", sans-serif; }
-
-@media (max-width: 768px) {
-  footer .footer-nav {
-    word-spacing: inherit;
-    text-align: center; }
-    footer .footer-nav a {
-      margin-bottom: 1em;
-      line-height: 2em; }
-      footer .footer-nav a:after {
-        content: "\a";
-        white-space: pre; } }

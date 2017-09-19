@@ -29,10 +29,9 @@
 </script>
     </head>
     <body>
-    <div class="main-container" id="page">
         <div class="navbar sticky">
     <div class="nav-wrapper">
-	<div class="container main-nav">
+	<div class="container-small main-nav">
 		<span>
 			<a href="/" class="site-logo">
 				ZB
@@ -67,47 +66,23 @@
 	<div class="blogHeader">
 	    <h1 class="banner">search</h1>
 	    <span class="tagline">go ahead, do it.</span>
-	</div>
-	<div class="container">
-		<div class="main-search-form">
-			<form onsubmit="return false;">
-				<input id="search-input" type="text" placeholder="Search terms"><span class="icon-search"></span>
-			</form>
-		</div>
-		<div id='log'></div>
-		<div class="search-container">
-            <div class="no-results"></div>
-			<div class="story-results"></div>
-			<div class="blog-results"></div>
-		</div>
-	</div>
-</div>
-
     </div>
     <div class="container-small">
-        <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-	<footer class="row">
-		<div id="footer-nav" class="footer-nav">
-			<a id="footer-nav-home" href="/">home</a>
-			<a href="/">stories</a>
-			<a href="/blog">blog</a>
-			<a href="/contact">contact</a>
-			<a href="/search">search</a>
-		</div>
-		<div class="footer-meta">
-            
-			<p>
-				Copyright © <span class="copyright-date">2017</span> Zachary Bell - All Rights Reserved. Except where otherwise noted,
-				contents of this site including text and media may not be reproduced without prior
-				written consent.
-			</p>
-			<p>
-				
-			</p>
-			<span class="pw__vs">vs:</span><span class="pw__sm">sm:</span><span class="pw__md">md:</span><span class="pw__lg">lg:</span><span>107</span>
-		</div>
-	</footer>
+        <div class="main-search-form">
+            <form onsubmit="return false;">
+				<input id="search-input" type="text" placeholder="Search terms"><span class="clear-input">X</span>                
+            </form>
+        </div>
+        <div id='log'></div>
+        <div class="search-container">
+            <div class="no-results"></div>
+            <div class="story-results"></div>
+            <div class="blog-results"></div>
+        </div>
+    </div>
 </div>
+
+    <div class="container-small">
         <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
@@ -120,16 +95,6 @@
     
     <script src="/external_components/elasticlunr.js-master/elasticlunr.js"></script>
     <script>
-
-        window.onload = function () {
-            $('body').css('opacity', '1');
-        };
-        window.SCREEN_MIN  = 300;
-        window.SCREEN_XS   = 480;
-        window.SCREEN_MS   = 530;
-        window.SCREEN_SM   = 768;
-        window.SCREEN_MD   = 992;
-        window.SCREEN_LG   =1200;
 
         $('#search-input').focus();
 
