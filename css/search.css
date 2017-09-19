@@ -181,8 +181,7 @@ input:focus, select:focus, textarea:focus {
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.5); }
   .js .full-screen-home .site-logo {
     letter-spacing: -2px;
-    padding: 0 4px 0 3px;
-    margin-left: 20px; }
+    padding: 0 4px 0 3px; }
   .js .full-screen-home:hover, .js .full-screen-home:focus {
     color: white;
     background-color: rgba(0, 0, 0, 0.2);
