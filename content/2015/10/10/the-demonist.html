@@ -691,18 +691,6 @@
     
 
 
-<script>
-    var stylesheet = document.createElement('link');
-    stylesheet.href = 'https://zacharybell.net//css/fontello.css';
-    stylesheet.rel = 'stylesheet';
-    stylesheet.type = 'text/css';
-    // temporarily set media to something inapplicable to ensure it'll fetch without blocking render
-    stylesheet.media = 'only x';
-    // set the media back when the stylesheet loads
-    stylesheet.onload = function() {stylesheet.media = 'all'}
-    document.getElementsByTagName('head')[0].appendChild(stylesheet);
-</script>
-
 <div class="socialButtons">
 	<span class="nag">i don't need your approval</span>
     
@@ -889,6 +877,7 @@
         }
         getCoverImage();
     </script>
+    
     <link rel="stylesheet" href="https://zacharybell.net//css/story.css"> 
     
     <!-- inject:js -->
@@ -966,6 +955,16 @@
             // these images appear at the very bottom of the story, so they
             // can load last.
             $('.story-summary').znetLazyLoadImages({ 'buffer': 1000 });
+
+            var stylesheet = document.createElement('link');
+            stylesheet.href = 'https://zacharybell.net//css/fontello.css';
+            stylesheet.rel = 'stylesheet';
+            stylesheet.type = 'text/css';
+            // temporarily set media to something inapplicable to ensure it'll fetch without blocking render
+            stylesheet.media = 'only x';
+            // set the media back when the stylesheet loads
+            stylesheet.onload = function() {stylesheet.media = 'all'}
+            document.getElementsByTagName('head')[0].appendChild(stylesheet);
         
     </script>
 </body>
