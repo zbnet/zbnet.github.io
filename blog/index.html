@@ -27,14 +27,14 @@
 
 <script>
     var currentTime = new Date();
-    document.getElementsByClassName('copyright-date')[0].innerHTML = currentTime.getFullYear();
+    $('.copyright-date').html(currentTime.getFullYear());
 </script>
     </head>
     <body>
         <div class="main-container" id="page">
             <div class="navbar sticky">
     <div class="nav-wrapper">
-	<div class="container-medium main-nav">
+	<div class="container-small main-nav">
 		<span>
 			<a href="/" class="site-logo">
 				ZB
@@ -148,26 +148,19 @@
 
 <script>
     var currentTime = new Date();
-    document.getElementsByClassName('copyright-date')[0].innerHTML = currentTime.getFullYear();
+    $('.copyright-date').html(currentTime.getFullYear());
 </script>
 
         <script src="/external_components/elasticlunr.js-master/elasticlunr.min.js"></script>
         <script>
-            ZnetUI.titleFill(
-                'story-title', 
-                {
-                    paddingX: 10,
-                }
-            );
-            ZnetUI.lazyLoadImages(
-                'lazy-image', 
-                {
-                    buffer: 500
-                }
-            );
-            ZnetUI.lazyLoadCSS(
-                'https://zacharybell.net//css/fontello.css'
-            );
+            window.onload = function () {
+                $(".story-title").znetTitleFill({
+                    paddingX:    0,
+                    titleAlignment: "center",
+                    yNudgeDown:  0
+                });
+            };
+            $('.story-summary').znetLazyLoadImages({'buffer': 1000});
         </script>
     </body>
 </html>

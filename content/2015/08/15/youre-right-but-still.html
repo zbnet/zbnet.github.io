@@ -78,7 +78,6 @@
             display: none;
         }
     </style>
-
     <script>
     document.documentElement.classList.remove("no-js");
     document.documentElement.classList.add("js");
@@ -108,9 +107,9 @@
 
 <body>
     <div class="main-container">
-        <div id="navbar" class="navbar sticky nav-hide">
+        <div class="navbar sticky nav-hide">
 	<div class="nav-wrapper">
-		<div class="container-medium main-nav">
+		<div class="container-small main-nav">
 			<span>
 				<a href="/" class="site-logo">
 					ZB
@@ -140,25 +139,26 @@
 	</div>
 </div>
 
-<a href="/" id="full-screen-home" class="full-screen-home nav-hide">
+<a href="/" class="full-screen-home nav-hide">
 	<span href="/" class="site-logo">ZB</span>
 	<span>home</span>
 </a>
-<a href="#footer-nav-home" id="tab-nav" class="tab-nav">
+<a href="#footer-nav-home" class="tab-nav">
 	<span>skip to navigation</span>
 </a>
  
         <div class="cover-page">
     <div class="cover-image-initial"></div>
     <div class="cover-image-final"></div>  
-    <h1 id="cover-title" class="cover-title">You're Right, But Still</h1>
+    <h1 class="cover-title">You're Right, But Still</h1>
 </div>
-
-
-
+<div class="toc-container container-small">
+    
+    
+    
 <div class="story-container container-small">
     
-    <div id="story" class="story" data-story-number="1">
+    <div class="story" data-story-number="1">
         <p><strong>American Male:</strong> Okay, Coors, so it's cool about those twins. I mean yeah, I like twins. Cheerleaders are good too, I guess.</p>
 
 <p><strong>Coors Beer:</strong> Twins, right? And cheerleaders! Fuckin'-a!</p>
@@ -258,12 +258,12 @@
             
 </div>
 <div class="keep-reading-container container-small">
-    <ol id="keep-reading" class="story-menu">
+    <ol class="story-menu">
     
     <li class="story-quaternary"><article class="story-summary summary-small" data-slug="The Demonist">
 	<a href="/content/2015/10/10/the-demonist.html">
 		<div class="cover-wrapper">
-			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/whosblowingwhom.jpg">
+			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/whosblowingwhom.jpg">
 				<h3 class="story-title">The Demonist</h3>
 			</div>
 		</div>
@@ -278,7 +278,7 @@
     <li class="story-quaternary"><article class="story-summary summary-small" data-slug="A Last Minute Truth">
 	<a href="/content/2015/10/08/a-last-minute-truth.html">
 		<div class="cover-wrapper">
-			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/45bullet-closer.jpg">
+			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/45bullet-closer.jpg">
 				<h3 class="story-title">A Last Minute Truth</h3>
 			</div>
 		</div>
@@ -293,7 +293,7 @@
     <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Taking Pictures of Cats Having Sex In Istanbul">
 	<a href="/content/2015/09/21/taking-pictures-of-cats-having-sex-in-istanbul.html">
 		<div class="cover-wrapper">
-			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/mosque.jpg">
+			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/mosque.jpg">
 				<h3 class="story-title">Taking Pictures of Cats Having Sex In Istanbul</h3>
 			</div>
 		</div>
@@ -308,7 +308,7 @@
     <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Welcome Travelers, To Dublin">
 	<a href="/content/2015/09/18/welcome-travelers-to-dublin.html">
 		<div class="cover-wrapper">
-			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/double-decker-bus.jpg">
+			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/double-decker-bus.jpg">
 				<h3 class="story-title">Welcome Travelers, To Dublin</h3>
 			</div>
 		</div>
@@ -323,7 +323,7 @@
     <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Alfreds For Breakfast">
 	<a href="/content/2015/08/27/alfreds-for-breakfast.html">
 		<div class="cover-wrapper">
-			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/wegener.jpg">
+			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/wegener.jpg">
 				<h3 class="story-title">Alfreds For Breakfast</h3>
 			</div>
 		</div>
@@ -338,7 +338,7 @@
     <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Juney's Coming For A Visit">
 	<a href="/content/2015/08/21/juneys-coming-for-a-visit.html">
 		<div class="cover-wrapper">
-			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/chicken.jpg">
+			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/chicken.jpg">
 				<h3 class="story-title">Juney's Coming For A Visit</h3>
 			</div>
 		</div>
@@ -381,6 +381,18 @@
 </footer>
         </div>
     </div>
+
+    <link rel="stylesheet" href="https://zacharybell.net//css/story.css"> 
+    
+    <!-- inject:js -->
+<script src="/javascript-combined/znet.js"></script>
+<!-- endinject -->
+
+<script>
+    var currentTime = new Date();
+    $('.copyright-date').html(currentTime.getFullYear());
+</script>
+    
     <script>
         var getCoverImage = function () {
             var img;
@@ -407,69 +419,82 @@
             }
 
             init();
-            window.addEventListener('resize', function(){
+
+            $(window).resize(function() {
                 clearTimeout(resizeId);
                 resizeId = setTimeout(function(){
                     init();
                 }, 150);
-            }, true);
+            });
         }
         getCoverImage();
-    </script>
-    
-    <link rel="stylesheet" href="https://zacharybell.net//css/story.css"> 
-    
-    <!-- inject:js -->
-<script src="/javascript-combined/znet.js"></script>
-<!-- endinject -->
 
-<script>
-    var currentTime = new Date();
-    document.getElementsByClassName('copyright-date')[0].innerHTML = currentTime.getFullYear();
-</script>
 
-    <script>
-        ZnetUI.nav('navbar', 
-            {   
-                minScrollDown: window.innerHeight, 
-                coverPageHome:'full-screen-home',
-                tabNav: 'tab-nav'
-            }
-        );
-        ZnetUI.titleFill(
-            'cover-title', 
-            {
-                paddingX: 10,
-                yNudgeDown: 100
-            }
-        );
-        ZnetUI.titleFill(
-            'story-title',
-            {
+        $('.tab-nav').znetTabNav({});
+        
+        // hide the full navbar until scroll past cover image. 
+        $('.navbar').znetHideNav({ minScrollDown: $(window).height(), storyMode: true }, function(){
+            $('.navbar').show();
+        });
+
+        $(".cover-title").znetTitleFill({
+            paddingX: 10,
+            titleAlignment: "center",
+            yNudgeDown: 100
+        });
+
+            $(".story-title").znetTitleFill({
                 paddingX: 10,
                 titleAlignment: "center",
                 yNudgeDown: 0
-            }
-        );
-        ZnetUI.TOC(
-            {
-                navHeight: 60
-            }
-        );
-        ZnetUI.lazyLoadImages(
-            'lazy-image', 
-            {
-                buffer: 500
-            }
-        );
-        ZnetUI.lazyLoadCSS('https://zacharybell.net//css/fontello.css');
-        ZnetUI.footnotes(
-            'footnote-collection',
-            {
-                nudge: -11
-            }
-        )
-        //$(".footnote-collection").znetFootnotes({ nudge: -11 });
+            });
+
+            // have to wait for the whole page to load before we can set up
+            // the footnote positions, as footnote heights are set relative
+            // to the height of the page, which we won't know until we have
+            // the cover, the toc and te teasers all set.
+            $(".footnote-collection").znetFootnotes({ nudge: -11 });
+
+            //$('.teaser').znetFirstPage({ extraPadding: 30 });
+            //$('.toc').znetFirstPage({ extraPadding: 30 });
+            
+            $('.topLink').click(function () {
+                var screenHeight = $(window).height();
+                var tocHeight = $('.toc').height();
+                var centerTocMargin;
+                var scrollToHeight;
+
+                // block the navbar, so it doesn't pop up
+                $('body').addClass('autoscrolling');
+
+                // height of the upper toc link
+                scrollToHeight = $($.attr(this, 'href')).offset().top;
+
+                // if possible, center the TOC in the window...
+                if (tocHeight < screenHeight) {
+                    centerTocMargin = (screenHeight - tocHeight) / 2;
+                    scrollToHeight = scrollToHeight - centerTocMargin;
+                }
+
+                $('html, body').animate({
+                    scrollTop: scrollToHeight
+                }, 500);
+                return false;
+            });
+
+            // the reverse of the above.
+            $('.toc a').click(function () {
+                var position = $($.attr(this, 'href')).offset().top - $('.navbar').height() - 30;
+                $('html, body').animate({
+                    scrollTop: position
+                }, 500);
+                return false;
+            });
+
+
+            // these images appear at the very bottom of the story, so they
+            // can load last.
+            $('.story-summary').znetLazyLoadImages({ 'buffer': 1000 });
         
     </script>
 </body>
