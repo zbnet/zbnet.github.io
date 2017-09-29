@@ -257,6 +257,7 @@ input:focus, select:focus, textarea:focus {
   box-shadow: 0 4px 10px -9px rgba(0, 0, 0, 0.75); }
 
 .navbar {
+  display: inherit;
   transition: opacity 0.25s;
   z-index: 2;
   position: absolute;
@@ -287,9 +288,11 @@ input:focus, select:focus, textarea:focus {
       color: #545454; }
 
 .js .nav-show {
+  visibility: visible !important;
   opacity: 1; }
 
 .js .nav-hide {
+  visibility: hidden !important;
   opacity: 0; }
 
 @media (max-width: 768px) {
@@ -302,6 +305,9 @@ input:focus, select:focus, textarea:focus {
 @media (max-width: 480px) {
   .navbar .site-logo {
     display: none; } }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .story {
+    flex: 3 0 60% !important; } }
 html.no-js .cover-page {
   height: 10em;
   text-align: center;
@@ -346,7 +352,7 @@ html.no-js .cover-page {
 .story {
   flex: 3 0 calc(70% - 40px);
   margin: 20vh 20px 0 20px; }
-  .story .topLink {
+  .story .top-link {
     padding: 0 0.15em;
     margin: 0 0.1em;
     font-size: 1.2em; }
@@ -371,11 +377,15 @@ html.no-js .cover-page {
   .footnote-collection ul, .footnote-collection ol {
     list-style-type: none;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    position: relative; }
     .footnote-collection ul li, .footnote-collection ol li {
       line-height: 1.5em; }
+    .footnote-collection ul .desktop-footnote, .footnote-collection ol .desktop-footnote {
+      position: absolute;
+      right: 0;
+      left: 0; }
   .footnote-collection .footnoteFields {
-    display: table;
     border-left: solid 1px #D9D9D9;
     padding: 20px 20px; }
     .footnote-collection .footnoteFields .footnoteNumber {
@@ -630,6 +640,13 @@ body.locked {
     .story-menu .story-quaternary .story-summary {
       padding: 20px;
       border-right: none !important; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .story-menu .story-primary {
+      flex: 3 0 96% !important; }
+    .story-menu .story-secondary {
+      flex: 3 0 48% !important; }
+    .story-menu .story-tertiary {
+      flex: 3 0 30% !important; } }
 
 .story-summary:hover {
   text-decoration: none;
@@ -646,7 +663,8 @@ body.locked {
     background-size: contain;
     position: relative;
     background-repeat: no-repeat;
-    height: 0; }
+    height: 0;
+    width: 100%; }
     .story-summary .cover-wrapper .cover-image .story-title {
       font-size: 6em;
       z-index: 1;

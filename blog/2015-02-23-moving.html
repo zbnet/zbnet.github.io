@@ -27,14 +27,14 @@
 
 <script>
     var currentTime = new Date();
-    $('.copyright-date').html(currentTime.getFullYear());
+    document.getElementsByClassName('copyright-date')[0].innerHTML = currentTime.getFullYear();
 </script>
     </head>
     <body>
         <div class="main-container" id="page">
             <div class="navbar sticky">
     <div class="nav-wrapper">
-	<div class="container-small main-nav">
+	<div class="container-medium main-nav">
 		<span>
 			<a href="/" class="site-logo">
 				ZB
@@ -113,12 +113,12 @@
 
 
     
-    <ol class="story-menu">
+    <ol id="keep-reading" class="story-menu">
     
     <li class="story-quaternary"><article class="story-summary summary-small" data-slug="The Demonist">
 	<a href="/content/2015/10/10/the-demonist.html">
 		<div class="cover-wrapper">
-			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/whosblowingwhom.jpg">
+			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/whosblowingwhom.jpg">
 				<h3 class="story-title">The Demonist</h3>
 			</div>
 		</div>
@@ -133,7 +133,7 @@
     <li class="story-quaternary"><article class="story-summary summary-small" data-slug="A Last Minute Truth">
 	<a href="/content/2015/10/08/a-last-minute-truth.html">
 		<div class="cover-wrapper">
-			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/45bullet-closer.jpg">
+			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/45bullet-closer.jpg">
 				<h3 class="story-title">A Last Minute Truth</h3>
 			</div>
 		</div>
@@ -148,7 +148,7 @@
     <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Taking Pictures of Cats Having Sex In Istanbul">
 	<a href="/content/2015/09/21/taking-pictures-of-cats-having-sex-in-istanbul.html">
 		<div class="cover-wrapper">
-			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/mosque.jpg">
+			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/mosque.jpg">
 				<h3 class="story-title">Taking Pictures of Cats Having Sex In Istanbul</h3>
 			</div>
 		</div>
@@ -163,7 +163,7 @@
     <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Welcome Travelers, To Dublin">
 	<a href="/content/2015/09/18/welcome-travelers-to-dublin.html">
 		<div class="cover-wrapper">
-			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/double-decker-bus.jpg">
+			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/double-decker-bus.jpg">
 				<h3 class="story-title">Welcome Travelers, To Dublin</h3>
 			</div>
 		</div>
@@ -178,7 +178,7 @@
     <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Alfreds For Breakfast">
 	<a href="/content/2015/08/27/alfreds-for-breakfast.html">
 		<div class="cover-wrapper">
-			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/wegener.jpg">
+			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/wegener.jpg">
 				<h3 class="story-title">Alfreds For Breakfast</h3>
 			</div>
 		</div>
@@ -193,7 +193,7 @@
     <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Juney's Coming For A Visit">
 	<a href="/content/2015/08/21/juneys-coming-for-a-visit.html">
 		<div class="cover-wrapper">
-			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/chicken.jpg">
+			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/chicken.jpg">
 				<h3 class="story-title">Juney's Coming For A Visit</h3>
 			</div>
 		</div>
@@ -234,30 +234,26 @@
 
 <script>
     var currentTime = new Date();
-    $('.copyright-date').html(currentTime.getFullYear());
+    document.getElementsByClassName('copyright-date')[0].innerHTML = currentTime.getFullYear();
 </script>
 
         <script src="/external_components/elasticlunr.js-master/elasticlunr.min.js"></script>
         <script>
-            window.onload = function () {
-                $(".story-title").znetTitleFill({
-                    paddingX:    0,
-                    titleAlignment: "center",
-                    yNudgeDown:  0
-                });
-            };
-            $('.story-summary').znetLazyLoadImages({'buffer': 1000});
-
-            
-            var stylesheet = document.createElement('link');
-            stylesheet.href = 'https://zacharybell.net//css/fontello.css';
-            stylesheet.rel = 'stylesheet';
-            stylesheet.type = 'text/css';
-            // temporarily set media to something inapplicable to ensure it'll fetch without blocking render
-            stylesheet.media = 'only x';
-            // set the media back when the stylesheet loads
-            stylesheet.onload = function() {stylesheet.media = 'all'}
-            document.getElementsByTagName('head')[0].appendChild(stylesheet);
+            ZnetUI.titleFill(
+                'story-title', 
+                {
+                    paddingX: 10,
+                }
+            );
+            ZnetUI.lazyLoadImages(
+                'lazy-image', 
+                {
+                    buffer: 500
+                }
+            );
+            ZnetUI.lazyLoadCSS(
+                'https://zacharybell.net//css/fontello.css'
+            );
         </script>
     </body>
 </html>

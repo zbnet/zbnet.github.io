@@ -25,14 +25,14 @@
 
 <script>
     var currentTime = new Date();
-    $('.copyright-date').html(currentTime.getFullYear());
+    document.getElementsByClassName('copyright-date')[0].innerHTML = currentTime.getFullYear();
 </script>
 	</head>
     <body>
         <div class="main-container">
             <div class="navbar sticky">
     <div class="nav-wrapper">
-	<div class="container-small main-nav">
+	<div class="container-medium main-nav">
 		<span>
 			<a href="/" class="site-logo">
 				ZB
@@ -108,7 +108,7 @@
 
 <script>
     var currentTime = new Date();
-    $('.copyright-date').html(currentTime.getFullYear());
+    document.getElementsByClassName('copyright-date')[0].innerHTML = currentTime.getFullYear();
 </script>
 
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
@@ -129,7 +129,6 @@
 
             $("#contactForm").validate();
             
-            $('body').css('opacity', '1');
         </script>
     </body>
 </html>
