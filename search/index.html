@@ -22,16 +22,11 @@
         <link rel="stylesheet" href="https://zacharybell.net//css/search.css"> <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
-
-<script>
-    var currentTime = new Date();
-    $('.copyright-date').html(currentTime.getFullYear());
-</script>
     </head>
     <body>
         <div class="navbar sticky">
     <div class="nav-wrapper">
-	<div class="container-small main-nav">
+	<div class="container-medium main-nav">
 		<span>
 			<a href="/" class="site-logo">
 				ZB
@@ -62,51 +57,47 @@
 
 </div>
 
-        <div class="blog">
-	<div class="blogHeader">
-	    <h1 class="banner">search</h1>
-	    <span class="tagline">go ahead, do it.</span>
+        <h1 class="search-banner">search</h1>
+<div class="container-medium">
+    <div class="main-search-form">
+        <form onsubmit="return false;">
+            <input id="search-input" autocomplete="off" type="text"><span id="clear-button" class="clear-input">X</span>
+        </form>
+        <button type="submit" form="" value="Go!">Go!</button>        
     </div>
-    <div class="container-small">
-        <div class="main-search-form">
-            <form onsubmit="return false;">
-				<input id="search-input" type="text" placeholder="Search terms"><span class="clear-input">X</span>                
-            </form>
-        </div>
-        <div id='log'></div>
-        <div class="search-container">
-            <div class="no-results"></div>
-            <div class="story-results"></div>
-            <div class="blog-results"></div>
-        </div>
+    <div id='log'></div>
+    <div class="search-container">
+        <div id="no-results" class="no-results"></div>
+        <div id="story-results" class="story-results"></div>
+        <div id="blog-results" class="blog-results"></div>
     </div>
 </div>
 
-    <div class="container-small">
+        
         <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
-
-<script>
-    var currentTime = new Date();
-    $('.copyright-date').html(currentTime.getFullYear());
-</script>
-    </div>
     
-    <script src="/external_components/elasticlunr.js-master/elasticlunr.js"></script>
-    <script>
+        <script src="/external_components/elasticlunr.js-master/elasticlunr.js"></script>
+        <script>
 
-        $('#search-input').focus();
+            document.getElementById('search-input').focus();
 
-        $.znetSearch('https://zacharybell.net/', {'callback': function(){
-            $(".story-title").znetTitleFill({
-                paddingX:    0,
-                titleAlignment: "center",
-                yNudgeDown:  0
-            }, function(){
-                $('body').css('opacity', '1');
-            });
-        }});
-    </script>
+            ZnetUI.search(
+                {
+                    imageURL: 'https://zacharybell.net/'
+                },
+                function(){
+                    ZnetUI.titleFill(
+                        'story-title',
+                        {
+                            paddingX: 10,
+                            titleAlignment: "center",
+                            yNudgeDown: 0
+                        }
+                    );
+                }
+            );
+        </script>
     </body>
 </html>

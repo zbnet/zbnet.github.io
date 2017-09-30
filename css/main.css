@@ -1054,10 +1054,11 @@ html {
 body {
   font-size: 10px;
   margin: 0;
-  width: 100%; }
+  width: 100%;
+  color: #333333; }
 
 a {
-  color: #FF2200;
+  color: #B30005;
   text-decoration: none;
   padding: 2px;
   transition: color .25s;
@@ -1067,7 +1068,7 @@ a {
     color: #801E00; }
   a:focus {
     text-decoration: none;
-    outline: 1px auto #FF2200;
+    outline: 1px auto #B30005;
     color: #801E00; }
 
 p {
@@ -1077,7 +1078,7 @@ p {
   margin: 0 0 1.2em 0; }
   p a {
     color: #333333;
-    border-bottom: 2px solid #FF2200;
+    border-bottom: 2px solid #B30005;
     transition: border-color .25s; }
     p a:hover {
       color: #333333;
@@ -1100,7 +1101,7 @@ input {
   -webkit-appearance: none; }
 
 input:focus, select:focus, textarea:focus {
-  outline-color: #FF2200; }
+  outline-color: #B30005; }
 
 ::selection {
   background: rgba(255, 34, 0, 0.99);
@@ -1179,6 +1180,13 @@ input:focus, select:focus, textarea:focus {
     .story-menu .story-quaternary .story-summary {
       padding: 20px;
       border-right: none !important; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .story-menu .story-primary {
+      flex: 3 0 96% !important; }
+    .story-menu .story-secondary {
+      flex: 3 0 48% !important; }
+    .story-menu .story-tertiary {
+      flex: 3 0 30% !important; } }
 
 .story-summary:hover {
   text-decoration: none;
@@ -1195,7 +1203,8 @@ input:focus, select:focus, textarea:focus {
     background-size: contain;
     position: relative;
     background-repeat: no-repeat;
-    height: 0; }
+    height: 0;
+    width: 100%; }
     .story-summary .cover-wrapper .cover-image .story-title {
       font-size: 6em;
       z-index: 1;
@@ -1299,12 +1308,12 @@ input:focus, select:focus, textarea:focus {
       margin: 0; } }
 .js .full-screen-home .site-logo, .navbar .site-logo {
   font-family: "Open Sans", "Tahoma", "Verdana", sans-serif;
-  background-color: #FF2200;
+  background-color: #B30005;
   color: white;
   display: inline-block; }
   .js .full-screen-home .site-logo:focus, .navbar .site-logo:focus {
     background-color: white;
-    color: #FF2200; }
+    color: #B30005; }
 
 .main-nav {
   position: relative;
@@ -1371,6 +1380,7 @@ input:focus, select:focus, textarea:focus {
   box-shadow: 0 4px 10px -9px rgba(0, 0, 0, 0.75); }
 
 .navbar {
+  display: inherit;
   transition: opacity 0.25s;
   z-index: 2;
   position: absolute;
@@ -1396,14 +1406,16 @@ input:focus, select:focus, textarea:focus {
     text-transform: uppercase;
     padding: .5em;
     margin: .5em;
-    color: #808080; }
+    color: #B30005; }
     .navbar span.nav-button a:hover {
       color: #545454; }
 
 .js .nav-show {
+  visibility: visible !important;
   opacity: 1; }
 
 .js .nav-hide {
+  visibility: hidden !important;
   opacity: 0; }
 
 @media (max-width: 768px) {
@@ -1416,6 +1428,9 @@ input:focus, select:focus, textarea:focus {
 @media (max-width: 480px) {
   .navbar .site-logo {
     display: none; } }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .story {
+    flex: 3 0 60% !important; } }
 html.no-js .cover-page {
   height: 10em;
   text-align: center;
@@ -1460,7 +1475,7 @@ html.no-js .cover-page {
 .story {
   flex: 3 0 calc(70% - 40px);
   margin: 20vh 20px 0 20px; }
-  .story .topLink {
+  .story .top-link {
     padding: 0 0.15em;
     margin: 0 0.1em;
     font-size: 1.2em; }
@@ -1485,11 +1500,15 @@ html.no-js .cover-page {
   .footnote-collection ul, .footnote-collection ol {
     list-style-type: none;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    position: relative; }
     .footnote-collection ul li, .footnote-collection ol li {
       line-height: 1.5em; }
+    .footnote-collection ul .desktop-footnote, .footnote-collection ol .desktop-footnote {
+      position: absolute;
+      right: 0;
+      left: 0; }
   .footnote-collection .footnoteFields {
-    display: table;
     border-left: solid 1px #D9D9D9;
     padding: 20px 20px; }
     .footnote-collection .footnoteFields .footnoteNumber {
@@ -1506,19 +1525,19 @@ body.locked {
   position: fixed; }
 
 .sympatheticHover--lower {
-  outline: 1px solid #FF2200; }
+  outline: 1px solid #B30005; }
   .sympatheticHover--lower li {
     color: black !important; }
 
 .sympatheticHover--upper {
-  outline: 1px solid #FF2200 !important; }
+  outline: 1px solid #B30005 !important; }
 
 .footLink--lower, .footLink--upper {
   min-width: 1em;
   position: relative;
   font-family: "Lora", "Palatino", "Georgia", serif;
   border: none;
-  color: #FF2200; }
+  color: #B30005; }
   .footLink--lower:focus, .footLink--upper:focus {
     box-shadow: none;
     border-color: transparent; }
@@ -1585,7 +1604,7 @@ body.locked {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #FF2200;
+  background: #B30005;
   z-index: 10;
   color: white;
   padding: 2em 2em 2em 1.5em;
@@ -1619,7 +1638,7 @@ body.locked {
   bottom: 0;
   right: 0;
   z-index: 11;
-  background-color: #FF2200;
+  background-color: #B30005;
   font-size: 15px;
   color: white;
   display: none; }
@@ -1695,7 +1714,7 @@ body.js .ss-form-container {
   height: 20em; }
 .contactForm button {
   border: none;
-  background-color: #FF2200;
+  background-color: #B30005;
   color: white; }
 
 @media (max-width: 992px) {
@@ -1717,20 +1736,30 @@ body.js .ss-form-container {
 
   .blog-summary h2 {
     font-size: 25px; } }
+.search-banner {
+  margin-top: 60px;
+  text-align: center;
+  font-family: "Open Sans", "Tahoma", "Verdana", sans-serif;
+  text-transform: uppercase;
+  font-size: 30px; }
+
 .main-search-form {
   position: relative;
   padding: 0;
-  margin: 0 auto;
-  max-width: 500px; }
+  margin: 20px auto 0 auto;
+  max-width: 500px;
+  border: 1px solid #808080;
+  overflow: hidden; }
   .main-search-form form {
     font-size: 16px;
     display: flex;
-    border-bottom: 2px solid #808080; }
+    width: 80%;
+    float: left; }
     .main-search-form form input {
       flex: 0 0 80%;
       padding: 5px 30px 5px 5px;
       border: none;
-      width: calc(100% - 14px);
+      width: calc(100% - 100px);
       font-size: 1.1em; }
       .main-search-form form input:focus {
         outline: none; }
@@ -1738,10 +1767,20 @@ body.js .ss-form-container {
       flex: 0 0 20%;
       position: absolute;
       bottom: 6px;
-      right: 6px;
+      right: 50px;
       color: #808080;
       font-family: "Open Sans", "Tahoma", "Verdana", sans-serif;
-      display: none; }
+      display: none;
+      cursor: pointer; }
+  .main-search-form button {
+    background-color: #B30005;
+    border: none;
+    padding: 8px;
+    text-transform: uppercase;
+    float: right;
+    color: white;
+    font-family: "Karla", "Arial", sans-serif;
+    width: 38px; }
 
 .search-header {
   text-align: center;
@@ -1791,7 +1830,7 @@ body.js .ss-form-container {
 
 .gsc-cursor-page {
   text-decoration: none !important;
-  color: #FF2200 !important;
+  color: #B30005 !important;
   font-weight: bold !important; }
   .gsc-cursor-page:hover {
     color: black !important; }
@@ -1897,7 +1936,7 @@ body.locked {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #FF2200;
+  background: #B30005;
   z-index: 10;
   color: white;
   padding: 2em 2em 2em 1.5em;
@@ -1920,7 +1959,7 @@ body.locked {
   #mobile-footnote #close {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     font-size: 15px; }
     #mobile-footnote #close:hover {
       cursor: hand;
@@ -1931,7 +1970,7 @@ body.locked {
   bottom: 0;
   right: 0;
   z-index: 11;
-  background-color: #FF2200;
+  background-color: #B30005;
   font-size: 15px;
   color: white;
   display: none; }
@@ -1949,19 +1988,19 @@ body.locked {
       color: #808080; }
 
 .sympatheticHover--lower {
-  outline: 1px solid #FF2200; }
+  outline: 1px solid #B30005; }
   .sympatheticHover--lower li {
     color: black !important; }
 
 .sympatheticHover--upper {
-  outline: 1px solid #FF2200 !important; }
+  outline: 1px solid #B30005 !important; }
 
 .footLink--lower, .footLink--upper {
   min-width: 1em;
   position: relative;
   font-family: "Lora", "Palatino", "Georgia", serif;
   border: none;
-  color: #FF2200; }
+  color: #B30005; }
   .footLink--lower:focus, .footLink--upper:focus {
     box-shadow: none;
     border-color: transparent; }

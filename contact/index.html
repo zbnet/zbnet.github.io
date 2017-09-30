@@ -22,17 +22,12 @@
         <link rel="stylesheet" href="https://zacharybell.net//css/main.css"> <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
-
-<script>
-    var currentTime = new Date();
-    $('.copyright-date').html(currentTime.getFullYear());
-</script>
 	</head>
     <body>
         <div class="main-container">
             <div class="navbar sticky">
     <div class="nav-wrapper">
-	<div class="container-small main-nav">
+	<div class="container-medium main-nav">
 		<span>
 			<a href="/" class="site-logo">
 				ZB
@@ -102,14 +97,13 @@
         <span class="pw__vs">vs:</span><span class="pw__sm">sm:</span><span class="pw__md">md:</span><span class="pw__lg">lg:</span><span>107</span>
     </div>
 </footer>
+<script>
+    var currentTime = new Date();
+    document.getElementsByClassName('copyright-date')[0].innerHTML = currentTime.getFullYear();
+</script>
         <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
-
-<script>
-    var currentTime = new Date();
-    $('.copyright-date').html(currentTime.getFullYear());
-</script>
 
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
         <script>
@@ -129,7 +123,6 @@
 
             $("#contactForm").validate();
             
-            $('body').css('opacity', '1');
         </script>
     </body>
 </html>

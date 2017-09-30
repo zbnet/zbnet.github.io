@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* set up site-wide fundamentals */
 /* google fonts */
 /* latin-ext */
@@ -54,10 +53,11 @@ html {
 body {
   font-size: 10px;
   margin: 0;
-  width: 100%; }
+  width: 100%;
+  color: #333333; }
 
 a {
-  color: #FF2200;
+  color: #B30005;
   text-decoration: none;
   padding: 2px;
   transition: color .25s;
@@ -67,7 +67,7 @@ a {
     color: #801E00; }
   a:focus {
     text-decoration: none;
-    outline: 1px auto #FF2200;
+    outline: 1px auto #B30005;
     color: #801E00; }
 
 p {
@@ -77,7 +77,7 @@ p {
   margin: 0 0 1.2em 0; }
   p a {
     color: #333333;
-    border-bottom: 2px solid #FF2200;
+    border-bottom: 2px solid #B30005;
     transition: border-color .25s; }
     p a:hover {
       color: #333333;
@@ -100,7 +100,7 @@ input {
   -webkit-appearance: none; }
 
 input:focus, select:focus, textarea:focus {
-  outline-color: #FF2200; }
+  outline-color: #B30005; }
 
 ::selection {
   background: rgba(255, 34, 0, 0.99);
@@ -184,121 +184,14 @@ input:focus, select:focus, textarea:focus {
 
   .pw__lg {
     display: inline; } }
-@font-face {
-  font-family: 'fontello';
-  src: url("../external_components/fontello/font/fontello.eot");
-  src: url("../external_components/fontello/font/fontello.eot?10163038#iefix") format("embedded-opentype"), url("../external_components/fontello/font/fontello.woff2") format("woff2"), url("../external_components/fontello/font/fontello.woff") format("woff"), url("../external_components/fontello/font/fontello.ttf") format("truetype"), url("../external_components/fontello/font/fontello.svg?10163038#fontello") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'fontello';
-    src: url('../font/fontello.svg?10163038#fontello') format('svg');
-  }
-}
-*/
-[class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
-  text-align: center;
-  /* opacity: .8; */
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: .2em;
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-  /* Font smoothing. That was taken from TWBS */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
-
-.icon-search:before {
-  content: '\e800'; }
-
-/* 'εáÇ' */
-.icon-down-open:before {
-  content: '\e801'; }
-
-/* 'εáü' */
-.icon-mail:before {
-  content: '\e802'; }
-
-/* 'εáé' */
-.icon-reddit:before {
-  content: '\e803'; }
-
-/* 'εáâ' */
-.icon-twitter:before {
-  content: '\e804'; }
-
-/* 'εáä' */
-.icon-facebook:before {
-  content: '\e805'; }
-
-/* 'εáà' */
-.icon-cancel-1:before {
-  content: '\e806'; }
-
-/* 'εáå' */
-.icon-up-open:before {
-  content: '\e807'; }
-
-/* 'εáç' */
-.icon-search:before {
-  content: '\e800'; }
-
-/* 'εáÇ' */
-.icon-down-open:before {
-  content: '\e801'; }
-
-/* 'εáü' */
-.icon-mail:before {
-  content: '\e802'; }
-
-/* 'εáé' */
-.icon-reddit:before {
-  content: '\e803'; }
-
-/* 'εáâ' */
-.icon-twitter:before {
-  content: '\e804'; }
-
-/* 'εáä' */
-.icon-facebook:before {
-  content: '\e805'; }
-
-/* 'εáà' */
-.icon-cancel-1:before {
-  content: '\e806'; }
-
-/* 'εáå' */
-.icon-up-open:before {
-  content: '\e807'; }
-
-/* 'εáç' */
 .js .full-screen-home .site-logo, .navbar .site-logo {
   font-family: "Open Sans", "Tahoma", "Verdana", sans-serif;
-  background-color: #FF2200;
+  background-color: #B30005;
   color: white;
   display: inline-block; }
   .js .full-screen-home .site-logo:focus, .navbar .site-logo:focus {
     background-color: white;
-    color: #FF2200; }
+    color: #B30005; }
 
 .main-nav {
   position: relative;
@@ -365,6 +258,7 @@ input:focus, select:focus, textarea:focus {
   box-shadow: 0 4px 10px -9px rgba(0, 0, 0, 0.75); }
 
 .navbar {
+  display: inherit;
   transition: opacity 0.25s;
   z-index: 2;
   position: absolute;
@@ -390,14 +284,16 @@ input:focus, select:focus, textarea:focus {
     text-transform: uppercase;
     padding: .5em;
     margin: .5em;
-    color: #808080; }
+    color: #B30005; }
     .navbar span.nav-button a:hover {
       color: #545454; }
 
 .js .nav-show {
+  visibility: visible !important;
   opacity: 1; }
 
 .js .nav-hide {
+  visibility: hidden !important;
   opacity: 0; }
 
 @media (max-width: 768px) {
@@ -410,6 +306,9 @@ input:focus, select:focus, textarea:focus {
 @media (max-width: 480px) {
   .navbar .site-logo {
     display: none; } }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .story {
+    flex: 3 0 60% !important; } }
 html.no-js .cover-page {
   height: 10em;
   text-align: center;
@@ -454,7 +353,7 @@ html.no-js .cover-page {
 .story {
   flex: 3 0 calc(70% - 40px);
   margin: 20vh 20px 0 20px; }
-  .story .topLink {
+  .story .top-link {
     padding: 0 0.15em;
     margin: 0 0.1em;
     font-size: 1.2em; }
@@ -479,11 +378,15 @@ html.no-js .cover-page {
   .footnote-collection ul, .footnote-collection ol {
     list-style-type: none;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    position: relative; }
     .footnote-collection ul li, .footnote-collection ol li {
       line-height: 1.5em; }
+    .footnote-collection ul .desktop-footnote, .footnote-collection ol .desktop-footnote {
+      position: absolute;
+      right: 0;
+      left: 0; }
   .footnote-collection .footnoteFields {
-    display: table;
     border-left: solid 1px #D9D9D9;
     padding: 20px 20px; }
     .footnote-collection .footnoteFields .footnoteNumber {
@@ -500,19 +403,19 @@ body.locked {
   position: fixed; }
 
 .sympatheticHover--lower {
-  outline: 1px solid #FF2200; }
+  outline: 1px solid #B30005; }
   .sympatheticHover--lower li {
     color: black !important; }
 
 .sympatheticHover--upper {
-  outline: 1px solid #FF2200 !important; }
+  outline: 1px solid #B30005 !important; }
 
 .footLink--lower, .footLink--upper {
   min-width: 1em;
   position: relative;
   font-family: "Lora", "Palatino", "Georgia", serif;
   border: none;
-  color: #FF2200; }
+  color: #B30005; }
   .footLink--lower:focus, .footLink--upper:focus {
     box-shadow: none;
     border-color: transparent; }
@@ -579,7 +482,7 @@ body.locked {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #FF2200;
+  background: #B30005;
   z-index: 10;
   color: white;
   padding: 2em 2em 2em 1.5em;
@@ -613,7 +516,7 @@ body.locked {
   bottom: 0;
   right: 0;
   z-index: 11;
-  background-color: #FF2200;
+  background-color: #B30005;
   font-size: 15px;
   color: white;
   display: none; }
@@ -738,6 +641,13 @@ body.locked {
     .story-menu .story-quaternary .story-summary {
       padding: 20px;
       border-right: none !important; }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .story-menu .story-primary {
+      flex: 3 0 96% !important; }
+    .story-menu .story-secondary {
+      flex: 3 0 48% !important; }
+    .story-menu .story-tertiary {
+      flex: 3 0 30% !important; } }
 
 .story-summary:hover {
   text-decoration: none;
@@ -754,7 +664,8 @@ body.locked {
     background-size: contain;
     position: relative;
     background-repeat: no-repeat;
-    height: 0; }
+    height: 0;
+    width: 100%; }
     .story-summary .cover-wrapper .cover-image .story-title {
       font-size: 6em;
       z-index: 1;
@@ -865,7 +776,7 @@ body.locked {
   word-spacing: 2em; }
   .footer-nav a {
     color: #333333;
-    border-bottom: 2px solid #FF2200; }
+    border-bottom: 2px solid #B30005; }
     .footer-nav a:hover {
       border-bottom: #545454 2px solid;
       color: #333333; }
