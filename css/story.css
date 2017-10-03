@@ -53,8 +53,7 @@ html {
 body {
   font-size: 10px;
   margin: 0;
-  width: 100%;
-  color: #333333; }
+  width: 100%; }
 
 a {
   color: #FF2200;
@@ -284,7 +283,7 @@ input:focus, select:focus, textarea:focus {
     text-transform: uppercase;
     padding: .5em;
     margin: .5em;
-    color: #FF2200; }
+    color: #808080; }
     .navbar span.nav-button a:hover {
       color: #545454; }
 
@@ -363,6 +362,8 @@ html.no-js .cover-page {
     font-family: "Karla", "Arial", sans-serif;
     margin: 20px 0;
     font-size: 3em; }
+  .story p {
+    font-family: "Lora", "Palatino", "Georgia", serif; }
   .story p:first-child:first-letter {
     float: left;
     font-size: 5.35em;

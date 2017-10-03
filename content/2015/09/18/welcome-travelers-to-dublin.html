@@ -3,93 +3,87 @@
 
 <head>
     <!-- bare minimum css to render above the fold content.-->
-    
     <style>
-    body {
-        margin: 0;
-        width: 100%;
-    }
+        body {
+            margin: 0;
+            width: 100%;
+        }
 
-    .cover-page {
-        position: relative;
-        height: 100vh;            
-    }
-    .cover-image-initial, .cover-image-final {
-        background-size: cover;
-        -moz-background-size: cover;
-        /* Firefox 3.6 */
-        background-position: center;
-        /* Internet Explorer 7/8 */
-    }
-    .cover-image-initial {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 0;
-    }
-    .cover-image-final {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 1;
-    }
-    .cover-image-intial{
-        display: none;
-    }
-    .loading {
-        filter:blur(20px);
-    }
-
-    @media screen and (orientation:portrait) {
-        body:after{
-            content: 'https://zacharybell.net//images/mobile_portrait/double-decker-bus.jpg';
-            display: none;
+        .cover-page {
+            position: relative;
+        }
+        .cover-image-initial, .cover-image-final {
+            
+            background-size: cover;
+            -moz-background-size: cover;
+            /* Firefox 3.6 */
+            background-position: center;
+            /* Internet Explorer 7/8 */
+            height: 100vh;
         }
         .cover-image-initial {
-            background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoABcDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQFBv/EACcQAAIBBAECBQUAAAAAAAAAAAECAwAEESESMUEFExQisTJRcYKh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQAC/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAERIQL/2gAMAwEAAhEDEQA/AObeWRWyMIeuu1d3DeFbdAGbPEZ3nOq4hbXzJFDXEYJIHXNbfqYYyUa4xx1kqwHxR6stU2NlrlXYCReWtapWbA08wEluvnoMjKENSs6nOQkest16EyDI+26quZMysCPpYgEfmo5LtjJG8XBGG/aM4Oap5oVJcgsQ2+5ONf2tBfEzL4EvlswzdOfaSO1Kgs5ZeBjhdxskBScUonF2sxSdDj3z03V+Y8AiOV/1C/NKU04W3JJeRjZACSATnrSlKDj/2Q==");
+            position: relative;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 0;
         }
-    }
-
-    @media screen and (orientation:landscape) and (max-width: 767px) {
-        body:after{
-            content: 'https://zacharybell.net//images/medium/double-decker-bus.jpg';
+        .cover-image-final {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .cover-image-intial{
             display: none;
         }
-        .cover-image-initial {
-            background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUBAwQC/8QAKBAAAgICAAQEBwAAAAAAAAAAAQIAAxESBCExQQUTIlEUMkJhobHh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgEA/8QAGREBAQADAQAAAAAAAAAAAAAAAAECERIx/9oADAMBAAIRAxEAPwCfxtrNfaq6BQ2MnrynT4DxBqN2zHnjHOcTqoXcqrM3vnnNvD26cOWVUQ7kfL1wBLnd+jjNLnxO7DOH69Z6FynGQRz79pKouDUWW3KTq6qPLOOo+82BqtdxbdXkfUAYCU1c49Dcokw2MpGvEIT22Uj9RH3R5SU4hXCo6Fj0yDM0PtWa9QFBJ/H8iJKrbXcyLbUoDLtnBHtAv2wSq4PbXtEQpWPNbPoAAJ9hERK0f//Z");
+        .loading {
+            filter:blur(20px);
         }
-    }
-    @media screen and (orientation:landscape) and (min-width: 768px) {
-        body:after{
-            content: 'https://zacharybell.net//images/large/double-decker-bus.jpg';
+
+        @media screen and (orientation:portrait) {
+            body:after{
+                content: 'https://zacharybell.net//images/mobile_portrait/double-decker-bus.jpg';
+                display: none;
+            }
+            .cover-image-initial {
+                background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoABcDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQFBv/EACcQAAIBBAECBQUAAAAAAAAAAAECAwAEESESMUEFExQisTJRcYKh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQAC/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAERIQL/2gAMAwEAAhEDEQA/AObeWRWyMIeuu1d3DeFbdAGbPEZ3nOq4hbXzJFDXEYJIHXNbfqYYyUa4xx1kqwHxR6stU2NlrlXYCReWtapWbA08wEluvnoMjKENSs6nOQkest16EyDI+26quZMysCPpYgEfmo5LtjJG8XBGG/aM4Oap5oVJcgsQ2+5ONf2tBfEzL4EvlswzdOfaSO1Kgs5ZeBjhdxskBScUonF2sxSdDj3z03V+Y8AiOV/1C/NKU04W3JJeRjZACSATnrSlKDj/2Q==");
+            }
+        }
+
+        @media screen and (orientation:landscape) and (max-width: 767px) {
+            body:after{
+                content: 'https://zacharybell.net//images/medium/double-decker-bus.jpg';
+                display: none;
+            }
+            .cover-image-initial {
+                background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUBAwQC/8QAKBAAAgICAAQEBwAAAAAAAAAAAQIAAxESBCExQQUTIlEUMkJhobHh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgEA/8QAGREBAQADAQAAAAAAAAAAAAAAAAECERIx/9oADAMBAAIRAxEAPwCfxtrNfaq6BQ2MnrynT4DxBqN2zHnjHOcTqoXcqrM3vnnNvD26cOWVUQ7kfL1wBLnd+jjNLnxO7DOH69Z6FynGQRz79pKouDUWW3KTq6qPLOOo+82BqtdxbdXkfUAYCU1c49Dcokw2MpGvEIT22Uj9RH3R5SU4hXCo6Fj0yDM0PtWa9QFBJ/H8iJKrbXcyLbUoDLtnBHtAv2wSq4PbXtEQpWPNbPoAAJ9hERK0f//Z");
+            }
+        }
+        @media screen and (orientation:landscape) and (min-width: 768px) {
+            body:after{
+                content: 'https://zacharybell.net//images/large/double-decker-bus.jpg';
+                display: none;
+            }
+            .cover-image-initial {
+                background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUBAwQC/8QAKBAAAgICAAQEBwAAAAAAAAAAAQIAAxESBCExQQUTIlEUMkJhobHh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgEA/8QAGREBAQADAQAAAAAAAAAAAAAAAAECERIx/9oADAMBAAIRAxEAPwCfxtrNfaq6BQ2MnrynT4DxBqN2zHnjHOcTqoXcqrM3vnnNvD26cOWVUQ7kfL1wBLnd+jjNLnxO7DOH69Z6FynGQRz79pKouDUWW3KTq6qPLOOo+82BqtdxbdXkfUAYCU1c49Dcokw2MpGvEIT22Uj9RH3R5SU4hXCo6Fj0yDM0PtWa9QFBJ/H8iJKrbXcyLbUoDLtnBHtAv2wSq4PbXtEQpWPNbPoAAJ9hERK0f//Z");
+            }
+        }
+
+        .navbar,
+        .full-screen-home,
+        .tab-nav,
+        .cover-page h1 {
             display: none;
         }
-        .cover-image-initial {
-            background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUBAwQC/8QAKBAAAgICAAQEBwAAAAAAAAAAAQIAAxESBCExQQUTIlEUMkJhobHh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgEA/8QAGREBAQADAQAAAAAAAAAAAAAAAAECERIx/9oADAMBAAIRAxEAPwCfxtrNfaq6BQ2MnrynT4DxBqN2zHnjHOcTqoXcqrM3vnnNvD26cOWVUQ7kfL1wBLnd+jjNLnxO7DOH69Z6FynGQRz79pKouDUWW3KTq6qPLOOo+82BqtdxbdXkfUAYCU1c49Dcokw2MpGvEIT22Uj9RH3R5SU4hXCo6Fj0yDM0PtWa9QFBJ/H8iJKrbXcyLbUoDLtnBHtAv2wSq4PbXtEQpWPNbPoAAJ9hERK0f//Z");
-        }
-    }
+    </style>
 
-    .navbar,
-    .full-screen-home,
-    .tab-nav,
-    .cover-page h1 {
-        display: none;
-    }
-</style>    
     <script>
     document.documentElement.classList.remove("no-js");
     document.documentElement.classList.add("js");
 </script>
-<style>
-    .body-curtain, .title-curtain {
-        opacity: 0;
-        transition: opacity .05s linear;
-    }
-</style>
+
 <meta charset="utf-8" />
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -114,13 +108,7 @@
 
 <body>
     <div class="main-container">
-        <div class="cover-page">
-    <div class="cover-image-initial"></div>
-    <div class="cover-image-final"></div>  
-    <h1 id="cover-title" class="title-curtain cover-title">Welcome Travelers, To Dublin</h1>
-</div>
-<div class="body-curtain">
-    <div id="navbar" class="navbar sticky nav-hide">
+        <div id="navbar" class="navbar sticky nav-hide">
 	<div class="nav-wrapper">
 		<div class="container-medium main-nav">
 			<span>
@@ -160,13 +148,18 @@
 	<span>skip to navigation</span>
 </a>
  
+        <div class="cover-page">
+    <div class="cover-image-initial"></div>
+    <div class="cover-image-final"></div>  
+    <h1 id="cover-title" class="cover-title">Welcome Travelers, To Dublin</h1>
+</div>
+
+
+
+<div class="story-container container-small">
     
-    
-    
-    <div class="story-container container-small">
-        
-        <div id="story" class="story" data-story-number="1">
-            <p>We lived in Loughborough, a grumpy, brick-and-gloom sort of place somewhere in the middle of England, and my family was back home in Colorado. We hadn’t seen each other for a while, so they—my parents and my brother—decided to come for a visit. Since Loughborough doesn't have any particular sights to see,<sup><a class="footLink--upper" id="footLink--upper_1" href="#footLink--lower_1" data-footnote-number="1">1</a></sup> we decided to go to meet in Ireland. When we arrived, they were already waiting for us at the the airport. Everyone hugged, we collected our baggage. Then we realized that it was late—well past midnight—and that the trains had stopped running.</p>
+    <div id="story" class="story" data-story-number="1">
+        <p>We lived in Loughborough, a grumpy, brick-and-gloom sort of place somewhere in the middle of England, and my family was back home in Colorado. We hadn’t seen each other for a while, so they—my parents and my brother—decided to come for a visit. Since Loughborough doesn't have any particular sights to see,<sup><a class="footLink--upper" id="footLink--upper_1" href="#footLink--lower_1" data-footnote-number="1">1</a></sup> we decided to go to meet in Ireland. When we arrived, they were already waiting for us at the the airport. Everyone hugged, we collected our baggage. Then we realized that it was late—well past midnight—and that the trains had stopped running.</p>
 
 <p>"Let's get a cab," I said.</p>
 
@@ -266,16 +259,16 @@
 
 <p>Everyone except my mother, but she would recover. She always does.</p>
 
-        </div>
-    
-        <div class="footnote-collection" data-footnote-collection="1">
-            <ul class="footnotes"><li class="footnote" id="footnote_1" data-footnote-number="1"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_1" href="#footLink--upper_1" data-footnote-number="1">1</a></li><li class="footnoteContent">Here’s the entirety of the tourism section from the <a href="https://en.wikipedia.org/wiki/Loughborough#Tourism">Wikipedia article</a> on Loughborough: ”In 1841, Loughborough was the destination for the first package tour, organised by Thomas Cook for a temperance group from Leicester.” That’s about as good as it gets in Loughborough</li></ul></li><li class="footnote" id="footnote_2" data-footnote-number="2"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_2" href="#footLink--upper_2" data-footnote-number="2">2</a></li><li class="footnoteContent">Rough translation from the origional Irish: ‘Not even a fucking blush!’.</li></ul></li></ul>
-        </div>
-    
-        
     </div>
-    <div class="social-buttons-container container-small">
-        
+
+    <div class="footnote-collection" data-footnote-collection="1">
+        <ul class="footnotes"><li class="footnote" id="footnote_1" data-footnote-number="1"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_1" href="#footLink--upper_1" data-footnote-number="1">1</a></li><li class="footnoteContent">Here’s the entirety of the tourism section from the <a href="https://en.wikipedia.org/wiki/Loughborough#Tourism">Wikipedia article</a> on Loughborough: ”In 1841, Loughborough was the destination for the first package tour, organised by Thomas Cook for a temperance group from Leicester.” That’s about as good as it gets in Loughborough</li></ul></li><li class="footnote" id="footnote_2" data-footnote-number="2"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_2" href="#footLink--upper_2" data-footnote-number="2">2</a></li><li class="footnoteContent">Rough translation from the origional Irish: ‘Not even a fucking blush!’.</li></ul></li></ul>
+    </div>
+
+    
+</div>
+<div class="social-buttons-container container-small">
+    
 
 
 <div class="socialButtons">
@@ -303,9 +296,9 @@
 
 
             
-    </div>
-    <div class="keep-reading-container container-small">
-        <ol id="keep-reading" class="story-menu">
+</div>
+<div class="keep-reading-container container-small">
+    <ol id="keep-reading" class="story-menu">
     
     <li class="story-quaternary"><article class="story-summary summary-small" data-slug="The Demonist">
 	<a href="/content/2015/10/10/the-demonist.html">
@@ -398,16 +391,17 @@
 </article></li>
     
 </ol>        
-    </div>
-    <div class="container-small">
-        <div id="footer-nav" class="footer-nav">
+</div>
+ 
+        <div class="container-small">
+            <div id="footer-nav" class="footer-nav">
     <a id="footer-nav-home" href="/">home</a>
     <a href="/">stories</a>
     <a href="/blog">blog</a>
     <a href="/contact">contact</a>
     <a href="/search">search</a>
 </div>
-        <footer>
+            <footer>
     <div class="footer-meta">
         
             <h1>Welcome Travelers, To Dublin</h1>            
@@ -425,117 +419,102 @@
         <span class="pw__vs">vs:</span><span class="pw__sm">sm:</span><span class="pw__md">md:</span><span class="pw__lg">lg:</span><span>107</span>
     </div>
 </footer>
-<script>
-    var currentTime = new Date();
-    document.getElementsByClassName('copyright-date')[0].innerHTML = currentTime.getFullYear();
-</script>
-    </div>
-</div>
- 
+        </div>
     </div>
     <script>
-    var getCoverImage = function () {
-        var img;
-        var resizeId;
+        var getCoverImage = function () {
+            var img;
+            var resizeId;
 
-        // Quit early if older browser (e.g. IE8).
-        if (!('addEventListener' in window)) {
-            return;
+            // Quit early if older browser (e.g. IE8).
+            if (!('addEventListener' in window)) {
+                return;
+            }
+
+            var init = function(){
+                img = new Image();
+
+                var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+                img.src = backgroundImage.replace(/['"]+/g, '');
+                // Assign an onLoad handler to the dummy image *before* assigning the src
+                img.onload = function () {
+                    var $coverImageInitial = document.getElementsByClassName('cover-image-initial')[0];
+                    var $coverImageFinal = document.getElementsByClassName('cover-image-final')[0];
+
+                    $coverImageFinal.style.backgroundImage = 'url(' + img.src + ')';
+                    //$coverImageInitial.style.display = "none";
+                };
+            }
+
+            init();
+            window.addEventListener('resize', function(){
+                clearTimeout(resizeId);
+                resizeId = setTimeout(function(){
+                    init();
+                }, 150);
+            }, true);
         }
-
-        var init = function(){
-            img = new Image();
-
-            var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
-            img.src = backgroundImage.replace(/['"]+/g, '');
-            // Assign an onLoad handler to the dummy image *before* assigning the src
-            img.onload = function () {
-                var $coverImageInitial = document.getElementsByClassName('cover-image-initial')[0];
-                var $coverImageFinal = document.getElementsByClassName('cover-image-final')[0];
-
-                $coverImageFinal.style.backgroundImage = 'url(' + img.src + ')';
-                //$coverImageInitial.style.display = "none";
-            };
-        }
-
-        init();
-        window.addEventListener('resize', function(){
-            clearTimeout(resizeId);
-            resizeId = setTimeout(function(){
-                init();
-            }, 150);
-        }, true);
-    }
-    getCoverImage();
-</script>
-
-<!-- inject:js -->
+        getCoverImage();
+    </script>
+    
+    <link rel="stylesheet" href="https://zacharybell.net//css/story.css"> 
+    
+    <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
 
 <script>
-    // we need the main css before we can render most of the page. 
-    ZnetUI.lazyLoadCSS('https://zacharybell.net//css/story.css', {}, function(){
-
-        // we need the font to load before we can set the title or the footnotes
-        ZnetUI.fontWatch('Lora', {}, function(){
-
-            // once we have the font, we can show the body content
-            ZnetUI.curtain('body-curtain');
-
-            // size the title. 
-            ZnetUI.titleFill(
-                'cover-title', 
-                {
-                    paddingX: 10,
-                    yNudgeDown: 0,
-                    googleVHFix: true
-                },
-                function(){
-                    // reveal the title. 
-                    ZnetUI.curtain('title-curtain');
-                }
-            );
-
-            // do the footnotes (which depend on the font being loaded or they will be a bit
-            // misaligned)
-            ZnetUI.footnotes(
-                'footnote-collection',
-                {
-                    nudge: -11
-                }
-            )
-        });
-    });
-    ZnetUI.titleFill(
-        'story-title',
-        {
-            paddingX: 10,
-            titleAlignment: "center",
-            yNudgeDown: 0
-        }
-    );
-    ZnetUI.nav('navbar', 
-        {   
-            minScrollDown: window.innerHeight, 
-            coverPageHome:'full-screen-home',
-            tabNav: 'tab-nav'
-        }
-    );
-    ZnetUI.TOC(
-        {
-            navHeight: 60
-        }
-    );
-    ZnetUI.lazyLoadImages(
-        'lazy-image', 
-        {
-            buffer: 500
-        }
-    );
-    ZnetUI.lazyLoadCSS('https://zacharybell.net//css/fontello.css');
-    
+    var currentTime = new Date();
+    $('.copyright-date').html(currentTime.getFullYear());
 </script>
+
+    <script>
+        ZnetUI.nav('navbar', 
+            {   
+                minScrollDown: $(window).height(), 
+                coverPageHome:'full-screen-home',
+                tabNav: 'tab-nav'
+            }
+        );
+        ZnetUI.titleFill(
+            'cover-title', 
+            {
+                paddingX: 10,
+                yNudgeDown: 100
+            }
+        );
+        ZnetUI.titleFill(
+            'story-title',
+            {
+                paddingX: 10,
+                titleAlignment: "center",
+                yNudgeDown: 0
+            }
+        );
+        ZnetUI.TOC(
+            {
+                navHeight: 60
+            }
+        );
+        ZnetUI.LazyLoadImages(
+            'lazy-image', 
+            {
+                buffer: 500
+            }
+        );
+        ZnetUI.LazyLoadCSS('https://zacharybell.net//css/fontello.css');
+        ZnetUI.Footnotes(
+            'footnote-collection',
+            {
+                nudge: -11
+            },
+            function(){
+                console.log("callback from footnotes");
+            }
+        )
+        //$(".footnote-collection").znetFootnotes({ nudge: -11 });
+        
+    </script>
 </body>
 
 </html>

@@ -53,8 +53,7 @@ html {
 body {
   font-size: 10px;
   margin: 0;
-  width: 100%;
-  color: #333333; }
+  width: 100%; }
 
 a {
   color: #FF2200;
@@ -243,7 +242,7 @@ input:focus, select:focus, textarea:focus {
     text-transform: uppercase;
     padding: .5em;
     margin: .5em;
-    color: #FF2200; }
+    color: #808080; }
     .navbar span.nav-button a:hover {
       color: #545454; }
 
@@ -358,30 +357,28 @@ body.js .ss-form-container {
 
   .blog-summary h2 {
     font-size: 25px; } }
-.search-banner {
-  margin-top: 60px;
-  text-align: center;
-  font-family: "Open Sans", "Tahoma", "Verdana", sans-serif;
-  text-transform: uppercase;
-  font-size: 30px; }
-
 .main-search-form {
   position: relative;
   padding: 0;
-  margin: 20px auto 0 auto;
-  max-width: 500px;
-  border: 1px solid #808080;
-  overflow: hidden; }
+  margin: 60px auto 0 auto;
+  max-width: 500px; }
+  .main-search-form button {
+    background-color: #FF2200;
+    border: none;
+    padding: 10px;
+    text-transform: uppercase;
+    float: right;
+    color: white;
+    font-family: "Karla", "Arial", sans-serif; }
   .main-search-form form {
     font-size: 16px;
     display: flex;
-    width: 80%;
-    float: left; }
+    border-bottom: 2px solid #808080; }
     .main-search-form form input {
       flex: 0 0 80%;
       padding: 5px 30px 5px 5px;
       border: none;
-      width: calc(100% - 100px);
+      width: calc(100% - 14px);
       font-size: 1.1em; }
       .main-search-form form input:focus {
         outline: none; }
@@ -389,20 +386,10 @@ body.js .ss-form-container {
       flex: 0 0 20%;
       position: absolute;
       bottom: 6px;
-      right: 50px;
+      right: 6px;
       color: #808080;
       font-family: "Open Sans", "Tahoma", "Verdana", sans-serif;
-      display: none;
-      cursor: pointer; }
-  .main-search-form button {
-    background-color: #FF2200;
-    border: none;
-    padding: 8px;
-    text-transform: uppercase;
-    float: right;
-    color: white;
-    font-family: "Karla", "Arial", sans-serif;
-    width: 38px; }
+      display: none; }
 
 .search-header {
   text-align: center;

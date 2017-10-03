@@ -7,12 +7,7 @@
     document.documentElement.classList.remove("no-js");
     document.documentElement.classList.add("js");
 </script>
-<style>
-    .body-curtain, .title-curtain {
-        opacity: 0;
-        transition: opacity .05s linear;
-    }
-</style>
+
 <meta charset="utf-8" />
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,7 +21,14 @@
 <script>
 
 </script>
-        <link rel="stylesheet" href="https://zacharybell.net//css/home.css">
+        <link rel="stylesheet" href="https://zacharybell.net//css/home.css"> <!-- inject:js -->
+<script src="/javascript-combined/znet.js"></script>
+<!-- endinject -->
+
+<script>
+    var currentTime = new Date();
+    $('.copyright-date').html(currentTime.getFullYear());
+</script>
     </head>
     <body>
         <div class="main-container" id="page">
@@ -244,17 +246,18 @@
         </p>
         <span class="pw__vs">vs:</span><span class="pw__sm">sm:</span><span class="pw__md">md:</span><span class="pw__lg">lg:</span><span>107</span>
     </div>
-</footer>
-<script>
-    var currentTime = new Date();
-    document.getElementsByClassName('copyright-date')[0].innerHTML = currentTime.getFullYear();
-</script>                    
+</footer>                    
             </div>
         </div>
 
         <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
+
+<script>
+    var currentTime = new Date();
+    $('.copyright-date').html(currentTime.getFullYear());
+</script>
 
         <script src="/external_components/elasticlunr.js-master/elasticlunr.min.js"></script>
         <script>
@@ -264,13 +267,13 @@
                     paddingX: 10,
                 }
             );
-            ZnetUI.lazyLoadImages(
+            ZnetUI.LazyLoadImages(
                 'lazy-image', 
                 {
                     buffer: 500
                 }
             );
-            ZnetUI.lazyLoadCSS(
+            ZnetUI.LazyLoadCSS(
                 'https://zacharybell.net//css/fontello.css'
             );
         </script>

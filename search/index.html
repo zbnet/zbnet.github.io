@@ -5,12 +5,7 @@
     document.documentElement.classList.remove("no-js");
     document.documentElement.classList.add("js");
 </script>
-<style>
-    .body-curtain, .title-curtain {
-        opacity: 0;
-        transition: opacity .05s linear;
-    }
-</style>
+
 <meta charset="utf-8" />
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,6 +22,11 @@
         <link rel="stylesheet" href="https://zacharybell.net//css/search.css"> <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
+
+<script>
+    var currentTime = new Date();
+    $('.copyright-date').html(currentTime.getFullYear());
+</script>
     </head>
     <body>
         <div class="navbar sticky">
@@ -62,47 +62,64 @@
 
 </div>
 
-        <h1 class="search-banner">search</h1>
-<div class="container-medium">
-    <div class="main-search-form">
-        <form onsubmit="return false;">
-            <input id="search-input" autocomplete="off" type="text"><span id="clear-button" class="clear-input">X</span>
-        </form>
-        <button type="submit" form="" value="Go!">Go!</button>        
-    </div>
-    <div id='log'></div>
-    <div class="search-container">
-        <div id="no-results" class="no-results"></div>
-        <div id="story-results" class="story-results"></div>
-        <div id="blog-results" class="blog-results"></div>
+        <div class="blog">
+    <div class="container-small">
+        <div class="main-search-form">
+            <form onsubmit="return false;">
+                <input id="search-input" autocomplete="off" type="text"><span id="clear-button" class="clear-input">X</span>
+            </form>
+            <button type="submit" form="" value="Go!">Search</button>
+        </div>
+        <div id='log'></div>
+        <div class="search-container">
+            <div id="no-results" class="no-results"></div>
+            <div id="story-results" class="story-results"></div>
+            <div id="blog-results" class="blog-results"></div>
+        </div>
     </div>
 </div>
 
-        
+    <div class="container-small">
         <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
+
+<script>
+    var currentTime = new Date();
+    $('.copyright-date').html(currentTime.getFullYear());
+</script>
+    </div>
     
-        <script src="/external_components/elasticlunr.js-master/elasticlunr.js"></script>
-        <script>
+    <script src="/external_components/elasticlunr.js-master/elasticlunr.js"></script>
+    <script>
 
-            document.getElementById('search-input').focus();
+        $('#search-input').focus();
 
-            ZnetUI.search(
-                {
-                    imageURL: 'https://zacharybell.net/'
-                },
-                function(){
-                    ZnetUI.titleFill(
-                        'story-title',
-                        {
-                            paddingX: 10,
-                            titleAlignment: "center",
-                            yNudgeDown: 0
-                        }
-                    );
-                }
-            );
-        </script>
+        // $.znetSearch('https://zacharybell.net/', {'callback': function(){
+        //     $(".story-title").znetTitleFill({
+        //         paddingX:    0,
+        //         titleAlignment: "center",
+        //         yNudgeDown:  0
+        //     }, function(){
+        //         $('body').css('opacity', '1');
+        //     });
+        // }});
+
+        ZnetUI.Search(
+            {
+                imageURL: 'https://zacharybell.net/'
+            },
+            function(){
+                ZnetUI.titleFill(
+                    'story-title',
+                    {
+                        paddingX: 10,
+                        titleAlignment: "center",
+                        yNudgeDown: 0
+                    }
+                );
+            }
+        );
+    </script>
     </body>
 </html>
