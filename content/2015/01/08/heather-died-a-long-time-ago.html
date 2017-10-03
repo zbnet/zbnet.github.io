@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js">
 
 <head>
     <!-- bare minimum css to render above the fold content.-->
@@ -78,7 +78,6 @@
             display: none;
         }
     </style>
-
     <script>
     document.documentElement.classList.remove("no-js");
     document.documentElement.classList.add("js");
@@ -108,9 +107,9 @@
 
 <body>
     <div class="main-container">
-        <div id="navbar" class="navbar sticky nav-hide">
+        <div class="navbar sticky nav-hide">
 	<div class="nav-wrapper">
-		<div class="container-medium main-nav">
+		<div class="container main-nav">
 			<span>
 				<a href="/" class="site-logo">
 					ZB
@@ -140,26 +139,30 @@
 	</div>
 </div>
 
-<a href="/" id="full-screen-home" class="full-screen-home nav-hide">
+<a href="/" class="full-screen-home nav-hide">
 	<span href="/" class="site-logo">ZB</span>
 	<span>home</span>
 </a>
-<a href="#footer-nav-home" id="tab-nav" class="tab-nav">
+<a href="#footer-nav" class="tab-nav">
 	<span>skip to navigation</span>
 </a>
- 
-        <div class="cover-page">
+ <div class="cover-page">
     <div class="cover-image-initial"></div>
     <div class="cover-image-final"></div>  
-    <h1 id="cover-title" class="cover-title">Heather Died A Long Time Ago</h1>
+    <h1 class="cover-title">Heather Died A Long Time Ago</h1>
 </div>
 
-
-
-<div class="story-container container-small">
+<div class="container">
     
-    <div id="story" class="story" data-story-number="1">
-        <p>Chad was already on the hill when Millie arrived.  She saw him up there, hands in his pockets, staring down at the ground.  She got out of her car and opened an umbrella against the drizzle.  </p>
+    <div class="row">
+        <h2 class="teaser">"I just played along to get laid."</h2>
+        
+        
+    </div>
+    <div class="row story-wrapper">
+        
+        <div class="story col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8" data-story-number="1">
+            <p>Chad was already on the hill when Millie arrived.  She saw him up there, hands in his pockets, staring down at the ground.  She got out of her car and opened an umbrella against the drizzle.  </p>
 
 <p>“Hello,” Chad said as Millie came up behind him.  </p>
 
@@ -287,34 +290,34 @@
 
 <p>“Yeah,” he said.</p>
 
-    </div>
+        </div>
 
-    <div class="footnote-collection" data-footnote-collection="1">
-        <ul class="footnotes"></ul>
-    </div>
+        <div class="footnoteCollection col-xs-12 col-ms-2 col-sm-offset-2 col-sm-8" data-footnote-collection="1">
+            <ul class="footnotes"></ul>
+        </div>
 
-    
+        
+    </div>
 </div>
-<div class="social-buttons-container container-small">
-    
+
 
 
 <div class="socialButtons">
 	<span class="nag">i don't need your approval</span>
     
-        <a aria-label="twitter button" onclick="window.open('http://twitter.com/share?text=' + encodeURIComponent('Heather Died A Long Time Ago') + ' %7C A short story by Zachary Bell %7C via @zachary_bell &url=https://zacharybell.net//content/2015/01/08/heather-died-a-long-time-ago.html', 'windowOpenTab', 'width=600,height=450,left=100, top=100'); return false;" href="">
+        <a onclick="window.open('http://twitter.com/share?text=' + encodeURIComponent('Heather Died A Long Time Ago') + ' %7C A short story by Zachary Bell %7C via @zachary_bell &url=https://zacharybell.net//content/2015/01/08/heather-died-a-long-time-ago.html', 'windowOpenTab', 'width=600,height=450,left=100, top=100'); return false;" href="">
         	<span class="icon-twitter"> </span>
         </a>
         
-    <a  aria-label="reddit button" onclick="window.open('http://reddit.com/submit?url=https://zacharybell.net//content/2015/01/08/heather-died-a-long-time-ago.html&title=' + encodeURIComponent('Heather Died A Long Time Ago'), 'windowOpenTab', 'width=1000,height=600,left=100, top=100'); return false;" href="">
+    <a  onclick="window.open('http://reddit.com/submit?url=https://zacharybell.net//content/2015/01/08/heather-died-a-long-time-ago.html&title=' + encodeURIComponent('Heather Died A Long Time Ago'), 'windowOpenTab', 'width=1000,height=600,left=100, top=100'); return false;" href="">
     	<span class="icon-reddit"> </span>
     </a>
-    <a aria-label="facebook button" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https://zacharybell.net//content/2015/01/08/heather-died-a-long-time-ago.html&title=' + encodeURIComponent('Heather Died A Long Time Ago'), 'windowOpenTab', 'width=1000,height=600,left=100, top=100'); return false;" href="">
+    <a  onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https://zacharybell.net//content/2015/01/08/heather-died-a-long-time-ago.html&title=' + encodeURIComponent('Heather Died A Long Time Ago'), 'windowOpenTab', 'width=1000,height=600,left=100, top=100'); return false;" href="">
         <span class="icon-facebook"> </span>
     </a>
 
     
-        <a aria-label="email button" onclick="window.location.href = 'mailto:?subject=' + encodeURIComponent('Heather Died A Long Time Ago') + '%3A%20A%20short%20story%20by%20Zachary%20Bell&body=' + encodeURIComponent('No one can tell you how to mourn.') + '%0A%0A https://zacharybell.net//content/2015/01/08/heather-died-a-long-time-ago.html'; return false;" href="">
+        <a  onclick="window.location.href = 'mailto:?subject=' + encodeURIComponent('Heather Died A Long Time Ago') + '%3A%20A%20short%20story%20by%20Zachary%20Bell&body=' + encodeURIComponent('No one can tell you how to mourn.') + '%0A%0A https://zacharybell.net//content/2015/01/08/heather-died-a-long-time-ago.html'; return false;" href="">
         	<span class="icon-mail"> </span>
         </a>
     
@@ -323,15 +326,15 @@
 
 
 
-            
-</div>
-<div class="keep-reading-container container-small">
-    <ol id="keep-reading" class="story-menu">
     
-    <li class="story-quaternary"><article class="story-summary summary-small" data-slug="The Demonist">
+
+<div class="keep-reading-container">
+    <ol class="story-menu">
+        
+        <li class="story-quaternary"><article class="story-summary summary-small" data-slug="The Demonist">
 	<a href="/content/2015/10/10/the-demonist.html">
 		<div class="cover-wrapper">
-			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/whosblowingwhom.jpg">
+			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/whosblowingwhom.jpg">
 				<h3 class="story-title">The Demonist</h3>
 			</div>
 		</div>
@@ -342,11 +345,11 @@
         </div>
 	</a>
 </article></li>
-    
-    <li class="story-quaternary"><article class="story-summary summary-small" data-slug="A Last Minute Truth">
+        
+        <li class="story-quaternary"><article class="story-summary summary-small" data-slug="A Last Minute Truth">
 	<a href="/content/2015/10/08/a-last-minute-truth.html">
 		<div class="cover-wrapper">
-			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/45bullet-closer.jpg">
+			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/45bullet-closer.jpg">
 				<h3 class="story-title">A Last Minute Truth</h3>
 			</div>
 		</div>
@@ -357,11 +360,11 @@
         </div>
 	</a>
 </article></li>
-    
-    <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Taking Pictures of Cats Having Sex In Istanbul">
+        
+        <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Taking Pictures of Cats Having Sex In Istanbul">
 	<a href="/content/2015/09/21/taking-pictures-of-cats-having-sex-in-istanbul.html">
 		<div class="cover-wrapper">
-			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/mosque.jpg">
+			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/mosque.jpg">
 				<h3 class="story-title">Taking Pictures of Cats Having Sex In Istanbul</h3>
 			</div>
 		</div>
@@ -372,11 +375,11 @@
         </div>
 	</a>
 </article></li>
-    
-    <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Welcome Travelers, To Dublin">
+        
+        <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Welcome Travelers, To Dublin">
 	<a href="/content/2015/09/18/welcome-travelers-to-dublin.html">
 		<div class="cover-wrapper">
-			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/double-decker-bus.jpg">
+			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/double-decker-bus.jpg">
 				<h3 class="story-title">Welcome Travelers, To Dublin</h3>
 			</div>
 		</div>
@@ -387,11 +390,11 @@
         </div>
 	</a>
 </article></li>
-    
-    <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Alfreds For Breakfast">
+        
+        <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Alfreds For Breakfast">
 	<a href="/content/2015/08/27/alfreds-for-breakfast.html">
 		<div class="cover-wrapper">
-			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/wegener.jpg">
+			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/wegener.jpg">
 				<h3 class="story-title">Alfreds For Breakfast</h3>
 			</div>
 		</div>
@@ -402,11 +405,11 @@
         </div>
 	</a>
 </article></li>
-    
-    <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Juney's Coming For A Visit">
+        
+        <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Juney's Coming For A Visit">
 	<a href="/content/2015/08/21/juneys-coming-for-a-visit.html">
 		<div class="cover-wrapper">
-			<div class="cover-image lazy-image" data-background="https://zacharybell.net//images/thumbnail/chicken.jpg">
+			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/chicken.jpg">
 				<h3 class="story-title">Juney's Coming For A Visit</h3>
 			</div>
 		</div>
@@ -417,39 +420,52 @@
         </div>
 	</a>
 </article></li>
-    
-</ol>        
-</div>
- 
-        <div class="container-small">
-            <div id="footer-nav" class="footer-nav">
-    <a id="footer-nav-home" href="/">home</a>
-    <a href="/">stories</a>
-    <a href="/blog">blog</a>
-    <a href="/contact">contact</a>
-    <a href="/search">search</a>
-</div>
-            <footer>
-    <div class="footer-meta">
         
-            <h1>Heather Died A Long Time Ago</h1>            
-        
-        <p>
-            Copyright © <span class="copyright-date">2017</span> Zachary Bell - All Rights Reserved. Except where otherwise noted,
-            contents of this site including text and media may not be reproduced without prior
-            written consent.
-        </p>
-        <p>
-            
-            Banner image courtesy of <a href="https://www.flickr.com/photos/usfwsendsp/5104977481/in/photolist-8M7kX8-8Maq8Y-824zso-8M7kMt-8M7m6F-3vRemR-nFUw-bGa34M-8MamVJ-rV84p-7JAnZQ-7JAo4m-9HatVc-7JAnAW-5QSJcK-7veUwx-cCQEUw-cCQFtJ-8M7iBc-cCQG41-cCQDpY-9U78gu-cCQF1W-cCQG2b-cpZGjq-8Mapew-6tjvZw-9S5wp-6kaq7H-fbFwQq-brzJYn-cCQEQS-bceVyH-cCQF6A-cCQEZq-fbFxhy-9BZCLP-9HdnXd-7vJpPC-fbrgw4-5B77sc-8Map9Y-fbri9F-7JwscM-7xiU9C" target="_blank" rel="noopener">USFWS Endangered Species</a>
-            
-        </p>
-        <span class="pw__vs">vs:</span><span class="pw__sm">sm:</span><span class="pw__md">md:</span><span class="pw__lg">lg:</span><span>107</span>
+    </ol>
+</div>
+ <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+	<footer class="row">
+		<div id="footer-nav" class="footer-nav">
+			<a href="/">home</a>
+			<a href="/">stories</a>
+			<a href="/blog">blog</a>
+			<a href="/contact">contact</a>
+			<a href="/search">search</a>
+		</div>
+		<div class="footer-meta">
+			<h1>Heather Died A Long Time Ago</h1>
+			<p>
+				Copyright © <span class="copyright-date">2017</span> Zachary Bell - All Rights Reserved. Except where otherwise noted,
+				contents of this site including text and media may not be reproduced without prior
+				written consent.
+			</p>
+			<p>
+				
+				Banner image courtesy of <a href="https://www.flickr.com/photos/usfwsendsp/5104977481/in/photolist-8M7kX8-8Maq8Y-824zso-8M7kMt-8M7m6F-3vRemR-nFUw-bGa34M-8MamVJ-rV84p-7JAnZQ-7JAo4m-9HatVc-7JAnAW-5QSJcK-7veUwx-cCQEUw-cCQFtJ-8M7iBc-cCQG41-cCQDpY-9U78gu-cCQF1W-cCQG2b-cpZGjq-8Mapew-6tjvZw-9S5wp-6kaq7H-fbFwQq-brzJYn-cCQEQS-bceVyH-cCQF6A-cCQEZq-fbFxhy-9BZCLP-9HdnXd-7vJpPC-fbrgw4-5B77sc-8Map9Y-fbri9F-7JwscM-7xiU9C" target="_blank">USFWS Endangered Species</a>
+				
+			</p>
+			<span class="pw__vs">vs:</span><span class="pw__sm">sm:</span><span class="pw__md">md:</span><span class="pw__lg">lg:</span><span>107</span>
+		</div>
+	</footer>
+</div>
     </div>
-</footer>
-        </div>
-    </div>
+    <link rel="stylesheet" href="https://zacharybell.net//css/main.css"> <!-- inject:js -->
+<script src="/javascript-combined/znet.js"></script>
+<!-- endinject -->
+
+<script>
+    var currentTime = new Date();
+    $('.copyright-date').html(currentTime.getFullYear());
+</script>
     <script>
+        // need to know screen size for a variety of things
+        window.SCREEN_MIN = 300;
+        window.SCREEN_XS = 480;
+        window.SCREEN_MS = 530;
+        window.SCREEN_SM = 768;
+        window.SCREEN_MD = 992;
+        window.SCREEN_LG = 1200;
+
         var getCoverImage = function () {
             var img;
             var resizeId;
@@ -473,74 +489,88 @@
                     //$coverImageInitial.style.display = "none";
                 };
             }
-
+            
             init();
-            window.addEventListener('resize', function(){
+
+            $(window).resize(function() {
                 clearTimeout(resizeId);
                 resizeId = setTimeout(function(){
                     init();
                 }, 150);
-            }, true);
+            });
         }
+
         getCoverImage();
-    </script>
-    
-    <link rel="stylesheet" href="https://zacharybell.net//css/story.css"> 
-    
-    <!-- inject:js -->
-<script src="/javascript-combined/znet.js"></script>
-<!-- endinject -->
 
-<script>
-    var currentTime = new Date();
-    $('.copyright-date').html(currentTime.getFullYear());
-</script>
 
-    <script>
-        ZnetUI.nav('navbar', 
-            {   
-                minScrollDown: $(window).height(), 
-                coverPageHome:'full-screen-home',
-                tabNav: 'tab-nav'
-            }
+
+        // hide the full navbar until scroll past cover image. 
+        $('.navbar').znetHideNav({ minScrollDown: $(window).height(), storyMode: true }, function(){
+            $('.navbar').show();
+        });
+
+        $(".cover-title").znetTitleFill({
+            paddingX: 10,
+            titleAlignment: "center",
+            yNudgeDown: 100
+        }, function () {
+        }
         );
-        ZnetUI.titleFill(
-            'cover-title', 
-            {
-                paddingX: 10,
-                yNudgeDown: 100
-            }
-        );
-        ZnetUI.titleFill(
-            'story-title',
-            {
+
+        // things that can wait until the page is at least displaying something.
+            // do the titles for the "keep reading" images. 
+            $(".story-title").znetTitleFill({
                 paddingX: 10,
                 titleAlignment: "center",
                 yNudgeDown: 0
-            }
-        );
-        ZnetUI.TOC(
-            {
-                navHeight: 60
-            }
-        );
-        ZnetUI.LazyLoadImages(
-            'lazy-image', 
-            {
-                buffer: 500
-            }
-        );
-        ZnetUI.LazyLoadCSS('https://zacharybell.net//css/fontello.css');
-        ZnetUI.Footnotes(
-            'footnote-collection',
-            {
-                nudge: -11
-            },
-            function(){
-                console.log("callback from footnotes");
-            }
-        )
-        //$(".footnote-collection").znetFootnotes({ nudge: -11 });
+            }, function () {
+            });
+
+            // have to wait for the whole page to load before we can set up
+            // the footnote positions, as footnote heights are set relative
+            // to the height of the page, which we won't know until we have
+            // the cover, the toc and te teasers all set.
+            $(".footnoteCollection").znetFootnotes({ nudge: -4 });
+
+            $('.teaser').znetFirstPage({ extraPadding: 30 });
+            $('.toc').znetFirstPage({ extraPadding: 30 });
+            $('.topLink').click(function () {
+                var screenHeight = $(window).height();
+                var tocHeight = $('.toc').height();
+                var centerTocMargin;
+                var scrollToHeight;
+
+                // block the navbar, so it doesn't pop up
+                $('body').addClass('autoscrolling');
+
+                // height of the upper toc link
+                scrollToHeight = $($.attr(this, 'href')).offset().top;
+
+                // if possible, center the TOC in the window...
+                if (tocHeight < screenHeight) {
+                    centerTocMargin = (screenHeight - tocHeight) / 2;
+                    scrollToHeight = scrollToHeight - centerTocMargin;
+                }
+
+                $('html, body').animate({
+                    scrollTop: scrollToHeight
+                }, 500);
+                return false;
+            });
+
+            // the reverse of the above.
+            $('.toc a').click(function () {
+                var position = $($.attr(this, 'href')).offset().top - $('.navbar').height() - 30;
+                $('html, body').animate({
+                    scrollTop: position
+                }, 500);
+                return false;
+            });
+
+
+            // these images appear at the very bottom of the story, so they
+            // can load last.
+            $('.story-summary').znetLazyLoadImages({ 'buffer': 1000 });
         
     </script>
 </body>
