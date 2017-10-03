@@ -3,88 +3,93 @@
 
 <head>
     <!-- bare minimum css to render above the fold content.-->
+    
     <style>
-        body {
-            margin: 0;
-            width: 100%;
-        }
+    body {
+        margin: 0;
+        width: 100%;
+    }
 
-        .cover-page {
-            position: relative;
-            height: 100vh;            
-        }
-        .cover-image-initial, .cover-image-final {
-            background-size: cover;
-            -moz-background-size: cover;
-            /* Firefox 3.6 */
-            background-position: center;
-            /* Internet Explorer 7/8 */
+    .cover-page {
+        position: relative;
+        height: 100vh;            
+    }
+    .cover-image-initial, .cover-image-final {
+        background-size: cover;
+        -moz-background-size: cover;
+        /* Firefox 3.6 */
+        background-position: center;
+        /* Internet Explorer 7/8 */
+    }
+    .cover-image-initial {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+    .cover-image-final {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    .cover-image-intial{
+        display: none;
+    }
+    .loading {
+        filter:blur(20px);
+    }
+
+    @media screen and (orientation:portrait) {
+        body:after{
+            content: 'https://zacharybell.net//images/mobile_portrait/whosblowingwhom.jpg';
+            display: none;
         }
         .cover-image-initial {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 0;
+            background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoABcDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAQDAgX/xAAlEAACAgICAQMFAQAAAAAAAAABAgMRACEEEjFBQlEFFCIygdH/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD0izSbKFWrW79c7ZpiAVKsNaGr/wBzcTRMQAysfGt7yTmTmOSlIQk12PxWYKkOpk6h1ur6g7xkvC40YrkNbO9spY2Vv0vGBa8Xo0v7wuQPYtEHOeb9PjmuUu4ZASN2Ac143cyHszUBX5RhbPyDms/hUHvav55OKY8ED7WO0KnZIIreMprWMkj46EToTD1ULQPfsBlE0ipOvY+EJAAs+RjGQI5w8gQgqxXtjGMi/9k=");
         }
-        .cover-image-final {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1;
-        }
-        .cover-image-intial{
+    }
+
+    @media screen and (orientation:landscape) and (max-width: 767px) {
+        body:after{
+            content: 'https://zacharybell.net//images/medium/whosblowingwhom.jpg';
             display: none;
         }
-        .loading {
-            filter:blur(20px);
+        .cover-image-initial {
+            background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAIDAQT/xAApEAABBAECBQIHAAAAAAAAAAABAAIDESEEExIxQaHwUWEFIkJxgZHR/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Aa4zad7IonPLTZwLXt+HOmk0oMzyHWRyAwrhaN1rgKrz0XZ8ynF486LKtS3mdx3ZQ6Nzvrse4WBqsD9AfxdjaNwWOqCnPLX8Dbe44q8D8oqMAGqEjSSSDxAlEEQOZvNoiz37KtQQJiCeg85IiDL5bOcjz0VMNPZRHPFH3+yIg3dIGvfi6q0REH//Z");
         }
-
-        @media screen and (orientation:portrait) {
-            body:after{
-                content: 'https://zacharybell.net//images/mobile_portrait/whosblowingwhom.jpg';
-                display: none;
-            }
-            .cover-image-initial {
-                background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoABcDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAQDAgX/xAAlEAACAgICAQMFAQAAAAAAAAABAgMRACEEEjFBQlEFFCIygdH/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD0izSbKFWrW79c7ZpiAVKsNaGr/wBzcTRMQAysfGt7yTmTmOSlIQk12PxWYKkOpk6h1ur6g7xkvC40YrkNbO9spY2Vv0vGBa8Xo0v7wuQPYtEHOeb9PjmuUu4ZASN2Ac143cyHszUBX5RhbPyDms/hUHvav55OKY8ED7WO0KnZIIreMprWMkj46EToTD1ULQPfsBlE0ipOvY+EJAAs+RjGQI5w8gQgqxXtjGMi/9k=");
-            }
-        }
-
-        @media screen and (orientation:landscape) and (max-width: 767px) {
-            body:after{
-                content: 'https://zacharybell.net//images/medium/whosblowingwhom.jpg';
-                display: none;
-            }
-            .cover-image-initial {
-                background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAIDAQT/xAApEAABBAECBQIHAAAAAAAAAAABAAIDESEEExIxQaHwUWEFIkJxgZHR/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Aa4zad7IonPLTZwLXt+HOmk0oMzyHWRyAwrhaN1rgKrz0XZ8ynF486LKtS3mdx3ZQ6Nzvrse4WBqsD9AfxdjaNwWOqCnPLX8Dbe44q8D8oqMAGqEjSSSDxAlEEQOZvNoiz37KtQQJiCeg85IiDL5bOcjz0VMNPZRHPFH3+yIg3dIGvfi6q0REH//Z");
-            }
-        }
-        @media screen and (orientation:landscape) and (min-width: 768px) {
-            body:after{
-                content: 'https://zacharybell.net//images/large/whosblowingwhom.jpg';
-                display: none;
-            }
-            .cover-image-initial {
-                background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAIDAQT/xAApEAABBAECBQIHAAAAAAAAAAABAAIDESEEExIxQaHwUWEFIkJxgZHR/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Aa4zad7IonPLTZwLXt+HOmk0oMzyHWRyAwrhaN1rgKrz0XZ8ynF486LKtS3mdx3ZQ6Nzvrse4WBqsD9AfxdjaNwWOqCnPLX8Dbe44q8D8oqMAGqEjSSSDxAlEEQOZvNoiz37KtQQJiCeg85IiDL5bOcjz0VMNPZRHPFH3+yIg3dIGvfi6q0REH//Z");
-            }
-        }
-
-        .navbar,
-        .full-screen-home,
-        .tab-nav,
-        .cover-page h1 {
+    }
+    @media screen and (orientation:landscape) and (min-width: 768px) {
+        body:after{
+            content: 'https://zacharybell.net//images/large/whosblowingwhom.jpg';
             display: none;
         }
-    </style>
+        .cover-image-initial {
+            background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAIDAQT/xAApEAABBAECBQIHAAAAAAAAAAABAAIDESEEExIxQaHwUWEFIkJxgZHR/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Aa4zad7IonPLTZwLXt+HOmk0oMzyHWRyAwrhaN1rgKrz0XZ8ynF486LKtS3mdx3ZQ6Nzvrse4WBqsD9AfxdjaNwWOqCnPLX8Dbe44q8D8oqMAGqEjSSSDxAlEEQOZvNoiz37KtQQJiCeg85IiDL5bOcjz0VMNPZRHPFH3+yIg3dIGvfi6q0REH//Z");
+        }
+    }
 
+    .navbar,
+    .full-screen-home,
+    .tab-nav,
+    .cover-page h1 {
+        display: none;
+    }
+</style>    
     <script>
     document.documentElement.classList.remove("no-js");
     document.documentElement.classList.add("js");
 </script>
-
+<style>
+    .body-curtain, .title-curtain {
+        opacity: 0;
+        transition: opacity .05s linear;
+    }
+</style>
 <meta charset="utf-8" />
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -109,7 +114,13 @@
 
 <body>
     <div class="main-container">
-        <div id="navbar" class="navbar sticky nav-hide">
+        <div class="cover-page">
+    <div class="cover-image-initial"></div>
+    <div class="cover-image-final"></div>  
+    <h1 id="cover-title" class="title-curtain cover-title">The Demonist</h1>
+</div>
+<div class="body-curtain">
+    <div id="navbar" class="navbar sticky nav-hide">
 	<div class="nav-wrapper">
 		<div class="container-medium main-nav">
 			<span>
@@ -149,25 +160,20 @@
 	<span>skip to navigation</span>
 </a>
  
-        <div class="cover-page">
-    <div class="cover-image-initial"></div>
-    <div class="cover-image-final"></div>  
-    <h1 id="cover-title" class="cover-title">The Demonist</h1>
-</div>
-
-
-
-<div class="toc-container container-small">
-    <div id="toc" class="toc">
-        <h3>Table of Contents</h3>
-        <ul><li><a class='toc-link bottom-link' href='#0-On_Demons'>On Demons</a></li><li><a class='toc-link bottom-link' href='#1-On_Timothy'>On Timothy</a></li><li><a class='toc-link bottom-link' href='#2-A_Demon_Appears'>A Demon Appears</a></li><li><a class='toc-link bottom-link' href='#3-Cook_Vs_Janitor'>Cook Vs. Janitor</a></li><li><a class='toc-link bottom-link' href='#4-The_Situation_Gets_Worse'>The Situation Gets Worse</a></li><li><a class='toc-link bottom-link' href='#5-Carnage_Flight'>Carnage, Flight</a></li><li><a class='toc-link bottom-link' href='#6-The_Heroic_Plan'>The Heroic Plan</a></li><li><a class='toc-link bottom-link' href='#7-The_Hero_Does_Battle'>The Hero Does Battle</a></li><li><a class='toc-link bottom-link' href='#8-Demon_Ex_Machina'>Demon Ex Machina</a></li></ul>
-    </div>
-</div>
-
-<div class="story-container container-small">
     
-    <div id="story" class="story" data-story-number="1">
-        <h3 id="0-On_Demons">On Demons<a class="toc-link top-link" href="#toc">^</a></h3>
+    
+    
+    <div class="toc-container container-small">
+        <div id="toc" class="toc">
+            <h3>Table of Contents</h3>
+            <ul><li><a class='toc-link bottom-link' href='#0-On_Demons'>On Demons</a></li><li><a class='toc-link bottom-link' href='#1-On_Timothy'>On Timothy</a></li><li><a class='toc-link bottom-link' href='#2-A_Demon_Appears'>A Demon Appears</a></li><li><a class='toc-link bottom-link' href='#3-Cook_Vs_Janitor'>Cook Vs. Janitor</a></li><li><a class='toc-link bottom-link' href='#4-The_Situation_Gets_Worse'>The Situation Gets Worse</a></li><li><a class='toc-link bottom-link' href='#5-Carnage_Flight'>Carnage, Flight</a></li><li><a class='toc-link bottom-link' href='#6-The_Heroic_Plan'>The Heroic Plan</a></li><li><a class='toc-link bottom-link' href='#7-The_Hero_Does_Battle'>The Hero Does Battle</a></li><li><a class='toc-link bottom-link' href='#8-Demon_Ex_Machina'>Demon Ex Machina</a></li></ul>
+        </div>
+    </div>
+    
+    <div class="story-container container-small">
+        
+        <div id="story" class="story" data-story-number="1">
+            <h3 id="0-On_Demons">On Demons<a class="toc-link top-link" href="#toc">^</a></h3>
 
 <p>Stripped of unnecessary foofraw—the chanting, the hooded robes, the goat entrails—summoning a demon is a two-step process.</p>
 
@@ -679,16 +685,16 @@
 
 <p>Timothy only smiled. He was a summoner now. Soon, the world would feel his wrath.<sup><a class="footLink--upper" id="footLink--upper_18" href="#footLink--lower_18" data-footnote-number="18">18</a></sup></p>
 
-    </div>
-
-    <div class="footnote-collection" data-footnote-collection="1">
-        <ul class="footnotes"><li class="footnote" id="footnote_1" data-footnote-number="1"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_1" href="#footLink--upper_1" data-footnote-number="1">1</a></li><li class="footnoteContent">Or, more likely, now you’re being disemboweled by a cranky minion of Hell. </li></ul></li><li class="footnote" id="footnote_2" data-footnote-number="2"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_2" href="#footLink--upper_2" data-footnote-number="2">2</a></li><li class="footnoteContent">The skeleton was Plague. Not infected fleas riding around on rats, but <em>Plague</em>, the spiritual embodiment of death-by-buboes. Plague's true name sounds like a soft, whistling fart, making it one of the few demons a person can summon rectally. Several have, much to history’s dismay.</li></ul></li><li class="footnote" id="footnote_3" data-footnote-number="3"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_3" href="#footLink--upper_3" data-footnote-number="3">3</a></li><li class="footnoteContent">For the proper execution of an eventual Deus Ex Machina, it is important that you acknowledge now, safely in act I that Timothy does indeed own a car.</li></ul></li><li class="footnote" id="footnote_4" data-footnote-number="4"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_4" href="#footLink--upper_4" data-footnote-number="4">4</a></li><li class="footnoteContent">Girls who would likely marry into money or divorce out of second-hand gonorrhea, but never spare a glance for the roommates.</li></ul></li><li class="footnote" id="footnote_5" data-footnote-number="5"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_5" href="#footLink--upper_5" data-footnote-number="5">5</a></li><li class="footnoteContent">Technically, bucket imps aren’t really even demons; they’re stitched together from the remnants of damned souls, though those souls are so processed and modified that bucket imps are made of sinners the way a wiffleball is made of an apatosaurus. Pedantry aside, to the layman a bucket imp looks, acts and smells like a real demon, only on a small scale. They are, like everything else in Hell, more than a little ornery. It takes a full squad of whip damei to motivate one brigade of bucket imps and a full dozen gate lords (who aren’t really lords, but merely middle-management) to oversee one squad of bucket imps, all to perform a job that humans can accomplish with a sump pump.</li></ul></li><li class="footnote" id="footnote_6" data-footnote-number="6"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_6" href="#footLink--upper_6" data-footnote-number="6">6</a></li><li class="footnoteContent">The aforementioned Cik'dasra' Diq' Drisgzügatizzyrchs’ Ahrhch’ Òehp 'Caxxcuxst doing what she does best.</li></ul></li><li class="footnote" id="footnote_7" data-footnote-number="7"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_7" href="#footLink--upper_7" data-footnote-number="7">7</a></li><li class="footnoteContent">After his outburst over the pizza boxes, you might assume Timothy was a fastidious housekeeper, but he wasn’t. He merely disliked the square, grease-stained shapes of the pizza boxes. They reminded him of manta rays, those strange, flat fish often found in the petting pool at aquariums. Manta rays in turn reminded him of inflatable mattresses, which brought back memories of bed-wetting. Well not go further down this particular rabbit hole.</li></ul></li><li class="footnote" id="footnote_8" data-footnote-number="8"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_8" href="#footLink--upper_8" data-footnote-number="8">8</a></li><li class="footnoteContent">Cook, M., &amp; Collins, A. (2012). Dungeons &amp; dragons: Dungeon master's guide, core rulebook II, v5. Renton, WA: Wizards of the Coast.</li></ul></li><li class="footnote" id="footnote_9" data-footnote-number="9"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_9" href="#footLink--upper_9" data-footnote-number="9">9</a></li><li class="footnoteContent">Everyone in Hell is naked, all of the time. This might sound like fun, but the great majority of humanity looks awful naked and even beautiful people aren’t particularly sexy while being flayed alive. Or boiled, buried, eaten, set on fire, etc. Heaven is a different story: no one is ever naked and under their robes angels are as neuter as Ken dolls. They play a lot of bingo in heaven. A lot. Hell sucks by design. Heaven sucks by demographics.</li></ul></li><li class="footnote" id="footnote_10" data-footnote-number="10"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_10" href="#footLink--upper_10" data-footnote-number="10">10</a></li><li class="footnoteContent">This hilariously untrue statement is very often a summoner’s last.</li></ul></li><li class="footnote" id="footnote_11" data-footnote-number="11"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_11" href="#footLink--upper_11" data-footnote-number="11">11</a></li><li class="footnoteContent">They were. An exact translation of this conversation would be tedious; imps have seventy-two words to describe various pitchfork impalings, yet they resort to “big sky eye fire” to describe sunlight and “toilet” was simply beyond their experience. Mostly, they stuck to asinine elevator topics, observational stuff like “there sure isn’t very much magma up here.”</li></ul></li><li class="footnote" id="footnote_12" data-footnote-number="12"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_12" href="#footLink--upper_12" data-footnote-number="12">12</a></li><li class="footnoteContent">”We’re on our own” could be the demon summoner's union credo if they had a union, which they do not. Because they all hate each other.</li></ul></li><li class="footnote" id="footnote_13" data-footnote-number="13"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_13" href="#footLink--upper_13" data-footnote-number="13">13</a></li><li class="footnoteContent">A fact prudently mentioned and subtlety emphasized earlier. Deus Ex Machina is a delicate dance of forethought.</li></ul></li><li class="footnote" id="footnote_14" data-footnote-number="14"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_14" href="#footLink--upper_14" data-footnote-number="14">14</a></li><li class="footnoteContent">It’s strange that Americans, a people both blessed with a nuanced language and possessing an Oedipal love of their motor vehicles, don’t have a special word to describe this area of a car.</li></ul></li><li class="footnote" id="footnote_15" data-footnote-number="15"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_15" href="#footLink--upper_15" data-footnote-number="15">15</a></li><li class="footnoteContent">The only person dumber than Odysseus was the Trojan who thought that horse would make a good conversation piece.</li></ul></li><li class="footnote" id="footnote_16" data-footnote-number="16"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_16" href="#footLink--upper_16" data-footnote-number="16">16</a></li><li class="footnoteContent">When one commits to a Deus Ex Machina, its best to <em>commit</em>.</li></ul></li><li class="footnote" id="footnote_17" data-footnote-number="17"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_17" href="#footLink--upper_17" data-footnote-number="17">17</a></li><li class="footnoteContent">We are  required at this point to admit that Timothy's pornographic DVD, introduced conspicuously as a Chekhovian gun in act one, serves no further role in this narrative. Apologies for any anticipation you might have experienced waiting for its return.</li></ul></li><li class="footnote" id="footnote_18" data-footnote-number="18"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_18" href="#footLink--upper_18" data-footnote-number="18">18</a></li><li class="footnoteContent">He wasn’t and it wouldn’t.</li></ul></li></ul>
-    </div>
-
+        </div>
     
-</div>
-<div class="social-buttons-container container-small">
+        <div class="footnote-collection" data-footnote-collection="1">
+            <ul class="footnotes"><li class="footnote" id="footnote_1" data-footnote-number="1"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_1" href="#footLink--upper_1" data-footnote-number="1">1</a></li><li class="footnoteContent">Or, more likely, now you’re being disemboweled by a cranky minion of Hell. </li></ul></li><li class="footnote" id="footnote_2" data-footnote-number="2"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_2" href="#footLink--upper_2" data-footnote-number="2">2</a></li><li class="footnoteContent">The skeleton was Plague. Not infected fleas riding around on rats, but <em>Plague</em>, the spiritual embodiment of death-by-buboes. Plague's true name sounds like a soft, whistling fart, making it one of the few demons a person can summon rectally. Several have, much to history’s dismay.</li></ul></li><li class="footnote" id="footnote_3" data-footnote-number="3"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_3" href="#footLink--upper_3" data-footnote-number="3">3</a></li><li class="footnoteContent">For the proper execution of an eventual Deus Ex Machina, it is important that you acknowledge now, safely in act I that Timothy does indeed own a car.</li></ul></li><li class="footnote" id="footnote_4" data-footnote-number="4"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_4" href="#footLink--upper_4" data-footnote-number="4">4</a></li><li class="footnoteContent">Girls who would likely marry into money or divorce out of second-hand gonorrhea, but never spare a glance for the roommates.</li></ul></li><li class="footnote" id="footnote_5" data-footnote-number="5"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_5" href="#footLink--upper_5" data-footnote-number="5">5</a></li><li class="footnoteContent">Technically, bucket imps aren’t really even demons; they’re stitched together from the remnants of damned souls, though those souls are so processed and modified that bucket imps are made of sinners the way a wiffleball is made of an apatosaurus. Pedantry aside, to the layman a bucket imp looks, acts and smells like a real demon, only on a small scale. They are, like everything else in Hell, more than a little ornery. It takes a full squad of whip damei to motivate one brigade of bucket imps and a full dozen gate lords (who aren’t really lords, but merely middle-management) to oversee one squad of bucket imps, all to perform a job that humans can accomplish with a sump pump.</li></ul></li><li class="footnote" id="footnote_6" data-footnote-number="6"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_6" href="#footLink--upper_6" data-footnote-number="6">6</a></li><li class="footnoteContent">The aforementioned Cik'dasra' Diq' Drisgzügatizzyrchs’ Ahrhch’ Òehp 'Caxxcuxst doing what she does best.</li></ul></li><li class="footnote" id="footnote_7" data-footnote-number="7"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_7" href="#footLink--upper_7" data-footnote-number="7">7</a></li><li class="footnoteContent">After his outburst over the pizza boxes, you might assume Timothy was a fastidious housekeeper, but he wasn’t. He merely disliked the square, grease-stained shapes of the pizza boxes. They reminded him of manta rays, those strange, flat fish often found in the petting pool at aquariums. Manta rays in turn reminded him of inflatable mattresses, which brought back memories of bed-wetting. Well not go further down this particular rabbit hole.</li></ul></li><li class="footnote" id="footnote_8" data-footnote-number="8"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_8" href="#footLink--upper_8" data-footnote-number="8">8</a></li><li class="footnoteContent">Cook, M., &amp; Collins, A. (2012). Dungeons &amp; dragons: Dungeon master's guide, core rulebook II, v5. Renton, WA: Wizards of the Coast.</li></ul></li><li class="footnote" id="footnote_9" data-footnote-number="9"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_9" href="#footLink--upper_9" data-footnote-number="9">9</a></li><li class="footnoteContent">Everyone in Hell is naked, all of the time. This might sound like fun, but the great majority of humanity looks awful naked and even beautiful people aren’t particularly sexy while being flayed alive. Or boiled, buried, eaten, set on fire, etc. Heaven is a different story: no one is ever naked and under their robes angels are as neuter as Ken dolls. They play a lot of bingo in heaven. A lot. Hell sucks by design. Heaven sucks by demographics.</li></ul></li><li class="footnote" id="footnote_10" data-footnote-number="10"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_10" href="#footLink--upper_10" data-footnote-number="10">10</a></li><li class="footnoteContent">This hilariously untrue statement is very often a summoner’s last.</li></ul></li><li class="footnote" id="footnote_11" data-footnote-number="11"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_11" href="#footLink--upper_11" data-footnote-number="11">11</a></li><li class="footnoteContent">They were. An exact translation of this conversation would be tedious; imps have seventy-two words to describe various pitchfork impalings, yet they resort to “big sky eye fire” to describe sunlight and “toilet” was simply beyond their experience. Mostly, they stuck to asinine elevator topics, observational stuff like “there sure isn’t very much magma up here.”</li></ul></li><li class="footnote" id="footnote_12" data-footnote-number="12"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_12" href="#footLink--upper_12" data-footnote-number="12">12</a></li><li class="footnoteContent">”We’re on our own” could be the demon summoner's union credo if they had a union, which they do not. Because they all hate each other.</li></ul></li><li class="footnote" id="footnote_13" data-footnote-number="13"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_13" href="#footLink--upper_13" data-footnote-number="13">13</a></li><li class="footnoteContent">A fact prudently mentioned and subtlety emphasized earlier. Deus Ex Machina is a delicate dance of forethought.</li></ul></li><li class="footnote" id="footnote_14" data-footnote-number="14"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_14" href="#footLink--upper_14" data-footnote-number="14">14</a></li><li class="footnoteContent">It’s strange that Americans, a people both blessed with a nuanced language and possessing an Oedipal love of their motor vehicles, don’t have a special word to describe this area of a car.</li></ul></li><li class="footnote" id="footnote_15" data-footnote-number="15"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_15" href="#footLink--upper_15" data-footnote-number="15">15</a></li><li class="footnoteContent">The only person dumber than Odysseus was the Trojan who thought that horse would make a good conversation piece.</li></ul></li><li class="footnote" id="footnote_16" data-footnote-number="16"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_16" href="#footLink--upper_16" data-footnote-number="16">16</a></li><li class="footnoteContent">When one commits to a Deus Ex Machina, its best to <em>commit</em>.</li></ul></li><li class="footnote" id="footnote_17" data-footnote-number="17"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_17" href="#footLink--upper_17" data-footnote-number="17">17</a></li><li class="footnoteContent">We are  required at this point to admit that Timothy's pornographic DVD, introduced conspicuously as a Chekhovian gun in act one, serves no further role in this narrative. Apologies for any anticipation you might have experienced waiting for its return.</li></ul></li><li class="footnote" id="footnote_18" data-footnote-number="18"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_18" href="#footLink--upper_18" data-footnote-number="18">18</a></li><li class="footnoteContent">He wasn’t and it wouldn’t.</li></ul></li></ul>
+        </div>
     
+        
+    </div>
+    <div class="social-buttons-container container-small">
+        
 
 
 <div class="socialButtons">
@@ -716,9 +722,9 @@
 
 
             
-</div>
-<div class="keep-reading-container container-small">
-    <ol id="keep-reading" class="story-menu">
+    </div>
+    <div class="keep-reading-container container-small">
+        <ol id="keep-reading" class="story-menu">
     
     <li class="story-quaternary"><article class="story-summary summary-small" data-slug="The Demonist">
 	<a href="/content/2015/10/10/the-demonist.html">
@@ -811,17 +817,16 @@
 </article></li>
     
 </ol>        
-</div>
- 
-        <div class="container-small">
-            <div id="footer-nav" class="footer-nav">
+    </div>
+    <div class="container-small">
+        <div id="footer-nav" class="footer-nav">
     <a id="footer-nav-home" href="/">home</a>
     <a href="/">stories</a>
     <a href="/blog">blog</a>
     <a href="/contact">contact</a>
     <a href="/search">search</a>
 </div>
-            <footer>
+        <footer>
     <div class="footer-meta">
         
             <h1>The Demonist</h1>            
@@ -843,66 +848,76 @@
     var currentTime = new Date();
     document.getElementsByClassName('copyright-date')[0].innerHTML = currentTime.getFullYear();
 </script>
-        </div>
+    </div>
+</div>
+ 
     </div>
     <script>
-        var getCoverImage = function () {
-            var img;
-            var resizeId;
+    var getCoverImage = function () {
+        var img;
+        var resizeId;
 
-            // Quit early if older browser (e.g. IE8).
-            if (!('addEventListener' in window)) {
-                return;
-            }
-
-            var init = function(){
-                img = new Image();
-
-                var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
-                img.src = backgroundImage.replace(/['"]+/g, '');
-                // Assign an onLoad handler to the dummy image *before* assigning the src
-                img.onload = function () {
-                    var $coverImageInitial = document.getElementsByClassName('cover-image-initial')[0];
-                    var $coverImageFinal = document.getElementsByClassName('cover-image-final')[0];
-
-                    $coverImageFinal.style.backgroundImage = 'url(' + img.src + ')';
-                    //$coverImageInitial.style.display = "none";
-                };
-            }
-
-            init();
-            window.addEventListener('resize', function(){
-                clearTimeout(resizeId);
-                resizeId = setTimeout(function(){
-                    init();
-                }, 150);
-            }, true);
+        // Quit early if older browser (e.g. IE8).
+        if (!('addEventListener' in window)) {
+            return;
         }
-        getCoverImage();
-    </script>
-    
-    <!-- inject:js -->
+
+        var init = function(){
+            img = new Image();
+
+            var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+            img.src = backgroundImage.replace(/['"]+/g, '');
+            // Assign an onLoad handler to the dummy image *before* assigning the src
+            img.onload = function () {
+                var $coverImageInitial = document.getElementsByClassName('cover-image-initial')[0];
+                var $coverImageFinal = document.getElementsByClassName('cover-image-final')[0];
+
+                $coverImageFinal.style.backgroundImage = 'url(' + img.src + ')';
+                //$coverImageInitial.style.display = "none";
+            };
+        }
+
+        init();
+        window.addEventListener('resize', function(){
+            clearTimeout(resizeId);
+            resizeId = setTimeout(function(){
+                init();
+            }, 150);
+        }, true);
+    }
+    getCoverImage();
+</script>
+
+<!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
 
-    <script>
-        ZnetUI.lazyLoadCSS('https://zacharybell.net//css/story.css', {}, function(){
+<script>
+    // we need the main css before we can render most of the page. 
+    ZnetUI.lazyLoadCSS('https://zacharybell.net//css/story.css', {}, function(){
+
+        // we need the font to load before we can set the title or the footnotes
+        ZnetUI.fontWatch('Lora', {}, function(){
+
+            // once we have the font, we can show the body content
+            ZnetUI.curtain('body-curtain');
+
+            // size the title. 
             ZnetUI.titleFill(
                 'cover-title', 
                 {
                     paddingX: 10,
                     yNudgeDown: 0,
                     googleVHFix: true
+                },
+                function(){
+                    // reveal the title. 
+                    ZnetUI.curtain('title-curtain');
                 }
             );
-            ZnetUI.titleFill(
-                'story-title',
-                {
-                    paddingX: 10,
-                    titleAlignment: "center",
-                    yNudgeDown: 0
-                }
-            );
+
+            // do the footnotes (which depend on the font being loaded or they will be a bit
+            // misaligned)
             ZnetUI.footnotes(
                 'footnote-collection',
                 {
@@ -910,28 +925,36 @@
                 }
             )
         });
-        
-        ZnetUI.nav('navbar', 
-            {   
-                minScrollDown: window.innerHeight, 
-                coverPageHome:'full-screen-home',
-                tabNav: 'tab-nav'
-            }
-        );
-        ZnetUI.TOC(
-            {
-                navHeight: 60
-            }
-        );
-        ZnetUI.lazyLoadImages(
-            'lazy-image', 
-            {
-                buffer: 500
-            }
-        );
-        ZnetUI.lazyLoadCSS('https://zacharybell.net//css/fontello.css');
-        
-    </script>
+    });
+    ZnetUI.titleFill(
+        'story-title',
+        {
+            paddingX: 10,
+            titleAlignment: "center",
+            yNudgeDown: 0
+        }
+    );
+    ZnetUI.nav('navbar', 
+        {   
+            minScrollDown: window.innerHeight, 
+            coverPageHome:'full-screen-home',
+            tabNav: 'tab-nav'
+        }
+    );
+    ZnetUI.TOC(
+        {
+            navHeight: 60
+        }
+    );
+    ZnetUI.lazyLoadImages(
+        'lazy-image', 
+        {
+            buffer: 500
+        }
+    );
+    ZnetUI.lazyLoadCSS('https://zacharybell.net//css/fontello.css');
+    
+</script>
 </body>
 
 </html>

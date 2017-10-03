@@ -57,7 +57,7 @@ body {
   color: #333333; }
 
 a {
-  color: #B30005;
+  color: #FF2200;
   text-decoration: none;
   padding: 2px;
   transition: color .25s;
@@ -67,7 +67,7 @@ a {
     color: #801E00; }
   a:focus {
     text-decoration: none;
-    outline: 1px auto #B30005;
+    outline: 1px auto #FF2200;
     color: #801E00; }
 
 p {
@@ -77,7 +77,7 @@ p {
   margin: 0 0 1.2em 0; }
   p a {
     color: #333333;
-    border-bottom: 2px solid #B30005;
+    border-bottom: 2px solid #FF2200;
     transition: border-color .25s; }
     p a:hover {
       color: #333333;
@@ -100,7 +100,7 @@ input {
   -webkit-appearance: none; }
 
 input:focus, select:focus, textarea:focus {
-  outline-color: #B30005; }
+  outline-color: #FF2200; }
 
 ::selection {
   background: rgba(255, 34, 0, 0.99);
@@ -145,12 +145,12 @@ input:focus, select:focus, textarea:focus {
     line-height: 1.7em; } }
 .js .full-screen-home .site-logo, .navbar .site-logo {
   font-family: "Open Sans", "Tahoma", "Verdana", sans-serif;
-  background-color: #B30005;
+  background-color: #FF2200;
   color: white;
   display: inline-block; }
   .js .full-screen-home .site-logo:focus, .navbar .site-logo:focus {
     background-color: white;
-    color: #B30005; }
+    color: #FF2200; }
 
 .main-nav {
   position: relative;
@@ -243,7 +243,7 @@ input:focus, select:focus, textarea:focus {
     text-transform: uppercase;
     padding: .5em;
     margin: .5em;
-    color: #B30005; }
+    color: #FF2200; }
     .navbar span.nav-button a:hover {
       color: #545454; }
 
@@ -540,7 +540,7 @@ body.js .ss-form-container {
   height: 20em; }
 .contactForm button {
   border: none;
-  background-color: #B30005;
+  background-color: #FF2200;
   color: white; }
 
 @media (max-width: 992px) {
