@@ -260,39 +260,54 @@
   
     
     <url>
+      <loc>https://zacharybell.net//css/blog.css</loc>
+      
+        <lastmod>2017-11-05T09:30:20-07:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://zacharybell.net//css/fontello.css</loc>
+      
+        <lastmod>2017-11-05T09:30:20-07:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://zacharybell.net//css/home.css</loc>
+      
+        <lastmod>2017-11-05T09:30:20-07:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
       <loc>https://zacharybell.net//about/</loc>
       
-        <lastmod>2017-10-03T11:45:25-06:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://zacharybell.net//blog/</loc>
-      
-        <lastmod>2017-10-03T11:45:25-06:00</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>https://zacharybell.net//contact/</loc>
-      
-        <lastmod>2017-10-03T11:45:25-06:00</lastmod>
+        <lastmod>2017-11-05T09:30:20-07:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -307,7 +322,37 @@
     <url>
       <loc>https://zacharybell.net//</loc>
       
-        <lastmod>2017-10-03T11:45:25-06:00</lastmod>
+        <lastmod>2017-11-05T09:30:20-07:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://zacharybell.net//contact/</loc>
+      
+        <lastmod>2017-11-05T09:30:20-07:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://zacharybell.net//blog/</loc>
+      
+        <lastmod>2017-11-05T09:30:20-07:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -322,7 +367,7 @@
     <url>
       <loc>https://zacharybell.net//search/</loc>
       
-        <lastmod>2017-10-03T11:45:25-06:00</lastmod>
+        <lastmod>2017-11-05T09:30:20-07:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -337,7 +382,7 @@
     <url>
       <loc>https://zacharybell.net//css/main.css</loc>
       
-        <lastmod>2017-10-03T11:45:25-06:00</lastmod>
+        <lastmod>2017-11-05T09:30:20-07:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -352,7 +397,7 @@
     <url>
       <loc>https://zacharybell.net//search-index-blog.json</loc>
       
-        <lastmod>2017-10-03T11:45:25-06:00</lastmod>
+        <lastmod>2017-11-05T09:30:20-07:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -366,12 +411,42 @@
     
   
     
+    <url>
+      <loc>https://zacharybell.net//css/search.css</loc>
+      
+        <lastmod>2017-11-05T09:30:20-07:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
   
     
     <url>
       <loc>https://zacharybell.net//contact/sorry.html</loc>
       
-        <lastmod>2017-10-03T11:45:25-06:00</lastmod>
+        <lastmod>2017-11-05T09:30:20-07:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://zacharybell.net//css/story.css</loc>
+      
+        <lastmod>2017-11-05T09:30:20-07:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -386,7 +461,7 @@
     <url>
       <loc>https://zacharybell.net//feed.xml</loc>
       
-        <lastmod>2017-10-03T11:45:25-06:00</lastmod>
+        <lastmod>2017-11-05T09:30:20-07:00</lastmod>
       
       
         <changefreq>monthly</changefreq>

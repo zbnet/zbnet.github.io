@@ -1,93 +1,142 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
 
 <head>
     <!-- bare minimum css to render above the fold content.-->
+    
     <style>
-        body {
-            margin: 0;
-            width: 100%;
-        }
+    body {
+        margin: 0;
+        width: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
 
-        .cover-page {
-            position: relative;
-        }
-        .cover-image-initial, .cover-image-final {
-            
-            background-size: cover;
-            -moz-background-size: cover;
-            /* Firefox 3.6 */
-            background-position: center;
-            /* Internet Explorer 7/8 */
-            height: 100vh;
+    .no-js ul, .no-js ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .no-js .footnoteNumber {
+        float: left;
+    }
+    .no-js .footnoteNumber::after{
+        content: ': ';
+    }
+    .no-js .footnote {
+        margin-bottom: 20px;
+    }
+    .no-js .main-container {
+        padding: 0 20px;
+    }
+
+    .js .cover-page {
+        position: relative;
+        height: 100vh;            
+    }
+    .js .cover-image-initial, .js .cover-image-final {
+        background-size: cover;
+        -moz-background-size: cover;
+        /* Firefox 3.6 */
+        background-position: center;
+        /* Internet Explorer 7/8 */
+    }
+    .js .cover-image-initial {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+    .js .cover-image-final {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        opacity: 0;
+        position: absolute;
+        transition: opacity .15s linear;
+    }
+    .cover-image-intial{
+        display: none;
+    }
+    .loading {
+        filter:blur(20px);
+    }
+
+    @media screen and (orientation:portrait) {
+        body:after{
+            content: 'https://zacharybell.net//images/mobile_portrait/double-decker-bus.jpg';
+            display: none;
         }
         .cover-image-initial {
-            position: relative;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 0;
+            background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoABcDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQFBv/EACcQAAIBBAECBQUAAAAAAAAAAAECAwAEESESMUEFExQisTJRcYKh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQAC/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAERIQL/2gAMAwEAAhEDEQA/AObeWRWyMIeuu1d3DeFbdAGbPEZ3nOq4hbXzJFDXEYJIHXNbfqYYyUa4xx1kqwHxR6stU2NlrlXYCReWtapWbA08wEluvnoMjKENSs6nOQkest16EyDI+26quZMysCPpYgEfmo5LtjJG8XBGG/aM4Oap5oVJcgsQ2+5ONf2tBfEzL4EvlswzdOfaSO1Kgs5ZeBjhdxskBScUonF2sxSdDj3z03V+Y8AiOV/1C/NKU04W3JJeRjZACSATnrSlKDj/2Q==");
         }
-        .cover-image-final {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+    }
+
+    @supports (-ms-ime-align:auto) {
+        body:after{
+            content: 'https://zacharybell.net//images/large/double-decker-bus.jpg' !important;
+            display: none !important;
         }
-        .cover-image-intial{
+        .cover-image-initial {
+            background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUBAwQC/8QAKBAAAgICAAQEBwAAAAAAAAAAAQIAAxESBCExQQUTIlEUMkJhobHh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgEA/8QAGREBAQADAQAAAAAAAAAAAAAAAAECERIx/9oADAMBAAIRAxEAPwCfxtrNfaq6BQ2MnrynT4DxBqN2zHnjHOcTqoXcqrM3vnnNvD26cOWVUQ7kfL1wBLnd+jjNLnxO7DOH69Z6FynGQRz79pKouDUWW3KTq6qPLOOo+82BqtdxbdXkfUAYCU1c49Dcokw2MpGvEIT22Uj9RH3R5SU4hXCo6Fj0yDM0PtWa9QFBJ/H8iJKrbXcyLbUoDLtnBHtAv2wSq4PbXtEQpWPNbPoAAJ9hERK0f//Z") !important;
+        } 
+    }
+    @media all and (-ms-high-contrast:none)
+    {
+        body:after{
+            content: 'https://zacharybell.net//images/large/double-decker-bus.jpg' !important;
+            display: none !important;
+        }
+        .cover-image-initial {
+            background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUBAwQC/8QAKBAAAgICAAQEBwAAAAAAAAAAAQIAAxESBCExQQUTIlEUMkJhobHh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgEA/8QAGREBAQADAQAAAAAAAAAAAAAAAAECERIx/9oADAMBAAIRAxEAPwCfxtrNfaq6BQ2MnrynT4DxBqN2zHnjHOcTqoXcqrM3vnnNvD26cOWVUQ7kfL1wBLnd+jjNLnxO7DOH69Z6FynGQRz79pKouDUWW3KTq6qPLOOo+82BqtdxbdXkfUAYCU1c49Dcokw2MpGvEIT22Uj9RH3R5SU4hXCo6Fj0yDM0PtWa9QFBJ/H8iJKrbXcyLbUoDLtnBHtAv2wSq4PbXtEQpWPNbPoAAJ9hERK0f//Z") !important;
+        } 
+    }
+    
+    @media screen and (orientation:landscape) and (max-width: 767px) {
+        body:after{
+            content: 'https://zacharybell.net//images/medium/double-decker-bus.jpg';
             display: none;
         }
-        .loading {
-            filter:blur(20px);
+        .cover-image-initial {
+            background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUBAwQC/8QAKBAAAgICAAQEBwAAAAAAAAAAAQIAAxESBCExQQUTIlEUMkJhobHh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgEA/8QAGREBAQADAQAAAAAAAAAAAAAAAAECERIx/9oADAMBAAIRAxEAPwCfxtrNfaq6BQ2MnrynT4DxBqN2zHnjHOcTqoXcqrM3vnnNvD26cOWVUQ7kfL1wBLnd+jjNLnxO7DOH69Z6FynGQRz79pKouDUWW3KTq6qPLOOo+82BqtdxbdXkfUAYCU1c49Dcokw2MpGvEIT22Uj9RH3R5SU4hXCo6Fj0yDM0PtWa9QFBJ/H8iJKrbXcyLbUoDLtnBHtAv2wSq4PbXtEQpWPNbPoAAJ9hERK0f//Z");
         }
-
-        @media screen and (orientation:portrait) {
-            body:after{
-                content: 'https://zacharybell.net//images/mobile_portrait/double-decker-bus.jpg';
-                display: none;
-            }
-            .cover-image-initial {
-                background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAoABcDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQFBv/EACcQAAIBBAECBQUAAAAAAAAAAAECAwAEESESMUEFExQisTJRcYKh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQAC/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAERIQL/2gAMAwEAAhEDEQA/AObeWRWyMIeuu1d3DeFbdAGbPEZ3nOq4hbXzJFDXEYJIHXNbfqYYyUa4xx1kqwHxR6stU2NlrlXYCReWtapWbA08wEluvnoMjKENSs6nOQkest16EyDI+26quZMysCPpYgEfmo5LtjJG8XBGG/aM4Oap5oVJcgsQ2+5ONf2tBfEzL4EvlswzdOfaSO1Kgs5ZeBjhdxskBScUonF2sxSdDj3z03V+Y8AiOV/1C/NKU04W3JJeRjZACSATnrSlKDj/2Q==");
-            }
-        }
-
-        @media screen and (orientation:landscape) and (max-width: 767px) {
-            body:after{
-                content: 'https://zacharybell.net//images/medium/double-decker-bus.jpg';
-                display: none;
-            }
-            .cover-image-initial {
-                background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUBAwQC/8QAKBAAAgICAAQEBwAAAAAAAAAAAQIAAxESBCExQQUTIlEUMkJhobHh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgEA/8QAGREBAQADAQAAAAAAAAAAAAAAAAECERIx/9oADAMBAAIRAxEAPwCfxtrNfaq6BQ2MnrynT4DxBqN2zHnjHOcTqoXcqrM3vnnNvD26cOWVUQ7kfL1wBLnd+jjNLnxO7DOH69Z6FynGQRz79pKouDUWW3KTq6qPLOOo+82BqtdxbdXkfUAYCU1c49Dcokw2MpGvEIT22Uj9RH3R5SU4hXCo6Fj0yDM0PtWa9QFBJ/H8iJKrbXcyLbUoDLtnBHtAv2wSq4PbXtEQpWPNbPoAAJ9hERK0f//Z");
-            }
-        }
-        @media screen and (orientation:landscape) and (min-width: 768px) {
-            body:after{
-                content: 'https://zacharybell.net//images/large/double-decker-bus.jpg';
-                display: none;
-            }
-            .cover-image-initial {
-                background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUBAwQC/8QAKBAAAgICAAQEBwAAAAAAAAAAAQIAAxESBCExQQUTIlEUMkJhobHh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgEA/8QAGREBAQADAQAAAAAAAAAAAAAAAAECERIx/9oADAMBAAIRAxEAPwCfxtrNfaq6BQ2MnrynT4DxBqN2zHnjHOcTqoXcqrM3vnnNvD26cOWVUQ7kfL1wBLnd+jjNLnxO7DOH69Z6FynGQRz79pKouDUWW3KTq6qPLOOo+82BqtdxbdXkfUAYCU1c49Dcokw2MpGvEIT22Uj9RH3R5SU4hXCo6Fj0yDM0PtWa9QFBJ/H8iJKrbXcyLbUoDLtnBHtAv2wSq4PbXtEQpWPNbPoAAJ9hERK0f//Z");
-            }
-        }
-
-        .navbar,
-        .full-screen-home,
-        .tab-nav,
-        .cover-page h1 {
+    }
+    @media screen and (orientation:landscape) and (min-width: 768px) {
+        body:after{
+            content: 'https://zacharybell.net//images/large/double-decker-bus.jpg';
             display: none;
         }
-    </style>
+        .cover-image-initial {
+            background-image: url("data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAXACgDASIAAhEBAxEB/8QAGQABAQADAQAAAAAAAAAAAAAAAAUBAwQC/8QAKBAAAgICAAQEBwAAAAAAAAAAAQIAAxESBCExQQUTIlEUMkJhobHh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgEA/8QAGREBAQADAQAAAAAAAAAAAAAAAAECERIx/9oADAMBAAIRAxEAPwCfxtrNfaq6BQ2MnrynT4DxBqN2zHnjHOcTqoXcqrM3vnnNvD26cOWVUQ7kfL1wBLnd+jjNLnxO7DOH69Z6FynGQRz79pKouDUWW3KTq6qPLOOo+82BqtdxbdXkfUAYCU1c49Dcokw2MpGvEIT22Uj9RH3R5SU4hXCo6Fj0yDM0PtWa9QFBJ/H8iJKrbXcyLbUoDLtnBHtAv2wSq4PbXtEQpWPNbPoAAJ9hERK0f//Z");
+        }
+    }
+
+    .navbar,
+    .full-screen-home,
+    .tab-nav,
+
+    .js .cover-title {
+        display: none;
+    }
+</style>    
     <script>
     document.documentElement.classList.remove("no-js");
     document.documentElement.classList.add("js");
 </script>
-
+<style>
+    .js .body-curtain, .js .title-curtain {
+        opacity: 0;
+        visibility: hidden;
+    }
+</style>
 <meta charset="utf-8" />
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Welcome Travelers, To Dublin</title>
 <meta name="description" content="We took this double-decker bus and maybe someone got murdered and then my mom didn't save my luggage from disaster.">
 
@@ -102,14 +151,20 @@
     <meta property="og:description" content="We took this double-decker bus and maybe someone got murdered and then my mom didn't save my luggage from disaster." />
     <meta property="og:image" content="https://zacharybell.net//images/medium/double-decker-bus.jpg" />
     <meta property="fb:app_id" content="466074093735144" />
-
+    
 </head>
 
 <body>
     <div class="main-container">
-        <div class="navbar sticky nav-hide">
+        <div class="cover-page">
+    <div class="cover-image-initial"></div>
+    <div class="cover-image-final"></div>  
+    <h1 id="cover-title" class="title-curtain cover-title">Welcome Travelers, To Dublin</h1>
+</div>
+<div class="body-curtain">
+    <div id="navbar" class="navbar sticky nav-hide">
 	<div class="nav-wrapper">
-		<div class="container main-nav">
+		<div class="container-medium main-nav">
 			<span>
 				<a href="/" class="site-logo">
 					ZB
@@ -139,29 +194,20 @@
 	</div>
 </div>
 
-<a href="/" class="full-screen-home nav-hide">
+<a href="/" id="full-screen-home" class="full-screen-home nav-hide">
 	<span href="/" class="site-logo">ZB</span>
 	<span>home</span>
 </a>
-<a href="#footer-nav" class="tab-nav">
+<a href="#footer-nav-home" id="tab-nav" class="tab-nav">
 	<span>skip to navigation</span>
 </a>
- <div class="cover-page">
-    <div class="cover-image-initial"></div>
-    <div class="cover-image-final"></div>  
-    <h1 class="cover-title">Welcome Travelers, To Dublin</h1>
-</div>
-
-<div class="container">
+ 
     
-    <div class="row">
-        <h2 class="teaser">"A drunk Irishman. And I’m a leprechaun. Welcome to Dublin."</h2>
+    
+    
+    <div class="story-container container-small">
         
-        
-    </div>
-    <div class="row story-wrapper">
-        
-        <div class="story col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8" data-story-number="1">
+        <div id="story" class="story top-padded-story" data-story-number="1">
             <p>We lived in Loughborough, a grumpy, brick-and-gloom sort of place somewhere in the middle of England, and my family was back home in Colorado. We hadn’t seen each other for a while, so they—my parents and my brother—decided to come for a visit. Since Loughborough doesn't have any particular sights to see,<sup><a class="footLink--upper" id="footLink--upper_1" href="#footLink--lower_1" data-footnote-number="1">1</a></sup> we decided to go to meet in Ireland. When we arrived, they were already waiting for us at the the airport. Everyone hugged, we collected our baggage. Then we realized that it was late—well past midnight—and that the trains had stopped running.</p>
 
 <p>"Let's get a cab," I said.</p>
@@ -263,33 +309,34 @@
 <p>Everyone except my mother, but she would recover. She always does.</p>
 
         </div>
-
-        <div class="footnoteCollection col-xs-12 col-ms-2 col-sm-offset-2 col-sm-8" data-footnote-collection="1">
+    
+        <div id="footnote-collection" class="footnote-collection top-padded-footnotes" data-footnote-collection="1">
             <ul class="footnotes"><li class="footnote" id="footnote_1" data-footnote-number="1"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_1" href="#footLink--upper_1" data-footnote-number="1">1</a></li><li class="footnoteContent">Here’s the entirety of the tourism section from the <a href="https://en.wikipedia.org/wiki/Loughborough#Tourism">Wikipedia article</a> on Loughborough: ”In 1841, Loughborough was the destination for the first package tour, organised by Thomas Cook for a temperance group from Leicester.” That’s about as good as it gets in Loughborough</li></ul></li><li class="footnote" id="footnote_2" data-footnote-number="2"><ul class="footnoteFields"><li class="footnoteNumber"><a class="footLink--lower" id="footLink--lower_2" href="#footLink--upper_2" data-footnote-number="2">2</a></li><li class="footnoteContent">Rough translation from the origional Irish: ‘Not even a fucking blush!’.</li></ul></li></ul>
         </div>
-
+    
         
     </div>
-</div>
+    <div class="social-buttons-container container-small">
+        
 
 
 
 <div class="socialButtons">
 	<span class="nag">i don't need your approval</span>
     
-        <a onclick="window.open('http://twitter.com/share?text=' + encodeURIComponent('Welcome Travelers, To Dublin') + ' %7C A short story by Zachary Bell %7C via @zachary_bell &url=https://zacharybell.net//content/2015/09/18/welcome-travelers-to-dublin.html', 'windowOpenTab', 'width=600,height=450,left=100, top=100'); return false;" href="">
+        <a aria-label="twitter button" onclick="window.open('http://twitter.com/share?text=' + encodeURIComponent('Welcome Travelers, To Dublin') + ' %7C A short story by Zachary Bell %7C via @zachary_bell &url=https://zacharybell.net//content/2015/09/18/welcome-travelers-to-dublin.html', 'windowOpenTab', 'width=600,height=450,left=100, top=100'); return false;" href="">
         	<span class="icon-twitter"> </span>
         </a>
         
-    <a  onclick="window.open('http://reddit.com/submit?url=https://zacharybell.net//content/2015/09/18/welcome-travelers-to-dublin.html&title=' + encodeURIComponent('Welcome Travelers, To Dublin'), 'windowOpenTab', 'width=1000,height=600,left=100, top=100'); return false;" href="">
+    <a  aria-label="reddit button" onclick="window.open('http://reddit.com/submit?url=https://zacharybell.net//content/2015/09/18/welcome-travelers-to-dublin.html&title=' + encodeURIComponent('Welcome Travelers, To Dublin'), 'windowOpenTab', 'width=1000,height=600,left=100, top=100'); return false;" href="">
     	<span class="icon-reddit"> </span>
     </a>
-    <a  onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https://zacharybell.net//content/2015/09/18/welcome-travelers-to-dublin.html&title=' + encodeURIComponent('Welcome Travelers, To Dublin'), 'windowOpenTab', 'width=1000,height=600,left=100, top=100'); return false;" href="">
+    <a aria-label="facebook button" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https://zacharybell.net//content/2015/09/18/welcome-travelers-to-dublin.html&title=' + encodeURIComponent('Welcome Travelers, To Dublin'), 'windowOpenTab', 'width=1000,height=600,left=100, top=100'); return false;" href="">
         <span class="icon-facebook"> </span>
     </a>
 
     
-        <a  onclick="window.location.href = 'mailto:?subject=' + encodeURIComponent('Welcome Travelers, To Dublin') + '%3A%20A%20short%20story%20by%20Zachary%20Bell&body=' + encodeURIComponent('We took this double-decker bus and maybe someone got murdered and then my mom didn't save my luggage from disaster.') + '%0A%0A https://zacharybell.net//content/2015/09/18/welcome-travelers-to-dublin.html'; return false;" href="">
+        <a aria-label="email button" onclick="window.location.href = 'mailto:?subject=' + encodeURIComponent('Welcome Travelers, To Dublin') + '%3A%20A%20short%20story%20by%20Zachary%20Bell&body=' + encodeURIComponent('') + '%0A%0A https://zacharybell.net//content/2015/09/18/welcome-travelers-to-dublin.html'; return false;" href="">
         	<span class="icon-mail"> </span>
         </a>
     
@@ -298,253 +345,259 @@
 
 
 
-    
-
-<div class="keep-reading-container">
-    <ol class="story-menu">
-        
-        <li class="story-quaternary"><article class="story-summary summary-small" data-slug="The Demonist">
-	<a href="/content/2015/10/10/the-demonist.html">
-		<div class="cover-wrapper">
-			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/whosblowingwhom.jpg">
-				<h3 class="story-title">The Demonist</h3>
-			</div>
-		</div>
-		<div class="info-wrapper">
-			<p class="excerpt">
-				Tim buys a book. Tim accidentally summons a demon. Hilarity, carnage, ensue.
-			</p>
-        </div>
-	</a>
-</article></li>
-        
-        <li class="story-quaternary"><article class="story-summary summary-small" data-slug="A Last Minute Truth">
-	<a href="/content/2015/10/08/a-last-minute-truth.html">
-		<div class="cover-wrapper">
-			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/45bullet-closer.jpg">
-				<h3 class="story-title">A Last Minute Truth</h3>
-			</div>
-		</div>
-		<div class="info-wrapper">
-			<p class="excerpt">
-				Old, embittered and depressed, Eustace decides to kill himself. Then he does something else.
-			</p>
-        </div>
-	</a>
-</article></li>
-        
-        <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Taking Pictures of Cats Having Sex In Istanbul">
-	<a href="/content/2015/09/21/taking-pictures-of-cats-having-sex-in-istanbul.html">
-		<div class="cover-wrapper">
-			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/mosque.jpg">
-				<h3 class="story-title">Taking Pictures of Cats Having Sex In Istanbul</h3>
-			</div>
-		</div>
-		<div class="info-wrapper">
-			<p class="excerpt">
-				Wherein I travel to distant lands, try to get a nice souvenir  and then engage in philosophical debate with policeman.
-			</p>
-        </div>
-	</a>
-</article></li>
-        
-        <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Welcome Travelers, To Dublin">
-	<a href="/content/2015/09/18/welcome-travelers-to-dublin.html">
-		<div class="cover-wrapper">
-			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/double-decker-bus.jpg">
-				<h3 class="story-title">Welcome Travelers, To Dublin</h3>
-			</div>
-		</div>
-		<div class="info-wrapper">
-			<p class="excerpt">
-				We took this double-decker bus and maybe someone got murdered and then my mom didn't save my luggage from disaster.
-			</p>
-        </div>
-	</a>
-</article></li>
-        
-        <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Alfreds For Breakfast">
-	<a href="/content/2015/08/27/alfreds-for-breakfast.html">
-		<div class="cover-wrapper">
-			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/wegener.jpg">
-				<h3 class="story-title">Alfreds For Breakfast</h3>
-			</div>
-		</div>
-		<div class="info-wrapper">
-			<p class="excerpt">
-				Albert wants to get the man who proposed plate tectonics removed from highschool textbooks.
-			</p>
-        </div>
-	</a>
-</article></li>
-        
-        <li class="story-quaternary"><article class="story-summary summary-small" data-slug="Juney's Coming For A Visit">
-	<a href="/content/2015/08/21/juneys-coming-for-a-visit.html">
-		<div class="cover-wrapper">
-			<div class="cover-image" data-background="https://zacharybell.net//images/thumbnail/chicken.jpg">
-				<h3 class="story-title">Juney's Coming For A Visit</h3>
-			</div>
-		</div>
-		<div class="info-wrapper">
-			<p class="excerpt">
-				George's daughter will be in town for Christmas, Alfred isn't as racist as he sounds and Javier's cousin is being deported.
-			</p>
-        </div>
-	</a>
-</article></li>
-        
-    </ol>
-</div>
- <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-	<footer class="row">
-		<div id="footer-nav" class="footer-nav">
-			<a href="/">home</a>
-			<a href="/">stories</a>
-			<a href="/blog">blog</a>
-			<a href="/contact">contact</a>
-			<a href="/search">search</a>
-		</div>
-		<div class="footer-meta">
-			<h1>Welcome Travelers, To Dublin</h1>
-			<p>
-				Copyright © <span class="copyright-date">2017</span> Zachary Bell - All Rights Reserved. Except where otherwise noted,
-				contents of this site including text and media may not be reproduced without prior
-				written consent.
-			</p>
-			<p>
-				
-				Banner image courtesy of <a href="https://www.flickr.com/photos/l2f1/5156369248/in/photolist-8RDJW5-8dzuNy-6xs5mp-e5TUUR-cHL7NY-e4Y5SB-kH3sHG-nQgbX3-6TMKnP-6kacRG-mp3cXF-7aQyYn-dYXu5K-6QZSpa-8tKbAH-df9YT-8o6RkS-agpP33-3gbVuT-dRY1n1-m9SavF-8dqYv6-coC11j-K7aBN-nXnhye-bEdmQ6-bYW7Ao-9u8grA-6ZqyPt-7DWDg-dfrtRc-aBZMo6-b8am2K-b46j3B-jkFyb1-aLfTcx-9jqJZR-bvZLbM-cFheGU-3KZvbT-d7CYzW-a85MK1-5kKNBA-9v1kBd-bXcnTe-aTTb78-dWg3oW-8dwPEq-bg2uJH-e39SUx/" target="_blank">Glen/Flickr</a>
-				
-			</p>
-			<span class="pw__vs">vs:</span><span class="pw__sm">sm:</span><span class="pw__md">md:</span><span class="pw__lg">lg:</span><span>107</span>
-		</div>
-	</footer>
-</div>
+            
     </div>
-    <link rel="stylesheet" href="https://zacharybell.net//css/main.css"> <!-- inject:js -->
+    <div class="keep-reading-container container-small">
+        <ol id="keep-reading" class="story-menu">
+    
+    <li class="story-quaternary"><a class="story-summary summary-small" href="/content/2015/10/10/the-demonist.html">
+    <article class="story-summary-wrapper" data-slug="The Demonist">
+        <div class="cover-wrapper">
+            <div class="cover-image lazy-image" data-background="https://zacharybell.net//images/square-medium/whosblowingwhom.jpg">
+                <h3 class="story-title">The Demonist</h3>
+            </div>
+        </div>
+        <div class="info-wrapper">
+            <p class="excerpt">
+                Tim buys a book. Tim accidentally summons a demon. Hilarity, carnage, ensue.
+            </p>
+        </div>
+    </article>
+</a>
+</li>
+    
+    <li class="story-quaternary"><a class="story-summary summary-small" href="/content/2015/10/08/a-last-minute-truth.html">
+    <article class="story-summary-wrapper" data-slug="A Last Minute Truth">
+        <div class="cover-wrapper">
+            <div class="cover-image lazy-image" data-background="https://zacharybell.net//images/square-medium/45bullet-closer.jpg">
+                <h3 class="story-title">A Last Minute Truth</h3>
+            </div>
+        </div>
+        <div class="info-wrapper">
+            <p class="excerpt">
+                Old, embittered and depressed, Eustace decides to kill himself. Then he does something else.
+            </p>
+        </div>
+    </article>
+</a>
+</li>
+    
+    <li class="story-quaternary"><a class="story-summary summary-small" href="/content/2015/09/21/taking-pictures-of-cats-having-sex-in-istanbul.html">
+    <article class="story-summary-wrapper" data-slug="Taking Pictures of Cats Having Sex In Istanbul">
+        <div class="cover-wrapper">
+            <div class="cover-image lazy-image" data-background="https://zacharybell.net//images/square-medium/mosque.jpg">
+                <h3 class="story-title">Taking Pictures of Cats Having Sex In Istanbul</h3>
+            </div>
+        </div>
+        <div class="info-wrapper">
+            <p class="excerpt">
+                Wherein I travel to distant lands, try to get a nice souvenir  and then engage in philosophical debate with policeman.
+            </p>
+        </div>
+    </article>
+</a>
+</li>
+    
+    <li class="story-quaternary"><a class="story-summary summary-small" href="/content/2015/09/18/welcome-travelers-to-dublin.html">
+    <article class="story-summary-wrapper" data-slug="Welcome Travelers, To Dublin">
+        <div class="cover-wrapper">
+            <div class="cover-image lazy-image" data-background="https://zacharybell.net//images/square-medium/double-decker-bus.jpg">
+                <h3 class="story-title">Welcome Travelers, To Dublin</h3>
+            </div>
+        </div>
+        <div class="info-wrapper">
+            <p class="excerpt">
+                We took this double-decker bus and maybe someone got murdered and then my mom didn't save my luggage from disaster.
+            </p>
+        </div>
+    </article>
+</a>
+</li>
+    
+    <li class="story-quaternary"><a class="story-summary summary-small" href="/content/2015/08/27/alfreds-for-breakfast.html">
+    <article class="story-summary-wrapper" data-slug="Alfreds For Breakfast">
+        <div class="cover-wrapper">
+            <div class="cover-image lazy-image" data-background="https://zacharybell.net//images/square-medium/wegener.jpg">
+                <h3 class="story-title">Alfreds For Breakfast</h3>
+            </div>
+        </div>
+        <div class="info-wrapper">
+            <p class="excerpt">
+                Albert wants to get the man who proposed plate tectonics removed from highschool textbooks.
+            </p>
+        </div>
+    </article>
+</a>
+</li>
+    
+    <li class="story-quaternary"><a class="story-summary summary-small" href="/content/2015/08/21/juneys-coming-for-a-visit.html">
+    <article class="story-summary-wrapper" data-slug="Juney's Coming For A Visit">
+        <div class="cover-wrapper">
+            <div class="cover-image lazy-image" data-background="https://zacharybell.net//images/square-medium/chicken.jpg">
+                <h3 class="story-title">Juney's Coming For A Visit</h3>
+            </div>
+        </div>
+        <div class="info-wrapper">
+            <p class="excerpt">
+                George's daughter will be in town for Christmas, Alfred isn't as racist as he sounds and Javier's cousin is being deported.
+            </p>
+        </div>
+    </article>
+</a>
+</li>
+    
+</ol>        
+    </div>
+    <div class="container-small">
+        <div id="footer-nav" class="footer-nav">
+    <a id="footer-nav-home" href="/">home</a>
+    <a href="/">stories</a>
+    <a href="/blog">blog</a>
+    <a href="/contact">contact</a>
+    <a href="/search">search</a>
+</div>
+        <footer>
+    <div class="footer-meta">
+        
+            <h1>Welcome Travelers, To Dublin</h1>            
+        
+        <p>
+            Copyright © <span class="copyright-date">2017</span> Zachary Bell - All Rights Reserved. Except where otherwise noted,
+            contents of this site including text and media may not be reproduced without prior
+            written consent.
+        </p>
+        <p>
+            
+            Banner image courtesy of <a href="https://www.flickr.com/photos/l2f1/5156369248/in/photolist-8RDJW5-8dzuNy-6xs5mp-e5TUUR-cHL7NY-e4Y5SB-kH3sHG-nQgbX3-6TMKnP-6kacRG-mp3cXF-7aQyYn-dYXu5K-6QZSpa-8tKbAH-df9YT-8o6RkS-agpP33-3gbVuT-dRY1n1-m9SavF-8dqYv6-coC11j-K7aBN-nXnhye-bEdmQ6-bYW7Ao-9u8grA-6ZqyPt-7DWDg-dfrtRc-aBZMo6-b8am2K-b46j3B-jkFyb1-aLfTcx-9jqJZR-bvZLbM-cFheGU-3KZvbT-d7CYzW-a85MK1-5kKNBA-9v1kBd-bXcnTe-aTTb78-dWg3oW-8dwPEq-bg2uJH-e39SUx/" target="_blank" rel="noopener">Glen/Flickr</a>
+            
+        </p>
+        <span class="pw__vs">vs:</span><span class="pw__sm">sm:</span><span class="pw__md">md:</span><span class="pw__lg">lg:</span><span>107</span>
+    </div>
+</footer>
+<script>
+    var currentTime = new Date();
+    document.getElementsByClassName('copyright-date')[0].innerHTML = currentTime.getFullYear();
+</script>
+    </div>
+</div>
+ 
+    </div>
+    <script>
+
+    window.addEventListener('error', function (e) {
+        var error = e.error;
+        ZnetUI.curtain('body-curtain');
+        ZnetUI.curtain('title-curtain');
+    });
+    window.setTimeout(function(){
+        ZnetUI.curtain('body-curtain');
+        ZnetUI.curtain('title-curtain');
+    }, 2000)
+
+    var getCoverImage = function (callback) {
+        var img;
+        var resizeId;
+        var callback = callback;
+        // Quit early if older browser (e.g. IE8).
+        if (!('addEventListener' in window)) {
+            return;
+        }
+
+        var init = function(callback){
+            img = new Image();
+
+            var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+            img.src = backgroundImage.replace(/['"]+/g, '');
+            // Assign an onLoad handler to the dummy image *before* assigning the src
+            img.onload = function () {
+                var $coverImageInitial = document.getElementsByClassName('cover-image-initial')[0];
+                var $coverImageFinal = document.getElementsByClassName('cover-image-final')[0];
+                $coverImageFinal.style.backgroundImage = 'url(' + img.src + ')';
+                $coverImageFinal.style.opacity = 1;
+                callback();
+            };
+        }
+
+        init(callback);
+        window.addEventListener('resize', function(e){
+            clearTimeout(resizeId);
+            resizeId = setTimeout(function(){
+                init(callback);
+            }, 150);
+        }, true);
+    }
+    getCoverImage(function(){
+    });
+</script>
+
+<!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
 
 <script>
-    var currentTime = new Date();
-    $('.copyright-date').html(currentTime.getFullYear());
-</script>
-    <script>
-        // need to know screen size for a variety of things
-        window.SCREEN_MIN = 300;
-        window.SCREEN_XS = 480;
-        window.SCREEN_MS = 530;
-        window.SCREEN_SM = 768;
-        window.SCREEN_MD = 992;
-        window.SCREEN_LG = 1200;
+    // we need the main css before we can render most of the page. 
+    ZnetUI.lazyLoadCSS('https://zacharybell.net//css/story.css', {}, function(){
 
-        var getCoverImage = function () {
-            var img;
-            var resizeId;
+        // we need the font to load before we can set the title or the footnotes
+        ZnetUI.fontWatch('Open Sans', {}, function(){
+            console.log('fontWatch callback');
+            // once we have the font, we can show the body content
+            ZnetUI.curtain('body-curtain');
 
-            // Quit early if older browser (e.g. IE8).
-            if (!('addEventListener' in window)) {
-                return;
-            }
-
-            var init = function(){
-                img = new Image();
-
-                var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
-                img.src = backgroundImage.replace(/['"]+/g, '');
-                // Assign an onLoad handler to the dummy image *before* assigning the src
-                img.onload = function () {
-                    var $coverImageInitial = document.getElementsByClassName('cover-image-initial')[0];
-                    var $coverImageFinal = document.getElementsByClassName('cover-image-final')[0];
-
-                    $coverImageFinal.style.backgroundImage = 'url(' + img.src + ')';
-                    //$coverImageInitial.style.display = "none";
-                };
-            }
-            
-            init();
-
-            $(window).resize(function() {
-                clearTimeout(resizeId);
-                resizeId = setTimeout(function(){
-                    init();
-                }, 150);
-            });
-        }
-
-        getCoverImage();
-
-
-
-        // hide the full navbar until scroll past cover image. 
-        $('.navbar').znetHideNav({ minScrollDown: $(window).height(), storyMode: true }, function(){
-            $('.navbar').show();
-        });
-
-        $(".cover-title").znetTitleFill({
-            paddingX: 10,
-            titleAlignment: "center",
-            yNudgeDown: 100
-        }, function () {
-        }
-        );
-
-        // things that can wait until the page is at least displaying something.
-            // do the titles for the "keep reading" images. 
-            $(".story-title").znetTitleFill({
-                paddingX: 10,
-                titleAlignment: "center",
-                yNudgeDown: 0
-            }, function () {
-            });
-
-            // have to wait for the whole page to load before we can set up
-            // the footnote positions, as footnote heights are set relative
-            // to the height of the page, which we won't know until we have
-            // the cover, the toc and te teasers all set.
-            $(".footnoteCollection").znetFootnotes({ nudge: -4 });
-
-            $('.teaser').znetFirstPage({ extraPadding: 30 });
-            $('.toc').znetFirstPage({ extraPadding: 30 });
-            $('.topLink').click(function () {
-                var screenHeight = $(window).height();
-                var tocHeight = $('.toc').height();
-                var centerTocMargin;
-                var scrollToHeight;
-
-                // block the navbar, so it doesn't pop up
-                $('body').addClass('autoscrolling');
-
-                // height of the upper toc link
-                scrollToHeight = $($.attr(this, 'href')).offset().top;
-
-                // if possible, center the TOC in the window...
-                if (tocHeight < screenHeight) {
-                    centerTocMargin = (screenHeight - tocHeight) / 2;
-                    scrollToHeight = scrollToHeight - centerTocMargin;
+            ZnetUI.titleFill(
+                'cover-title', 
+                {
+                    paddingX: 10,
+                    yNudgeDown: 0,
+                    googleVHFix: true
+                },
+                function(){
+                    // reveal the title. 
+                    ZnetUI.curtain('title-curtain');
+                    
+                    // do the footnotes (which depend on the font being loaded or they will be a bit
+                    // misaligned)
+                    ZnetUI.footnotes(
+                        'footnote-collection',
+                        {
+                            nudge: -11
+                        },
+                        function(){
+                            ZnetUI.lazyLoadImages(
+                                'lazy-image', 
+                                {
+                                    buffer: 500
+                                }
+                            );
+                        }
+                    )
                 }
-
-                $('html, body').animate({
-                    scrollTop: scrollToHeight
-                }, 500);
-                return false;
-            });
-
-            // the reverse of the above.
-            $('.toc a').click(function () {
-                var position = $($.attr(this, 'href')).offset().top - $('.navbar').height() - 30;
-                $('html, body').animate({
-                    scrollTop: position
-                }, 500);
-                return false;
-            });
-
-
-            // these images appear at the very bottom of the story, so they
-            // can load last.
-            $('.story-summary').znetLazyLoadImages({ 'buffer': 1000 });
-        
-    </script>
+            );
+            ZnetUI.titleFill(
+                'story-title',
+                {
+                    paddingX: 10,
+                    titleAlignment: "center",
+                    yNudgeDown: 0
+                }
+            );
+        });
+    });
+    ZnetUI.nav('navbar', 
+        {   
+            minScrollDown: window.innerHeight, 
+            coverPageHome:'full-screen-home',
+            tabNav: 'tab-nav'
+        }
+    );
+    ZnetUI.internalLinks(
+        {
+            navHeight: 60
+        }
+    );
+    ZnetUI.lazyLoadCSS('https://zacharybell.net//css/fontello.css');
+    
+</script>
 </body>
 
 </html>

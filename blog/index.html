@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
     <head>
-        <meta name="google-site-verification" content="Nt3xy9OgkrDFmMXfylZo0UxQYjoBNsUhVwekitE_1bw" />
-        <meta name="google-site-verification" content="Nt3xy9OgkrDFmMXfylZo0UxQYjoBNsUhVwekitE_1bw" />
         <script>
     document.documentElement.classList.remove("no-js");
     document.documentElement.classList.add("js");
 </script>
-
+<style>
+    .js .body-curtain, .js .title-curtain {
+        opacity: 0;
+        visibility: hidden;
+    }
+</style>
 <meta charset="utf-8" />
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>ZacharyBell.net</title>
 <meta name="description" content="Only the finest in novels, short stories and blog-like materials.">
 
@@ -21,20 +23,13 @@
 <script>
 
 </script>
-        <link rel="stylesheet" href="https://zacharybell.net//css/main.css"> <!-- inject:js -->
-<script src="/javascript-combined/znet.js"></script>
-<!-- endinject -->
-
-<script>
-    var currentTime = new Date();
-    $('.copyright-date').html(currentTime.getFullYear());
-</script>
+        <link rel="stylesheet" type="text/css" href="https://zacharybell.net//css/blog.css">
     </head>
     <body>
         <div class="main-container" id="page">
             <div class="navbar sticky">
     <div class="nav-wrapper">
-	<div class="container main-nav">
+	<div class="container-medium main-nav">
 		<span>
 			<a href="/" class="site-logo">
 				ZB
@@ -65,7 +60,7 @@
 
 </div>
 
-            <div class="blog">
+<div class="container-medium">
     <div class="blogHeader">
         <h1 class="banner">blog</h1>
         <div class="tagline">Probably Some Words</div>
@@ -123,68 +118,56 @@
         
     </div>
 </div>
-
-        </div>
-        <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-	<footer class="row">
-		<div id="footer-nav" class="footer-nav">
-			<a href="/">home</a>
-			<a href="/">stories</a>
-			<a href="/blog">blog</a>
-			<a href="/contact">contact</a>
-			<a href="/search">search</a>
-		</div>
-		<div class="footer-meta">
-			<h1></h1>
-			<p>
-				Copyright © <span class="copyright-date">2017</span> Zachary Bell - All Rights Reserved. Except where otherwise noted,
-				contents of this site including text and media may not be reproduced without prior
-				written consent.
-			</p>
-			<p>
-				
-			</p>
-			<span class="pw__vs">vs:</span><span class="pw__sm">sm:</span><span class="pw__md">md:</span><span class="pw__lg">lg:</span><span>107</span>
-		</div>
-	</footer>
+<div class="container-small">
+    <footer>
+    <div class="footer-meta">
+        
+        <p>
+            Copyright © <span class="copyright-date">2017</span> Zachary Bell - All Rights Reserved. Except where otherwise noted,
+            contents of this site including text and media may not be reproduced without prior
+            written consent.
+        </p>
+        <p>
+            
+        </p>
+        <span class="pw__vs">vs:</span><span class="pw__sm">sm:</span><span class="pw__md">md:</span><span class="pw__lg">lg:</span><span>107</span>
+    </div>
+</footer>
+<script>
+    var currentTime = new Date();
+    document.getElementsByClassName('copyright-date')[0].innerHTML = currentTime.getFullYear();
+</script>                    
 </div>
+        </div>
+
         <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
-
-<script>
-    var currentTime = new Date();
-    $('.copyright-date').html(currentTime.getFullYear());
-</script>
-
-        <script src="/external_components/elasticlunr.js-master/elasticlunr.min.js"></script>
         <script>
-            var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-            window.SCREEN_MIN  = 300;
-            window.SCREEN_XS   = 480;
-            window.SCREEN_MS   = 530;
-            window.SCREEN_SM   = 768;
-            window.SCREEN_MD   = 992;
-            window.SCREEN_LG   =1200;
-
-            window.onload = function () {
-                $(".story-title").znetTitleFill({
-                    paddingX:    0,
-                    titleAlignment: "center",
-                    yNudgeDown:  0
-                }, function(){
-                    $('body').css('opacity', '1');
-                });
-            };
-
-            window.addEventListener('mouseover', function onFirstHover() {
-                window.USER_CAN_HOVER = true;
-                window.removeEventListener('mouseover', onFirstHover, false);
-                $('.hover-box-placeholder').addClass('hover-box').removeClass('hover-box-placeholder');
-            }, false);
-                
-
-            $('.story-summary').znetLazyLoadImages({'buffer': 1000});
+            ZnetUI.fontWatch('Lora', {}, function(){
+                ZnetUI.titleFill(
+                    'story-title', 
+                    {
+                        paddingX: 10,
+                    }
+                );
+                // do the footnotes (which depend on the font being loaded or they will be a bit
+                // misaligned)
+                ZnetUI.footnotes(
+                    'footnote-collection',
+                    {
+                    }
+                )
+            });
+            ZnetUI.lazyLoadImages(
+                'lazy-image', 
+                {
+                    buffer: 500
+                }
+            );
+            ZnetUI.lazyLoadCSS(
+                'https://zacharybell.net//css/fontello.css'
+            );
         </script>
     </body>
 </html>

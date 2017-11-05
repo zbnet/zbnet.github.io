@@ -1,93 +1,142 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
 
 <head>
     <!-- bare minimum css to render above the fold content.-->
+    
     <style>
-        body {
-            margin: 0;
-            width: 100%;
-        }
+    body {
+        margin: 0;
+        width: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
 
-        .cover-page {
-            position: relative;
-        }
-        .cover-image-initial, .cover-image-final {
-            
-            background-size: cover;
-            -moz-background-size: cover;
-            /* Firefox 3.6 */
-            background-position: center;
-            /* Internet Explorer 7/8 */
-            height: 100vh;
+    .no-js ul, .no-js ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .no-js .footnoteNumber {
+        float: left;
+    }
+    .no-js .footnoteNumber::after{
+        content: ': ';
+    }
+    .no-js .footnote {
+        margin-bottom: 20px;
+    }
+    .no-js .main-container {
+        padding: 0 20px;
+    }
+
+    .js .cover-page {
+        position: relative;
+        height: 100vh;            
+    }
+    .js .cover-image-initial, .js .cover-image-final {
+        background-size: cover;
+        -moz-background-size: cover;
+        /* Firefox 3.6 */
+        background-position: center;
+        /* Internet Explorer 7/8 */
+    }
+    .js .cover-image-initial {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+    .js .cover-image-final {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        opacity: 0;
+        position: absolute;
+        transition: opacity .15s linear;
+    }
+    .cover-image-intial{
+        display: none;
+    }
+    .loading {
+        filter:blur(20px);
+    }
+
+    @media screen and (orientation:portrait) {
+        body:after{
+            content: 'https://zacharybell.net//images/mobile_portrait/';
+            display: none;
         }
         .cover-image-initial {
-            position: relative;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 0;
+            background-image: url("data:image/png;base64,");
         }
-        .cover-image-final {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+    }
+
+    @supports (-ms-ime-align:auto) {
+        body:after{
+            content: 'https://zacharybell.net//images/large/' !important;
+            display: none !important;
         }
-        .cover-image-intial{
+        .cover-image-initial {
+            background-image: url("data:image/png;base64,") !important;
+        } 
+    }
+    @media all and (-ms-high-contrast:none)
+    {
+        body:after{
+            content: 'https://zacharybell.net//images/large/' !important;
+            display: none !important;
+        }
+        .cover-image-initial {
+            background-image: url("data:image/png;base64,") !important;
+        } 
+    }
+    
+    @media screen and (orientation:landscape) and (max-width: 767px) {
+        body:after{
+            content: 'https://zacharybell.net//images/medium/';
             display: none;
         }
-        .loading {
-            filter:blur(20px);
+        .cover-image-initial {
+            background-image: url("data:image/png;base64,");
         }
-
-        @media screen and (orientation:portrait) {
-            body:after{
-                content: 'https://zacharybell.net//images/mobile_portrait/';
-                display: none;
-            }
-            .cover-image-initial {
-                background-image: url("data:image/png;base64,");
-            }
-        }
-
-        @media screen and (orientation:landscape) and (max-width: 767px) {
-            body:after{
-                content: 'https://zacharybell.net//images/medium/';
-                display: none;
-            }
-            .cover-image-initial {
-                background-image: url("data:image/png;base64,");
-            }
-        }
-        @media screen and (orientation:landscape) and (min-width: 768px) {
-            body:after{
-                content: 'https://zacharybell.net//images/large/';
-                display: none;
-            }
-            .cover-image-initial {
-                background-image: url("data:image/png;base64,");
-            }
-        }
-
-        .navbar,
-        .full-screen-home,
-        .tab-nav,
-        .cover-page h1 {
+    }
+    @media screen and (orientation:landscape) and (min-width: 768px) {
+        body:after{
+            content: 'https://zacharybell.net//images/large/';
             display: none;
         }
-    </style>
+        .cover-image-initial {
+            background-image: url("data:image/png;base64,");
+        }
+    }
+
+    .navbar,
+    .full-screen-home,
+    .tab-nav,
+
+    .js .cover-title {
+        display: none;
+    }
+</style>    
     <script>
     document.documentElement.classList.remove("no-js");
     document.documentElement.classList.add("js");
 </script>
-
+<style>
+    .js .body-curtain, .js .title-curtain {
+        opacity: 0;
+        visibility: hidden;
+    }
+</style>
 <meta charset="utf-8" />
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>ZacharyBell.net</title>
 <meta name="description" content="Only the finest in novels, short stories and blog-like materials.">
 
@@ -102,51 +151,12 @@
     <meta property="og:description" content="" />
     <meta property="og:image" content="https://zacharybell.net//images/medium/" />
     <meta property="fb:app_id" content="466074093735144" />
-
+    
 </head>
 
 <body>
     <div class="main-container">
-        <div class="navbar sticky nav-hide">
-	<div class="nav-wrapper">
-		<div class="container main-nav">
-			<span>
-				<a href="/" class="site-logo">
-					ZB
-				</a>
-			</span>
-			<span class="nav-button">
-				<a href="https://zacharybell.net/">
-					stories
-				</a>
-			</span>
-			<span class="nav-button">
-				<a  href="https://zacharybell.net//blog">
-					blog
-				</a>
-			</span>
-			<span class="nav-button">
-				<a href="https://zacharybell.net//contact">
-					contact
-				</a>
-			</span>
-			<span class="nav-button">
-				<a href="https://zacharybell.net//search">
-					search
-				</a>
-			</span>
-		</div>
-	</div>
-</div>
-
-<a href="/" class="full-screen-home nav-hide">
-	<span href="/" class="site-logo">ZB</span>
-	<span>home</span>
-</a>
-<a href="#footer-nav" class="tab-nav">
-	<span>skip to navigation</span>
-</a>
- <div class="blogHeader">
+        <div class="blogHeader">
     <h1 class="banner">The Author</h1>
     <span class="tagline">Wants You To Love Him</span>
 </div>
@@ -190,154 +200,124 @@
     </div>
 </div>
 
- <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-	<footer class="row">
-		<div id="footer-nav" class="footer-nav">
-			<a href="/">home</a>
-			<a href="/">stories</a>
-			<a href="/blog">blog</a>
-			<a href="/contact">contact</a>
-			<a href="/search">search</a>
-		</div>
-		<div class="footer-meta">
-			<h1></h1>
-			<p>
-				Copyright © <span class="copyright-date">2017</span> Zachary Bell - All Rights Reserved. Except where otherwise noted,
-				contents of this site including text and media may not be reproduced without prior
-				written consent.
-			</p>
-			<p>
-				
-			</p>
-			<span class="pw__vs">vs:</span><span class="pw__sm">sm:</span><span class="pw__md">md:</span><span class="pw__lg">lg:</span><span>107</span>
-		</div>
-	</footer>
-</div>
+ 
     </div>
-    <link rel="stylesheet" href="https://zacharybell.net//css/main.css"> <!-- inject:js -->
+    <script>
+
+    window.addEventListener('error', function (e) {
+        var error = e.error;
+        ZnetUI.curtain('body-curtain');
+        ZnetUI.curtain('title-curtain');
+    });
+    window.setTimeout(function(){
+        ZnetUI.curtain('body-curtain');
+        ZnetUI.curtain('title-curtain');
+    }, 2000)
+
+    var getCoverImage = function (callback) {
+        var img;
+        var resizeId;
+        var callback = callback;
+        // Quit early if older browser (e.g. IE8).
+        if (!('addEventListener' in window)) {
+            return;
+        }
+
+        var init = function(callback){
+            img = new Image();
+
+            var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+            img.src = backgroundImage.replace(/['"]+/g, '');
+            // Assign an onLoad handler to the dummy image *before* assigning the src
+            img.onload = function () {
+                var $coverImageInitial = document.getElementsByClassName('cover-image-initial')[0];
+                var $coverImageFinal = document.getElementsByClassName('cover-image-final')[0];
+                $coverImageFinal.style.backgroundImage = 'url(' + img.src + ')';
+                $coverImageFinal.style.opacity = 1;
+                callback();
+            };
+        }
+
+        init(callback);
+        window.addEventListener('resize', function(e){
+            clearTimeout(resizeId);
+            resizeId = setTimeout(function(){
+                init(callback);
+            }, 150);
+        }, true);
+    }
+    getCoverImage(function(){
+    });
+</script>
+
+<!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
 
 <script>
-    var currentTime = new Date();
-    $('.copyright-date').html(currentTime.getFullYear());
-</script>
-    <script>
-        // need to know screen size for a variety of things
-        window.SCREEN_MIN = 300;
-        window.SCREEN_XS = 480;
-        window.SCREEN_MS = 530;
-        window.SCREEN_SM = 768;
-        window.SCREEN_MD = 992;
-        window.SCREEN_LG = 1200;
+    // we need the main css before we can render most of the page. 
+    ZnetUI.lazyLoadCSS('https://zacharybell.net//css/story.css', {}, function(){
 
-        var getCoverImage = function () {
-            var img;
-            var resizeId;
+        // we need the font to load before we can set the title or the footnotes
+        ZnetUI.fontWatch('Open Sans', {}, function(){
+            console.log('fontWatch callback');
+            // once we have the font, we can show the body content
+            ZnetUI.curtain('body-curtain');
 
-            // Quit early if older browser (e.g. IE8).
-            if (!('addEventListener' in window)) {
-                return;
-            }
-
-            var init = function(){
-                img = new Image();
-
-                var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
-                img.src = backgroundImage.replace(/['"]+/g, '');
-                // Assign an onLoad handler to the dummy image *before* assigning the src
-                img.onload = function () {
-                    var $coverImageInitial = document.getElementsByClassName('cover-image-initial')[0];
-                    var $coverImageFinal = document.getElementsByClassName('cover-image-final')[0];
-
-                    $coverImageFinal.style.backgroundImage = 'url(' + img.src + ')';
-                    //$coverImageInitial.style.display = "none";
-                };
-            }
-            
-            init();
-
-            $(window).resize(function() {
-                clearTimeout(resizeId);
-                resizeId = setTimeout(function(){
-                    init();
-                }, 150);
-            });
-        }
-
-        getCoverImage();
-
-
-
-        // hide the full navbar until scroll past cover image. 
-        $('.navbar').znetHideNav({ minScrollDown: $(window).height(), storyMode: true }, function(){
-            $('.navbar').show();
-        });
-
-        $(".cover-title").znetTitleFill({
-            paddingX: 10,
-            titleAlignment: "center",
-            yNudgeDown: 100
-        }, function () {
-        }
-        );
-
-        // things that can wait until the page is at least displaying something.
-            // do the titles for the "keep reading" images. 
-            $(".story-title").znetTitleFill({
-                paddingX: 10,
-                titleAlignment: "center",
-                yNudgeDown: 0
-            }, function () {
-            });
-
-            // have to wait for the whole page to load before we can set up
-            // the footnote positions, as footnote heights are set relative
-            // to the height of the page, which we won't know until we have
-            // the cover, the toc and te teasers all set.
-            $(".footnoteCollection").znetFootnotes({ nudge: -4 });
-
-            $('.teaser').znetFirstPage({ extraPadding: 30 });
-            $('.toc').znetFirstPage({ extraPadding: 30 });
-            $('.topLink').click(function () {
-                var screenHeight = $(window).height();
-                var tocHeight = $('.toc').height();
-                var centerTocMargin;
-                var scrollToHeight;
-
-                // block the navbar, so it doesn't pop up
-                $('body').addClass('autoscrolling');
-
-                // height of the upper toc link
-                scrollToHeight = $($.attr(this, 'href')).offset().top;
-
-                // if possible, center the TOC in the window...
-                if (tocHeight < screenHeight) {
-                    centerTocMargin = (screenHeight - tocHeight) / 2;
-                    scrollToHeight = scrollToHeight - centerTocMargin;
+            ZnetUI.titleFill(
+                'cover-title', 
+                {
+                    paddingX: 10,
+                    yNudgeDown: 0,
+                    googleVHFix: true
+                },
+                function(){
+                    // reveal the title. 
+                    ZnetUI.curtain('title-curtain');
+                    
+                    // do the footnotes (which depend on the font being loaded or they will be a bit
+                    // misaligned)
+                    ZnetUI.footnotes(
+                        'footnote-collection',
+                        {
+                            nudge: -11
+                        },
+                        function(){
+                            ZnetUI.lazyLoadImages(
+                                'lazy-image', 
+                                {
+                                    buffer: 500
+                                }
+                            );
+                        }
+                    )
                 }
-
-                $('html, body').animate({
-                    scrollTop: scrollToHeight
-                }, 500);
-                return false;
-            });
-
-            // the reverse of the above.
-            $('.toc a').click(function () {
-                var position = $($.attr(this, 'href')).offset().top - $('.navbar').height() - 30;
-                $('html, body').animate({
-                    scrollTop: position
-                }, 500);
-                return false;
-            });
-
-
-            // these images appear at the very bottom of the story, so they
-            // can load last.
-            $('.story-summary').znetLazyLoadImages({ 'buffer': 1000 });
-        
-    </script>
+            );
+            ZnetUI.titleFill(
+                'story-title',
+                {
+                    paddingX: 10,
+                    titleAlignment: "center",
+                    yNudgeDown: 0
+                }
+            );
+        });
+    });
+    ZnetUI.nav('navbar', 
+        {   
+            minScrollDown: window.innerHeight, 
+            coverPageHome:'full-screen-home',
+            tabNav: 'tab-nav'
+        }
+    );
+    ZnetUI.internalLinks(
+        {
+            navHeight: 60
+        }
+    );
+    ZnetUI.lazyLoadCSS('https://zacharybell.net//css/fontello.css');
+    
+</script>
 </body>
 
 </html>

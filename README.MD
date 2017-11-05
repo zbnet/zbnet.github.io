@@ -24,5 +24,6 @@ Page served out of zbnet.github.io, but is CDN'd via cloudflare. Both accounts a
 
 ## Other Useful Notes
 
-gulp did not lend itself well to imagemagick because gulp is async and imagemagick is decidedly not. So the image resize/optimization happens in `images.bat`, which is in the folder `misc_scripts`.
+Gulp did not lend itself well to imagemagick because gulp is async and imagemagick is decidedly not. So the image resize/optimization happens in `images.bat`, which is in the folder `misc_scripts`.
 
+To add a paragraph to a footnote, add `@@` where you want the break. Works for multiple paragraphs. 

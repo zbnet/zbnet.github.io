@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
     <head>
         <script>
     document.documentElement.classList.remove("no-js");
     document.documentElement.classList.add("js");
 </script>
-
+<style>
+    .js .body-curtain, .js .title-curtain {
+        opacity: 0;
+        visibility: hidden;
+    }
+</style>
 <meta charset="utf-8" />
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>ZacharyBell.net</title>
 <meta name="description" content="Only the finest in novels, short stories and blog-like materials.">
 
@@ -19,20 +23,18 @@
 <script>
 
 </script>
-        <link rel="stylesheet" href="https://zacharybell.net//css/main.css"> <!-- inject:js -->
+        <link rel="stylesheet" href="https://zacharybell.net//css/search.css"> 
+        <link rel="stylesheet" href= 'https://zacharybell.net//css/fontello.css'>
+        
+        <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
 
-<script>
-    var currentTime = new Date();
-    $('.copyright-date').html(currentTime.getFullYear());
-</script>
     </head>
     <body>
-    <div class="main-container" id="page">
         <div class="navbar sticky">
     <div class="nav-wrapper">
-	<div class="container main-nav">
+	<div class="container-medium main-nav">
 		<span>
 			<a href="/" class="site-logo">
 				ZB
@@ -63,82 +65,63 @@
 
 </div>
 
-        <div class="blog">
-	<div class="blogHeader">
-	    <h1 class="banner">search</h1>
-	    <span class="tagline">go ahead, do it.</span>
-	</div>
-	<div class="container">
-		<div class="main-search-form">
-			<form onsubmit="return false;">
-				<input id="search-input" type="text" placeholder="Search terms"><span class="icon-search"></span>
-			</form>
-		</div>
-		<div id='log'></div>
-		<div class="search-container">
-			<div class="story-results"></div>
-			<div class="blog-results"></div>
-		</div>
-	</div>
+        <div class="body-curtain">
+    <h1 class="search-banner">search</h1>
+    <div class="container-medium">
+        <div class="main-search-form">
+            <form action="/search" method="get">
+                <input id="search-input" autocomplete="off" type="text" name="s">
+                <span id="clear-button" class="clear-input">X</span>
+                <button type="submit">
+                    <span class="icon-search"></span>
+                </button>
+            </form>
+            <script>
+                var url_string = window.location.href;
+                var url = new URL(url_string);
+                var searchString = url.searchParams.get("s");
+                var $formInput = document.getElementById('search-input');
+                $formInput.value = searchString;
+            </script>
+        </div>
+        <div id='log'></div>
+        <div class="search-container">
+            <div id="no-results" class="no-results"></div>
+            <div id="story-results" class="story-results"></div>
+            <div id="blog-results" class="blog-results"></div>
+        </div>
+    </div>
 </div>
 
-    </div>
-    <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-	<footer class="row">
-		<div id="footer-nav" class="footer-nav">
-			<a href="/">home</a>
-			<a href="/">stories</a>
-			<a href="/blog">blog</a>
-			<a href="/contact">contact</a>
-			<a href="/search">search</a>
-		</div>
-		<div class="footer-meta">
-			<h1></h1>
-			<p>
-				Copyright © <span class="copyright-date">2017</span> Zachary Bell - All Rights Reserved. Except where otherwise noted,
-				contents of this site including text and media may not be reproduced without prior
-				written consent.
-			</p>
-			<p>
-				
-			</p>
-			<span class="pw__vs">vs:</span><span class="pw__sm">sm:</span><span class="pw__md">md:</span><span class="pw__lg">lg:</span><span>107</span>
-		</div>
-	</footer>
-</div>
-    <!-- inject:js -->
+        <!-- inject:js -->
 <script src="/javascript-combined/znet.js"></script>
 <!-- endinject -->
+    
+        <script src="/external_components/elasticlunr.js-master/elasticlunr.js"></script>
+        <script>
 
-<script>
-    var currentTime = new Date();
-    $('.copyright-date').html(currentTime.getFullYear());
-</script>
+            document.getElementById('search-input').focus();
 
-    <script src="/external_components/elasticlunr.js-master/elasticlunr.js"></script>
-    <script>
-
-        window.onload = function () {
-            $('body').css('opacity', '1');
-        };
-        window.SCREEN_MIN  = 300;
-        window.SCREEN_XS   = 480;
-        window.SCREEN_MS   = 530;
-        window.SCREEN_SM   = 768;
-        window.SCREEN_MD   = 992;
-        window.SCREEN_LG   =1200;
-
-        $('#search-input').focus();
-
-        $.znetSearch('https://zacharybell.net/', {'callback': function(){
-            $(".story-title").znetTitleFill({
-                paddingX:    0,
-                titleAlignment: "center",
-                yNudgeDown:  0
-            }, function(){
-                $('body').css('opacity', '1');
-            });
-        }});
-    </script>
+            ZnetUI.search(
+                {
+                    imageURL: 'https://zacharybell.net/'
+                },
+                function(){
+                    ZnetUI.fontWatch('Lora', {}, function(){
+                        ZnetUI.titleFill(
+                            'story-title',
+                            {
+                                paddingX: 10,
+                                titleAlignment: "center",
+                                yNudgeDown: 0
+                            },
+                            function(){
+                                ZnetUI.curtain('body-curtain');
+                            }
+                        );
+                    });
+                }
+            );
+        </script>
     </body>
 </html>
