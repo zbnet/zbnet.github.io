@@ -1,39 +1,557 @@
-<p><strong>First Bratz Doll:</strong> It&#39;s time to play reality show!</p>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <!-- bare minimum css to render above the fold content.-->
+    
+    <style>
+    body {
+        margin: 0;
+        width: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    .no-js ul, .no-js ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .no-js .footnoteNumber {
+        float: left;
+    }
+    .no-js .footnoteNumber::after{
+        content: ': ';
+    }
+    .no-js .footnote {
+        margin-bottom: 20px;
+    }
+    .no-js .main-container {
+        padding: 0 20px;
+    }
+
+    .js .cover-page {
+        position: relative;
+        height: 100vh;            
+    }
+    .js .cover-image-initial, .js .cover-image-final {
+        background-size: cover;
+        -moz-background-size: cover;
+        /* Firefox 3.6 */
+        background-position: center;
+        /* Internet Explorer 7/8 */
+    }
+    .js .cover-image-initial {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+    .js .cover-image-final {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        opacity: 0;
+        position: absolute;
+        transition: opacity .15s linear;
+    }
+    .cover-image-intial{
+        display: none;
+    }
+    .loading {
+        filter:blur(20px);
+    }
+
+    @media screen and (orientation:portrait) {
+        body:after{
+            content: 'https://zacharybell.net//images/mobile_portrait/kardashain.jpg';
+            display: none;
+        }
+        .cover-image-initial {
+            background-image: url("data:image/png;base64,");
+        }
+    }
+
+    @supports (-ms-ime-align:auto) {
+        body:after{
+            content: 'https://zacharybell.net//images/large/kardashain.jpg' !important;
+            display: none !important;
+        }
+        .cover-image-initial {
+            background-image: url("data:image/png;base64,") !important;
+        } 
+    }
+    @media all and (-ms-high-contrast:none)
+    {
+        body:after{
+            content: 'https://zacharybell.net//images/large/kardashain.jpg' !important;
+            display: none !important;
+        }
+        .cover-image-initial {
+            background-image: url("data:image/png;base64,") !important;
+        } 
+    }
+    
+    @media screen and (orientation:landscape) and (max-width: 767px) {
+        body:after{
+            content: 'https://zacharybell.net//images/medium/kardashain.jpg';
+            display: none;
+        }
+        .cover-image-initial {
+            background-image: url("data:image/png;base64,");
+        }
+    }
+    @media screen and (orientation:landscape) and (min-width: 768px) {
+        body:after{
+            content: 'https://zacharybell.net//images/large/kardashain.jpg';
+            display: none;
+        }
+        .cover-image-initial {
+            background-image: url("data:image/png;base64,");
+        }
+    }
+
+    .navbar,
+    .full-screen-home,
+    .tab-nav,
+
+    .js .cover-title {
+        display: none;
+    }
+</style>    
+    <script>
+    document.documentElement.classList.remove("no-js");
+    document.documentElement.classList.add("js");
+</script>
+<style>
+    .js .body-curtain, .js .title-curtain {
+        opacity: 0;
+        visibility: hidden;
+    }
+</style>
+<meta charset="utf-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bratz Doll Opera</title>
+<meta name="description" content="…performed atop a McDonald’s trashcan by an eight year old">
+
+<link rel="canonical" href="https://zacharybell.net///content/2015/06/11/a-commentary-enacted-with-bratz-dolls-atop-a-mcdonald-e2-80-99s-trashcan-by-an-eight-year-old.html">
+<link rel="alternate" type="application/rss+xml" title="ZacharyBell.net" href="https://zacharybell.net///feed.xml">
+<script>
+
+</script>
+    <meta property="og:url" content="https://zacharybell.net///content/2015/06/11/a-commentary-enacted-with-bratz-dolls-atop-a-mcdonald-e2-80-99s-trashcan-by-an-eight-year-old.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Bratz Doll Opera" />
+    <meta property="og:description" content="…performed atop a McDonald’s trashcan by an eight year old" />
+    <meta property="og:image" content="https://zacharybell.net//images/medium/kardashain.jpg" />
+    <meta property="fb:app_id" content="466074093735144" />
+    
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="cover-page">
+    <div class="cover-image-initial"></div>
+    <div class="cover-image-final"></div>  
+    <h1 id="cover-title" class="title-curtain cover-title">Bratz Doll Opera</h1>
+</div>
+<div class="body-curtain">
+    <div id="navbar" class="navbar sticky nav-hide">
+	<div class="nav-wrapper">
+		<div class="container-medium main-nav">
+			<span>
+				<a href="/" class="site-logo">
+					ZB
+				</a>
+			</span>
+			<span class="nav-button">
+				<a href="https://zacharybell.net/">
+					stories
+				</a>
+			</span>
+			<span class="nav-button">
+				<a  href="https://zacharybell.net//blog">
+					blog
+				</a>
+			</span>
+			<span class="nav-button">
+				<a href="https://zacharybell.net//contact">
+					contact
+				</a>
+			</span>
+			<span class="nav-button">
+				<a href="https://zacharybell.net//search">
+					search
+				</a>
+			</span>
+		</div>
+	</div>
+</div>
+
+<a href="/" id="full-screen-home" class="full-screen-home nav-hide">
+	<span href="/" class="site-logo">ZB</span>
+	<span>home</span>
+</a>
+<a href="#footer-nav-home" id="tab-nav" class="tab-nav">
+	<span>skip to navigation</span>
+</a>
+ 
+    
+    
+    
+    <div class="story-container container-small">
+        
+        <div id="story" class="story top-padded-story" data-story-number="1">
+            <p><strong>First Bratz Doll:</strong> It's time to play reality show!</p>
 
 <p><strong>Second Bratz Doll:</strong> Cooking or shouting?</p>
 
 <p><strong>First:</strong> Shut up!</p>
 
-<p><strong>Second:</strong> Look at me!  I&#39;m skating!</p>
+<p><strong>Second:</strong> Look at me!  I'm skating!</p>
 
-<p><em>(Second Bratz doll pirouettes across top of McDonald&#39;s trashcan)</em></p>
+<p>
+   <em>(Second Bratz doll pirouettes across top of McDonald's trashcan)</em>
+</p>
 
-<p><strong>Second:</strong> If you want a rose, it&#39;s a game, but I&#39;m going to win.</p>
+<p><strong>Second:</strong> If you want a rose, it's a game, but I'm going to win.</p>
 
-<p><strong>First:</strong> Who&#39;s the faaaaaaatttttest dog?</p>
+<p><strong>First:</strong> Who's the faaaaaaatttttest dog?</p>
 
-<p><em>(First Bratz doll makes barking sounds)</em></p>
+<p>
+   <em>(First Bratz doll makes barking sounds)</em>
+</p>
 
-<p><strong>Second:</strong> That&#39;s not enough!  Try harder!  Make it work!</p>
+<p><strong>Second:</strong> That's not enough!  Try harder!  Make it work!</p>
 
-<p><strong>First:</strong> You can&#39;t talk to me that way!</p>
+<p><strong>First:</strong> You can't talk to me that way!</p>
 
-<p><em>(Bratz dolls attack one another atop the McDonald&#39;s trashcan)</em></p>
+<p>
+   <em>(Bratz dolls attack one another atop the McDonald's trashcan)</em>
+</p>
 
-<p><strong>Second:</strong> I see that skirt!  You stole it.  It&#39;s my design!</p>
+<p><strong>Second:</strong> I see that skirt!  You stole it.  It's my design!</p>
 
-<p><em>(Bratz combat continues)</em></p>
+<p>
+   <em>(Bratz combat continues)</em>
+</p>
 
-<p><strong>First:</strong> I&#39;m keeping all the stuff.</p>
+<p><strong>First:</strong> I'm keeping all the stuff.</p>
 
 <p><strong>Second:</strong> Go faster!  You have to go faster!</p>
 
-<p><em>(Bratz dolls collide like bull elk in rut.  The first falls into the trashcan.)</em></p>
+<p>
+   <em>(Bratz dolls collide like bull elk in rut.  The first falls into the trashcan.)</em>
+</p>
 
 <p><strong>Second:</strong> Oh no!  I love you!</p>
 
-<p><em>(The second Bratz doll leaps into the trashcan after the first.  There is a moment of silence.  Girl begins to cry.)</em></p>
+<p>
+   <em>(The second Bratz doll leaps into the trashcan after the first.  There is a moment of silence.  Girl begins to cry.)</em>
+</p>
 
 <p><strong>Mom:</strong> Angel, come over here and eat.</p>
 
-<p><em>(Girl peers into trashcan, shrugs, goes off to eat Happy Meal.)</em></p>
+<p>
+   <em>(Girl peers into trashcan, shrugs, goes off to eat Happy Meal.)</em>
+</p>
+
+        </div>
+    
+        <div id="footnote-collection" class="footnote-collection top-padded-footnotes" data-footnote-collection="1">
+            <ul class="footnotes"></ul>
+        </div>
+    
+        
+    </div>
+    <div class="social-buttons-container container-small">
+        
+
+
+
+<div class="socialButtons">
+	<span class="nag">i don't need your approval</span>
+    
+        <a aria-label="twitter button" onclick="window.open('http://twitter.com/share?text=' + encodeURIComponent('Bratz Doll Opera') + ' %7C A short story by Zachary Bell %7C via @zachary_bell &url=https://zacharybell.net//content/2015/06/11/a-commentary-enacted-with-bratz-dolls-atop-a-mcdonald-e2-80-99s-trashcan-by-an-eight-year-old.html', 'windowOpenTab', 'width=600,height=450,left=100, top=100'); return false;" href="">
+        	<span class="icon-twitter"> </span>
+        </a>
+        
+    <a  aria-label="reddit button" onclick="window.open('http://reddit.com/submit?url=https://zacharybell.net//content/2015/06/11/a-commentary-enacted-with-bratz-dolls-atop-a-mcdonald-e2-80-99s-trashcan-by-an-eight-year-old.html&title=' + encodeURIComponent('Bratz Doll Opera'), 'windowOpenTab', 'width=1000,height=600,left=100, top=100'); return false;" href="">
+    	<span class="icon-reddit"> </span>
+    </a>
+    <a aria-label="facebook button" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https://zacharybell.net//content/2015/06/11/a-commentary-enacted-with-bratz-dolls-atop-a-mcdonald-e2-80-99s-trashcan-by-an-eight-year-old.html&title=' + encodeURIComponent('Bratz Doll Opera'), 'windowOpenTab', 'width=1000,height=600,left=100, top=100'); return false;" href="">
+        <span class="icon-facebook"> </span>
+    </a>
+
+    
+        <a aria-label="email button" onclick="window.location.href = 'mailto:?subject=' + encodeURIComponent('Bratz Doll Opera') + '%3A%20A%20short%20story%20by%20Zachary%20Bell&body=' + encodeURIComponent('') + '%0A%0A https://zacharybell.net//content/2015/06/11/a-commentary-enacted-with-bratz-dolls-atop-a-mcdonald-e2-80-99s-trashcan-by-an-eight-year-old.html'; return false;" href="">
+        	<span class="icon-mail"> </span>
+        </a>
+    
+    <span class="sub-nag">i just desperately want it</span>
+</div>
+
+
+
+            
+    </div>
+    <div class="keep-reading-container container-small">
+        <ol id="keep-reading" class="story-menu">
+    
+    <li class="story-quaternary"><a class="story-summary summary-small" href="/content/2015/10/10/the-demonist.html">
+    <article class="story-summary-wrapper" data-slug="The Demonist">
+        <div class="cover-wrapper">
+            <div class="cover-image lazy-image" data-background="https://zacharybell.net//images/square-medium/whosblowingwhom.jpg">
+                <h3 class="story-title">The Demonist</h3>
+            </div>
+        </div>
+        <div class="info-wrapper">
+            <p class="excerpt">
+                Tim buys a book. Tim accidentally summons a demon. Hilarity, carnage, ensue.
+            </p>
+        </div>
+    </article>
+</a>
+</li>
+    
+    <li class="story-quaternary"><a class="story-summary summary-small" href="/content/2015/10/08/a-last-minute-truth.html">
+    <article class="story-summary-wrapper" data-slug="A Last Minute Truth">
+        <div class="cover-wrapper">
+            <div class="cover-image lazy-image" data-background="https://zacharybell.net//images/square-medium/45bullet-closer.jpg">
+                <h3 class="story-title">A Last Minute Truth</h3>
+            </div>
+        </div>
+        <div class="info-wrapper">
+            <p class="excerpt">
+                Old, embittered and depressed, Eustace decides to kill himself. Then he does something else.
+            </p>
+        </div>
+    </article>
+</a>
+</li>
+    
+    <li class="story-quaternary"><a class="story-summary summary-small" href="/content/2015/09/21/taking-pictures-of-cats-having-sex-in-istanbul.html">
+    <article class="story-summary-wrapper" data-slug="Taking Pictures of Cats Having Sex In Istanbul">
+        <div class="cover-wrapper">
+            <div class="cover-image lazy-image" data-background="https://zacharybell.net//images/square-medium/mosque.jpg">
+                <h3 class="story-title">Taking Pictures of Cats Having Sex In Istanbul</h3>
+            </div>
+        </div>
+        <div class="info-wrapper">
+            <p class="excerpt">
+                Wherein I travel to distant lands, try to get a nice souvenir  and then engage in philosophical debate with policeman.
+            </p>
+        </div>
+    </article>
+</a>
+</li>
+    
+    <li class="story-quaternary"><a class="story-summary summary-small" href="/content/2015/09/18/welcome-travelers-to-dublin.html">
+    <article class="story-summary-wrapper" data-slug="Welcome Travelers, To Dublin">
+        <div class="cover-wrapper">
+            <div class="cover-image lazy-image" data-background="https://zacharybell.net//images/square-medium/double-decker-bus.jpg">
+                <h3 class="story-title">Welcome Travelers, To Dublin</h3>
+            </div>
+        </div>
+        <div class="info-wrapper">
+            <p class="excerpt">
+                We took this double-decker bus and maybe someone got murdered and then my mom didn't save my luggage from disaster.
+            </p>
+        </div>
+    </article>
+</a>
+</li>
+    
+    <li class="story-quaternary"><a class="story-summary summary-small" href="/content/2015/08/27/alfreds-for-breakfast.html">
+    <article class="story-summary-wrapper" data-slug="Alfreds For Breakfast">
+        <div class="cover-wrapper">
+            <div class="cover-image lazy-image" data-background="https://zacharybell.net//images/square-medium/wegener.jpg">
+                <h3 class="story-title">Alfreds For Breakfast</h3>
+            </div>
+        </div>
+        <div class="info-wrapper">
+            <p class="excerpt">
+                Albert wants to get the man who proposed plate tectonics removed from highschool textbooks.
+            </p>
+        </div>
+    </article>
+</a>
+</li>
+    
+    <li class="story-quaternary"><a class="story-summary summary-small" href="/content/2015/08/21/juneys-coming-for-a-visit.html">
+    <article class="story-summary-wrapper" data-slug="Juney's Coming For A Visit">
+        <div class="cover-wrapper">
+            <div class="cover-image lazy-image" data-background="https://zacharybell.net//images/square-medium/chicken.jpg">
+                <h3 class="story-title">Juney's Coming For A Visit</h3>
+            </div>
+        </div>
+        <div class="info-wrapper">
+            <p class="excerpt">
+                George's daughter will be in town for Christmas, Alfred isn't as racist as he sounds and Javier's cousin is being deported.
+            </p>
+        </div>
+    </article>
+</a>
+</li>
+    
+</ol>        
+    </div>
+    <div class="container-small">
+        <div id="footer-nav" class="footer-nav">
+    <a id="footer-nav-home" href="/">home</a>
+    <a href="/">stories</a>
+    <a href="/blog">blog</a>
+    <a href="/contact">contact</a>
+    <a href="/search">search</a>
+</div>
+        <footer>
+    <div class="footer-meta">
+        
+            <h1>Bratz Doll Opera</h1>            
+        
+        <p>
+            Copyright © <span class="copyright-date">2017</span> Zachary Bell - All Rights Reserved. Except where otherwise noted,
+            contents of this site including text and media may not be reproduced without prior
+            written consent.
+        </p>
+        <p>
+            
+            Banner image courtesy of <a href="http://commons.wikimedia.org/wiki/File:Kim_Kardashian_2009_Tribeca_portrait.jpg" target="_blank" rel="noopener">Wikipedia</a>
+            
+        </p>
+        <span class="pw__vs">vs:</span><span class="pw__sm">sm:</span><span class="pw__md">md:</span><span class="pw__lg">lg:</span><span>107</span>
+    </div>
+</footer>
+<script>
+    var currentTime = new Date();
+    document.getElementsByClassName('copyright-date')[0].innerHTML = currentTime.getFullYear();
+</script>
+    </div>
+</div>
+ 
+    </div>
+    <script>
+
+    window.addEventListener('error', function (e) {
+        var error = e.error;
+        ZnetUI.curtain('body-curtain');
+        ZnetUI.curtain('title-curtain');
+    });
+    window.setTimeout(function(){
+        ZnetUI.curtain('body-curtain');
+        ZnetUI.curtain('title-curtain');
+    }, 2000)
+
+    var getCoverImage = function (callback) {
+        var img;
+        var resizeId;
+        var callback = callback;
+        // Quit early if older browser (e.g. IE8).
+        if (!('addEventListener' in window)) {
+            return;
+        }
+
+        var init = function(callback){
+            img = new Image();
+
+            var backgroundImage = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+            img.src = backgroundImage.replace(/['"]+/g, '');
+            // Assign an onLoad handler to the dummy image *before* assigning the src
+            img.onload = function () {
+                var $coverImageInitial = document.getElementsByClassName('cover-image-initial')[0];
+                var $coverImageFinal = document.getElementsByClassName('cover-image-final')[0];
+                $coverImageFinal.style.backgroundImage = 'url(' + img.src + ')';
+                $coverImageFinal.style.opacity = 1;
+                callback();
+            };
+        }
+
+        init(callback);
+        window.addEventListener('resize', function(e){
+            clearTimeout(resizeId);
+            resizeId = setTimeout(function(){
+                init(callback);
+            }, 150);
+        }, true);
+    }
+    getCoverImage(function(){
+    });
+</script>
+
+<!-- inject:js -->
+<script src="/javascript-combined/znet.js"></script>
+<!-- endinject -->
+
+<script>
+    // we need the main css before we can render most of the page. 
+    ZnetUI.lazyLoadCSS('https://zacharybell.net//css/story.css', {}, function(){
+
+        // we need the font to load before we can set the title or the footnotes
+        ZnetUI.fontWatch('Open Sans', {}, function(){
+            console.log('fontWatch callback');
+            // once we have the font, we can show the body content
+            ZnetUI.curtain('body-curtain');
+
+            ZnetUI.titleFill(
+                'cover-title', 
+                {
+                    paddingX: 10,
+                    yNudgeDown: 0,
+                    googleVHFix: true
+                },
+                function(){
+                    // reveal the title. 
+                    ZnetUI.curtain('title-curtain');
+                    
+                    // do the footnotes (which depend on the font being loaded or they will be a bit
+                    // misaligned)
+                    ZnetUI.footnotes(
+                        'footnote-collection',
+                        {
+                            nudge: -11
+                        },
+                        function(){
+                            ZnetUI.lazyLoadImages(
+                                'lazy-image', 
+                                {
+                                    buffer: 500
+                                }
+                            );
+                        }
+                    )
+                }
+            );
+            ZnetUI.titleFill(
+                'story-title',
+                {
+                    paddingX: 10,
+                    titleAlignment: "center",
+                    yNudgeDown: 0
+                }
+            );
+        });
+    });
+    ZnetUI.nav('navbar', 
+        {   
+            minScrollDown: window.innerHeight, 
+            coverPageHome:'full-screen-home',
+            tabNav: 'tab-nav'
+        }
+    );
+    ZnetUI.internalLinks(
+        {
+            navHeight: 60
+        }
+    );
+    ZnetUI.lazyLoadCSS('https://zacharybell.net//css/fontello.css');
+    
+</script>
+</body>
+
+</html>
